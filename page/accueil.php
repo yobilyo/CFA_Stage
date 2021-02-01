@@ -1,0 +1,1 @@
+<p><center>Bienvenue sur Amnesty Internationale !</center></p>
