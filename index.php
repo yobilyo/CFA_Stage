@@ -21,54 +21,54 @@
 	<!-- 
 		<link rel="shortcut icon" type="image/x-icon" href="image/ [...] .ico"/>	//logo site	
 	-->
+
+	<script src="lib/js/helpers.js"></script>
 	<link rel="stylesheet" href="style/index.css"/>
 </head> 
 <body> 
 	<center>
-		<a href="index.php?page=0"><img src=" " alt="Accueil"/></a>
-
-		<br/><br/>
-
-		<!-- Menu de navigation -->
+		<!-- Menu de navigation (navbar) -->
 		<?php
+			print_r($_SESSION);
 			require_once("vue/vue_navbar.php");
 		?>
 
-		<!-- Rubrique se connecter -->
-		<br/><br/>
-		<section>
-			<p><em>à faire</em></p>
-			<a href="connexion.php">Se connecter</a><br/>	
-			<a href="inscription.php">S'inscrire</a>
-		<section>
+		<?php
 
-		<br/><br/>
+            // on n'est pas connecté, donc on se connecte ou on s'inscrit
+            if (!isset($_SESSION['email'])) {
+                if (isset($_GET['page']) && $_GET['page'] == "001") {
+                    require_once("gestion_inscription.php");
+                } else {
+                    // ?page=001 est la page d'inscription, si ce n'est pas set on est sur la page de connexion
+                    require_once("gestion_connexion.php");
+                }
 
-		<?php 
-			$page = (isset($_GET['page'])) ? $_GET['page'] : 0 ;
-			try
-			{
+            } else {
+                // on est connecté maintenant, donc on affiche le site
+                require_once("vue/vue_navbar.php");
 
-			}
-			catch(Exception $e)
-			{
-				die ("Erreur : ".$e->getMessage() );
-			}
-			switch($page)
-			{
-				case 0 :
-					require_once("accueil.php");
-					break;
-				case 1 :
-					require_once("vue/page1.php");
-					break; 
-				case 2 :
-					require_once("vue/page2.php");
-					break; 
-				case 3 :
-					require_once("vue/page3.php");
-					break; 
-			}
+                if(isset($_GET['page'])) $page = $_GET['page']; 
+                    else  $page = 0;
+                switch ($page)
+                {
+                    case 0:
+                        require_once("accueil.php");
+                        break;
+                    case 2:
+                        require_once("vue/Page2.php");
+						break;
+					case 3:
+						require_once("vue/Page3.php");
+						break;
+					case 4:
+						require_once("vue/Page4.php");
+						break;
+                    case 10:
+                        session_destroy();   
+                        header("Location: index.php");             
+                    }
+            }
 
 			require_once("vue/vue_footer.php");
 		?>
