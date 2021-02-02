@@ -1,3 +1,8 @@
+drop database if exists assostage;
+create database assostage;
+
+use assostage;
+
 #------------------------------------------------------------
 #        Script MySQL.
 #------------------------------------------------------------
