@@ -137,5 +137,5 @@ CREATE TABLE Decrire(
 
 #insertions SQL
 #user
-insert into user values(null, "Zinedine", "Zidane", "administrateur", "a@gmail.com", "123", "/images/photo_profil/user1.jpg");
-insert into user values(null, "Fabien", "Barthez", "utilisateur", "b@gmail.com", "456", "/images/photo_profil/user2.jpg");
+insert into user values(null, "Zinedine", "Zidane", "administrateur", "a@gmail.com", "123", "/lib/images/photo_profil/user1.jpg");
+insert into user values(null, "Fabien", "Barthez", "utilisateur", "b@gmail.com", "456", "/lib/images/photo_profil/user2.jpg");
