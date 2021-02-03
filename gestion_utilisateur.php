@@ -19,9 +19,7 @@
 
             switch ($action){
                 case "sup" : 
-                        // avant de pouvoir supprimer une utilisateur, il faut supprimer toutes les participants à cette utilisateur
-                        // les clés étrangères id_utilisateur dans la table participer ne peuvent pas devenir orphelines ce qui bloque la suppression d'une utilisateur
-                        // DELETE from participer WHERE id_utilisateur = $id_utilisateur
+                        // avant de pouvoir supprimer un utilisateur, il faut supprimer toutes les                      // les clés étrangères id_utilisateur dans 
                         /*$unControleur->setTable ("participer");
                         $tab=array("id_utilisateur"=>$id_utilisateur); 
                         $unControleur->delete($tab);*/

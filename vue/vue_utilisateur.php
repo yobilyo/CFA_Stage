@@ -31,10 +31,10 @@
 						<td>".
 						"<img src='".$unUtilisateur['photo_profil']."' class='rounded' width='50' /> </td>
 						<td>
-							<a href='index.php?page=42&action=sup&id=".$unUtilisateur['id']."'>
+							<a href='index.php?page=2&action=sup&id=".$unUtilisateur['id']."'>
 							<img src ='lib/images/sup.png' height='30' witdh='30'> </a>
 
-							<a href='index.php?page=42&action=edit&id=".$unUtilisateur['id']."'>
+							<a href='index.php?page=2&action=edit&id=".$unUtilisateur['id']."'>
 							<img src ='lib/images/edition.png' height='30' witdh='30'> </a>
 
 							</td>

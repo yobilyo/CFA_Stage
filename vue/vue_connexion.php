@@ -2,7 +2,7 @@
 <script src="lib/js/helpers.js"></script>
 
 
-<a href="https://www.restosducoeur.org/"><img src='lib/images/resto-du-coeur-logo.jpg' style='position: relative'/></a>
+<a href="https://www.restosducoeur.org/"><img src='lib/images/resto-du-coeur-logo.jpg' style='position: relative' /></a>
 
 <br/>
 <br/>
@@ -47,5 +47,5 @@
 
 	</fieldset>
   </form>
-  <a href="index.php?page=001">Nouveau membre ? Créez votre compte.</a>
+  <a href="index.php?page=001">Cliquez ici pour vous inscrire.</a>
 </div>
