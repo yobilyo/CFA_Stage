@@ -59,7 +59,7 @@
                         require_once("gestion_utilisateur.php");
 						break;
 					case 3:
-						require_once("vue/Page3.php");
+						require_once("gestion_projet.php");
 						break;
 					case 4:
 						require_once("vue/Page4.php");

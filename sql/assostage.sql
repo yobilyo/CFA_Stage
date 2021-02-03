@@ -139,3 +139,19 @@ CREATE TABLE Decrire(
 #user
 insert into user values(null, "Zinedine", "Zidane", "administrateur", "a@gmail.com", "123", "lib/images/photo_profil/user1.jpg");
 insert into user values(null, "Fabien", "Barthez", "utilisateur", "b@gmail.com", "456", "lib/images/photo_profil/user2.jpg");
+
+#projet
+insert into Projet values (null, "Distribution", "12/12/20", "France", "Paris", 5000, 500, 1),
+        (null, "Distribution", "14/12/20", "Allemagne", "Berlin", 2000, 300, 1);
+
+#don
+insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", "CB", 2, 1);
+
+#Vues
+CREATE VIEW les_projets AS(
+    SELECT p.id, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte + SUM(d.montant) AS "somme_collecte", p.id_User
+FROM Projet p
+LEFT JOIN Don d
+ON p.id = d.id_Projet
+GROUP BY p.id
+    );       

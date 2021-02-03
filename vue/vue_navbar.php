@@ -6,7 +6,7 @@
 		<a href="index.php?page=2">Utilisateurs</a>
 	</div> | 
 	<div>
-		<a href="index.php?page=3">Page 3</a>
+		<a href="index.php?page=3">Projets</a>
 	</div> | 
 	<div>
 		<a href="index.php?page=4">Page 4</a>
