@@ -29,10 +29,19 @@ if(isset($_SESSION['email']) && $_SESSION['droits'] =="administrateur")
 		require_once("vue/vue_insert_projet.php"); 
 
 		if (isset($_POST['modifier'])){
-		$tab=array("description"=>$_POST['description'], "date_lancement"=>$_POST['date_lancement'],
-			"pays"=>$_POST['pays'],"ville"=>$_POST['ville'],"budget"=>$_POST['budget'],"somme_collecte"=>$_POST['somme_collecte'],"id_utilisateur"=>$_POST['id_utilisateur']);
+			$tab=array(
+				"nom"=>$_POST['nom'],
+				"description"=>$_POST['description'],
+				"date_lancement"=>$_POST['date_lancement'],
+				"pays"=>$_POST['pays'],
+				"ville"=>$_POST['ville'],
+				"budget"=>$_POST['budget'],
+				"somme_collecte"=>$_POST['somme_collecte'],
+				"id_Utilisateur"=>$_POST['id_utilisateur'],
+				"id_Association"=>$_POST['id_association']
+			);
+			
 			$where =array("id"=>$idprojet);
-
 			$unControleur->update($tab, $where);
 			header("Location: index.php?page=2");
 		}
@@ -52,6 +61,7 @@ if(isset($_SESSION['email']) && $_SESSION['droits'] =="administrateur")
 		$unControleur->setTable ("les_projets");
 		$tab=array("*");
 		$lesProjets = $unControleur->selectAll  ($tab);
+		echo "<h2>Liste des Projets</h2>";
 		require_once("vue/vue_les_projets.php"); 
 	}
 		

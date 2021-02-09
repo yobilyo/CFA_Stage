@@ -13,8 +13,7 @@
             echo "<br /> Erreur de connexion, Veuillez vérifier vos identifiants";
 
         } else if (isset($membreConnecte['email'])){
-            $_SESSION['id'] = $membreConnecte
-            ['id'];
+            $_SESSION['id'] = $membreConnecte['id'];
             $_SESSION['nom'] = $membreConnecte['nom'];
             $_SESSION['prenom'] = $membreConnecte['prenom'];
             $_SESSION['droits'] = $membreConnecte['droits'];

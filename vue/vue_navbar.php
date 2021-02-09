@@ -11,6 +11,9 @@
 	<div>
 		<a href="index.php?page=4">Page 4</a>
 	</div>
+	<div>
+		<a href="index.php?page=90">Mon Compte</a>
+	</div>
 	<?php
 		if (isset($_SESSION['email'])) {
 			echo "

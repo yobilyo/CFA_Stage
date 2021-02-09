@@ -64,6 +64,9 @@
 					case 4:
 						require_once("vue/Page4.php");
 						break;
+					case 90:
+						require_once("gestion_moncompte.php");
+						break;
                     case 10:
                         session_destroy();   
                         header("Location: index.php");             
