@@ -2,9 +2,9 @@
     // pour se connecter, on affiche le formulaire de connexion
     require_once("vue/vue_connexion.php");
 
-    // lorsqu'on clique sur le bouton se connecter, on teste les infos de connexion dans la table user, et si cet utilisateur existe bien dans notre base de données sql on se connecte et on entre ses informations dans la $_SESSION
+    // lorsqu'on clique sur le bouton se connecter, on teste les infos de connexion dans la table utilisateur, et si cet utilisateur existe bien dans notre base de données sql on se connecte et on entre ses informations dans la $_SESSION
     if (isset($_POST['seconnecter'])) {
-        $unControleur->setTable ("user");
+        $unControleur->setTable ("utilisateur");
         $tab=array("email"=>$_POST['email'], "mdp"=>$_POST['mdp']); 
         $membreConnecte = $unControleur->selectWhere ($tab);
 

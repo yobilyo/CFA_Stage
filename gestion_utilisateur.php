@@ -30,7 +30,7 @@
                         $unControleur->delete($tab);*/
 
                         // puis on peut supprimer l'utilisateur
-                        $unControleur->setTable ("user");
+                        $unControleur->setTable ("utilisateur");
                         $tab=array("id"=>$id_utilisateur); 
                         $unControleur->delete($tab);
 
@@ -39,7 +39,7 @@
                         
                         break;
                 case "edit" : 
-                        $unControleur->setTable ("user");
+                        $unControleur->setTable ("utilisateur");
                         $tab=array("id"=>$id_utilisateur); 
                         $unUtilisateur = $unControleur->selectWhere ($tab);
 
@@ -62,7 +62,7 @@
                         "email"=>$_POST['email'],
                         "mdp"=>$_POST['mdp'],
                         "photo_profil"=>$_POST['photo_profil']);
-            $unControleur->setTable ("user");
+            $unControleur->setTable ("utilisateur");
             $where =array("id"=>$id_utilisateur);
 
             $unControleur->update($tab, $where);
@@ -72,7 +72,7 @@
 
         if (isset($_POST['valider'])){
             //var_dump($_POST);
-            $unControleur->setTable ("user");
+            $unControleur->setTable ("utilisateur");
             $tab=array("id"=>$_POST['id'],
                         "nom"=>$_POST['nom'],
                         "prenom"=>$_POST['prenom'],
@@ -85,14 +85,14 @@
         }
 
 
-        /*} else if (isset($_SESSION['droits']) && $_SESSION['droits'] =="user")*/
+        /*} else if (isset($_SESSION['droits']) && $_SESSION['droits'] =="utilisateur")*/
         //{
 
             // actualisation des utilisateurs
             // il faut le faire juste avant le require_once vue_utilisateur.php,
             // pour bien afficher ces modifications sans avoir besoin d'utiliser de header
             // ni de refresh manuellement la page
-            $unControleur->setTable ("user");
+            $unControleur->setTable ("utilisateur");
             $tab=array("*");
             $lesUtilisateurs = $unControleur->selectAll ($tab);
             echo "<br/><h2> Modification des utilisateurs</h2>";

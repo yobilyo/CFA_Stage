@@ -2,7 +2,7 @@
 if(isset($_SESSION['email']) && $_SESSION['droits'] =="administrateur")
 	{
 
-		$unControleur->setTable ("User");
+		$unControleur->setTable ("utilisateur");
 		$tab=array("id", "nom", "prenom");
 		$lesUsers = $unControleur->selectAll ($tab); 
 
@@ -30,7 +30,7 @@ if(isset($_SESSION['email']) && $_SESSION['droits'] =="administrateur")
 
 		if (isset($_POST['modifier'])){
 		$tab=array("description"=>$_POST['description'], "date_lancement"=>$_POST['date_lancement'],
-			"pays"=>$_POST['pays'],"ville"=>$_POST['ville'],"budget"=>$_POST['budget'],"somme_collecte"=>$_POST['somme_collecte'],"id_User"=>$_POST['id_User']);
+			"pays"=>$_POST['pays'],"ville"=>$_POST['ville'],"budget"=>$_POST['budget'],"somme_collecte"=>$_POST['somme_collecte'],"id_utilisateur"=>$_POST['id_utilisateur']);
 			$where =array("id"=>$idprojet);
 
 			$unControleur->update($tab, $where);
@@ -39,7 +39,7 @@ if(isset($_SESSION['email']) && $_SESSION['droits'] =="administrateur")
 
 		if (isset($_POST['valider'])){
 		$tab=array("description"=>$_POST['description'], "date_lancement"=>$_POST['date_lancement'],
-			"pays"=>$_POST['pays'],"ville"=>$_POST['ville'],"budget"=>$_POST['budget'],"somme_collecte"=>$_POST['somme_collecte'],"id_User"=>$_POST['id_User']);
+			"pays"=>$_POST['pays'],"ville"=>$_POST['ville'],"budget"=>$_POST['budget'],"somme_collecte"=>$_POST['somme_collecte'],"id_utilisateur"=>$_POST['id_utilisateur']);
 			$unControleur->insert($tab);
 		}
 		$unControleur->setTable ("les_projets");
@@ -47,7 +47,7 @@ if(isset($_SESSION['email']) && $_SESSION['droits'] =="administrateur")
 		$lesProjets = $unControleur->selectAll ($tab); 
 		require_once("vue/vue_les_projets.php");
 		 
-	}else if (isset($_SESSION['droits']) && $_SESSION['droits'] =="user")
+	}else if (isset($_SESSION['droits']) && $_SESSION['droits'] =="utilisateur")
 			{
 		$unControleur->setTable ("les_projets");
 		$tab=array("*");
