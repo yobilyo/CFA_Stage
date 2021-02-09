@@ -67,6 +67,9 @@
 					case 90:
 						require_once("gestion_moncompte.php");
 						break;
+					case 5:
+						require_once("gestion_commentaire.php");
+						break;
                     case 10:
                         session_destroy();   
                         header("Location: index.php");             

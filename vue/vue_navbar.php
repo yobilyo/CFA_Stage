@@ -14,6 +14,9 @@
 	<div>
 		<a href="index.php?page=90">Mon Compte</a>
 	</div>
+	<div>
+		<a href="index.php?page=5">Commentaire</a>
+	</div>
 	<?php
 		if (isset($_SESSION['email'])) {
 			echo "
