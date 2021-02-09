@@ -4,7 +4,11 @@ if(isset($_SESSION['email']) && $_SESSION['droits'] =="administrateur")
 
 		$unControleur->setTable ("utilisateur");
 		$tab=array("id", "nom", "prenom");
-		$lesUsers = $unControleur->selectAll ($tab); 
+		$lesUsers = $unControleur->selectAll ($tab);
+
+		$unControleur->setTable ("association");
+		$tab=array("id", "libelle");
+		$lesAssos = $unControleur->selectAll ($tab);
 
 		$unControleur->setTable ("projet");
 		
@@ -30,16 +34,16 @@ if(isset($_SESSION['email']) && $_SESSION['droits'] =="administrateur")
 
 		if (isset($_POST['modifier'])){
 		$tab=array("description"=>$_POST['description'], "date_lancement"=>$_POST['date_lancement'],
-			"pays"=>$_POST['pays'],"ville"=>$_POST['ville'],"budget"=>$_POST['budget'],"somme_collecte"=>$_POST['somme_collecte'],"id_utilisateur"=>$_POST['id_utilisateur']);
+			"pays"=>$_POST['pays'],"ville"=>$_POST['ville'],"budget"=>$_POST['budget'],"somme_collecte"=>$_POST['somme_collecte'],"id_utilisateur"=>$_POST['id_utilisateur'], "id_association"=>$_POST['id_association']);
 			$where =array("id"=>$idprojet);
 
 			$unControleur->update($tab, $where);
-			header("Location: index.php?page=2");
+			header("Location: index.php?page=3");
 		}
 
 		if (isset($_POST['valider'])){
 		$tab=array("description"=>$_POST['description'], "date_lancement"=>$_POST['date_lancement'],
-			"pays"=>$_POST['pays'],"ville"=>$_POST['ville'],"budget"=>$_POST['budget'],"somme_collecte"=>$_POST['somme_collecte'],"id_utilisateur"=>$_POST['id_utilisateur']);
+			"pays"=>$_POST['pays'],"ville"=>$_POST['ville'],"budget"=>$_POST['budget'],"somme_collecte"=>$_POST['somme_collecte'],"id_utilisateur"=>$_POST['id_utilisateur'], "id_association"=>$_POST['id_association']);
 			$unControleur->insert($tab);
 		}
 		$unControleur->setTable ("les_projets");

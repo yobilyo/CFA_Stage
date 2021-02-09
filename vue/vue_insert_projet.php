@@ -33,11 +33,23 @@
 		</tr>
 
 		<tr> 
-			<td> Id User : </td> 
-			<td> <select name ="id_User">
+			<td> Id Utilisateur : </td> 
+			<td> <select name ="id_utilisateur">
 					 <?php
 					 	foreach ($lesUsers as $unUser) {
 					 		echo "<option value ='".$unUser['id']."'>".$unUser['nom']."  ".$unUser['prenom']."</option>";
+					 	}
+					 ?>
+				</select>
+			</td>
+		</tr>
+
+		<tr> 
+			<td> Id Association : </td> 
+			<td> <select name ="id_association">
+					 <?php
+					 	foreach ($lesAssos as $unAsso) {
+					 		echo "<option value ='".$unAsso['id']."'>".$unAsso['libelle']."</option>";
 					 	}
 					 ?>
 				</select>

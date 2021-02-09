@@ -184,7 +184,7 @@ INSERT  mode_de_paiement values (null, "carte");
 insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
 
 CREATE VIEW les_projets AS (
-    SELECT p.id, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte + SUM(d.montant) AS "somme_collecte", p.id_utilisateur
+    SELECT p.id, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte + SUM(d.montant) AS "somme_collecte", p.id_utilisateur, p.id_association
 	FROM Projet p
 	LEFT JOIN Don d
 	ON p.id = d.id_Projet
