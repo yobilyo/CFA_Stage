@@ -1,1 +1,0 @@
-<p><center>Vous êtes sur la page 3</center></p>

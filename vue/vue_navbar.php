@@ -9,8 +9,8 @@
 		<a href="index.php?page=3">Projets</a>
 	</div> | 
 	<div>
-		<a href="index.php?page=4">Page 4</a>
-	</div>
+		<a href="index.php?page=6">Association</a>
+	</div> | 
 	<div>
 		<a href="index.php?page=90">Mon Compte</a>
 	</div>

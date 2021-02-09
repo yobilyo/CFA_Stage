@@ -54,7 +54,8 @@ CREATE TABLE Association(
         libelle           Varchar (30) NOT NULL ,
         nbprojets         Int NOT NULL ,
         budgetProjetsTot  Float NOT NULL ,
-        sommeCollecteeTot Float NOT NULL
+        sommeCollecteeTot Float NOT NULL,
+        photo_profil      Varchar (100) NOT NULL
 	,CONSTRAINT Association_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
@@ -173,7 +174,7 @@ insert into utilisateur values
 (null, "Fabien", "Barthez", "administrateur", "b@gmail.com", "456","lib/images/photo_profil/membre1.jpg"),
 (null, "Lilian", "Thuram", "membre", "c@gmail.com", "789","lib/images/photo_profil/anonymous.jpg");
 
-INSERT INTO association VALUES (null, "Restos du coeur", 0,0,0);
+INSERT INTO association VALUES (null, "Restos du coeur", 0,0,0, "lib/images/resto-du-coeur-logo.jpg");
 
 INSERT INTO projet values (null, "Action contre la faim", "Distribution de nourriture", "2020-12-18", "France", "Paris", 30000, 22000,1,1);
 INSERT INTO projet values (null, "Action contre la soif", "Distribution d'eau", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
