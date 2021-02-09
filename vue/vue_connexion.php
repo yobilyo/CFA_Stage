@@ -1,24 +1,22 @@
 
 <script src="lib/js/helpers.js"></script>
 
+<img src='./lib/images/asso-logo.png' style='position: relative' width='270'/>
 
-<a href="https://www.restosducoeur.org/"><img src='lib/images/resto-du-coeur-logo.jpg' style='position: relative' /></a>
-
-<br/>
-<br/>
-<br/>
-
+<br/><br/><br/>
 
 <div class='col-md-5' style='background-color:#F9F9F9'>
   <form method='post' action='' class='form-horizontal' role='form'>
 	<fieldset>
 
+	<br/><br/>
 	  
 	  <legend>Connectez-vous pour accéder à votre compte</legend>
-	  <br/>
+
+	  <br/><br/>
 
 	  <!-- Text input-->
-	  Votre email
+	  Votre email :
 	  <div class='form-group'>
 		<div class='col-sm-8'>
 		  <input type='email' required='required' name = 'email' class='form-control'>
@@ -27,11 +25,11 @@
 	  <br/>
 
 	  <!-- Text input-->
-	  Votre mot de passe
+	  Votre mot de passe :
 	  <div class='form-group'>
 		<div class='col-sm-8'>
 		  <!-- Password field -->
-		  <input type='password' name = 'mdp' id='myMdp' autocomplete='on' class='form-control'>
+		  <input type='password' name = 'mdp' id='myMdp' autocomplete='on' class='form-control'><br/>
 		  <input type='checkbox' onclick='showMdp()'> Afficher
 		</div>
 	  </div>
@@ -48,4 +46,6 @@
 	</fieldset>
   </form>
   <a href="index.php?page=001">Cliquez ici pour vous inscrire.</a>
+  <br/><br/>
 </div>
+

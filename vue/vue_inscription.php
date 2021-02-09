@@ -1,19 +1,18 @@
-<a href="https://www.restosducoeur.org/"><img src='lib/images/resto-du-coeur-logo.jpg' style='position: relative' width='400'/></a>
+<img style="float:left;margin:40px;" src='./lib/images/asso-logo.png' style='position: relative' width='250'/>
 
-<br/>
-<br/>
+<br/><br/><br/><br/><br/>
 
 <div class='col-md-5' style='background-color:#F9F9F9'>
 <form method='post' action='' class='form-horizontal' role='form'>
 	<fieldset>
 
-	
-	<legend>Inscription membre au site internet des Restos du Coeur</legend>
-	<br/>
+	<br/><br/>
+	<legend>Devenir membre</legend>
+	<br/><br/>
 
 	<!-- Text input-->
 
-	Nom *
+	Nom * :
 	<div class='form-group'>
 		<div class='col-sm-8'>
 		<input type="text" required='required' name="nom" class='form-control'>
@@ -21,7 +20,7 @@
 	</div>
 	<br/>
 
-    Prénom *
+    Prénom * :
 	<div class='form-group'>
 		<div class='col-sm-8'>
 		<input type="text" required='required' name="prenom" class='form-control'>
@@ -29,7 +28,7 @@
 	</div>
 	<br/>
 
-	E-mail *
+	E-mail * :
 	<div class='form-group'>
 		<div class='col-sm-8'>
 		<input type="email" required='required' name="email" class='form-control'>
@@ -37,11 +36,11 @@
 	</div>
 	<br/>
 
-	Mot de passe *
+	Mot de passe * :
 	<div class='form-group'>
 		<div class='col-sm-8'>
 		
-		<input type="password" required='required' name="mdp" id='myMdp' autocomplete='on' class='form-control'>
+		<input type="password" required='required' name="mdp" id='myMdp' autocomplete='on' class='form-control'><br/>
 		<input type='checkbox' onclick='showMdp()'> Afficher
 		</div>
 	</div>
@@ -62,7 +61,7 @@
 		</div>
 		</div>
 	</div>
-
+	<br/>
 	</fieldset>
 </form>
 

@@ -30,7 +30,6 @@
 		<!-- Menu de navigation (navbar) -->
 		<?php
 			print_r($_SESSION);
-			require_once("vue/vue_navbar.php");
 		?>
 
 		<?php
