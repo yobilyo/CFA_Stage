@@ -55,7 +55,7 @@ CREATE TABLE Association(
         nbprojets         Int NOT NULL ,
         budgetProjetsTot  Float NOT NULL ,
         sommeCollecteeTot Float NOT NULL,
-        photo_profil      Varchar (100) NOT NULL,
+        photo_profil      Varchar (100) NOT NULL
 	,CONSTRAINT Association_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
@@ -185,6 +185,9 @@ INSERT  mode_de_paiement values (null, "carte");
 insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
 insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 1,2,1,1);
 insert into Don values (NULL, 133, "2020-11-03", "Bien vu !", "valide", 1,3,1,1);
+
+INSERT INTO commentaire values (null, "2020-12-01","Bon projet", 8, 1, 1);
+INSERT INTO commentaire values (null, "2021-01-08","Pas ouf", 3, 1, 2);
 
 #cette vue permet d'avoir le total des sommes collectées de tous les dons sans faire de trigger
 

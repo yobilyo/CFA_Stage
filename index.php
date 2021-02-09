@@ -64,8 +64,14 @@
 					case 4:
 						require_once("gestion_don.php");
 						break;
+					case 6:
+						require_once("gestion_association.php");
+						break;
 					case 90:
 						require_once("gestion_moncompte.php");
+						break;
+					case 5:
+						require_once("gestion_commentaire.php");
 						break;
                     case 10:
                         session_destroy();   
