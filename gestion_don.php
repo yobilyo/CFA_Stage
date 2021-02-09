@@ -124,25 +124,7 @@
             $unControleur->setTable ("don");
             $tab=array("*");
             $lesDons = $unControleur->selectAll ($tab);
-            echo "<br/><h2> Modification des dons</h2>";
-
-            $unControleur->setTable ("Projet");
-            $tab=array("id", "nom","date_lancement");
-            $lesProjets = $unControleur->selectAll ($tab); 
-    
-            $unControleur->setTable ("Utilisateur");
-            $tab=array("id", "nom", "prenom");
-            $lesUsers = $unControleur->selectAll ($tab);
-
-            $unControleur->setTable ("Mode_de_paiement");
-            $tab=array("id", "mode");
-            $lesModesdePaiements = $unControleur->selectAll ($tab);
-
-            $unControleur->setTable ("Association");
-            $tab=array("id", "libelle");
-            $lesAssociations = $unControleur->selectAll ($tab);
-
-    
+            echo "<br/><h2> Modification des dons</h2>";  
 
             require_once("vue/vue_don.php"); 
         //}

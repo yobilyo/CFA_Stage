@@ -10,14 +10,14 @@
 <br/>
 <h2>Mes Dons</h2>
 <?php
-    //require_once("vue_don.php");
+    require_once("vue_don.php");
 ?>
 
 <br/>
 <br/>
 <h2>Mes Commentaires</h2>
 <?php
-    //require_once("vue_don.php");
+    require_once("vue_commentaire.php");
 ?>
 
 <?php

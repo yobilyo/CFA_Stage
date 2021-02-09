@@ -19,6 +19,22 @@
         // pas besoin de cette ligne car on fait un fetchAll qui retourne déjà un tableau de tableaux
         // $les$lesProjets = array($leProjet);
 
+        $unControleur->setTable ("commentaire");
+        $where = array('id_Utilisateur' => $_SESSION['id']);
+        // requete:
+        // SELECT * from commentaire where id_Utilisateur = $_SESSION['id'];
+        $lesCommentaires = $unControleur->selectWhereAll ($where);
+        // pas besoin de cette ligne car on fait un fetchAll qui retourne déjà un tableau de tableaux
+        // $les$lesProjets = array($leProjet); 
+
+        $unControleur->setTable ("don");
+        $where = array('id_Utilisateur' => $_SESSION['id']);
+        // requete:
+        // SELECT * from don where id_Utilisateur = $_SESSION['id'];
+        $lesDons = $unControleur->selectWhereAll ($where);
+        // pas besoin de cette ligne car on fait un fetchAll qui retourne déjà un tableau de tableaux
+        // $les$lesProjets = array($leProjet); 
+
         /*$unControleur->setTable ("utilisateur_salarie_activite_commentaire");
         $where = array('idutilisateur' => $_SESSION['idutilisateur']);
         $lesCommentaires = $unControleur->selectWhereAll ($where);
