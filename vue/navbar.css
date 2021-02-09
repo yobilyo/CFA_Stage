@@ -1,0 +1,46 @@
+#navbar 
+{
+    display : flex;
+    width : 800px;
+    margin : auto;
+    justify-content : space-around;
+    border-radius: 15px;
+    background-color : #F2F3F4;
+    padding : 15px;
+    align-items: center;
+}
+
+#dropdown
+{
+    display: none;
+    position:absolute;      /*pour ne pas faire bouger la navbar quand on deroule le dropdown*/
+	box-shadow:0px 0px 1px 0px ;
+}
+
+/*Pour afficher le dropdown*/
+#afficher_dropdown:hover #dropdown	
+{
+    display:block;
+}
+
+li
+{
+    list-style-type:none;
+    color : black;
+}
+
+.lien_dropdown ,#navbar > li > a:visited    /*selectionne les a qui ont un parent li, qui ont eux meme un parent #navbar*/
+{
+    color:black;
+}
+
+.lien_dropdown ,#navbar > li > a:hover
+{
+    text-shadow: 0px 0px 1px black;
+}
+
+.lien_dropdown ,#navbar > li > a 
+{
+    text-decoration:none;
+}
+
