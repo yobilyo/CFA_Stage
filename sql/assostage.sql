@@ -183,11 +183,12 @@ INSERT INTO projet values (null, "Action contre la pauvreté", "Distribution d'a
 INSERT  mode_de_paiement values (null, "carte");
 
 insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
-insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 1,2,1,1);
-insert into Don values (NULL, 133, "2020-11-03", "Bien vu !", "valide", 1,3,1,1);
+insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 2,2,1,1);
+insert into Don values (NULL, 133, "2020-11-03", "Bien vu !", "valide", 3,3,1,1);
 
-INSERT INTO commentaire values (null, "2020-12-01","Bon projet", 8, 1, 1);
-INSERT INTO commentaire values (null, "2021-01-08","Pas ouf", 3, 1, 2);
+INSERT INTO commentaire values (null, "2020-12-01","Bon projet", 14, 1, 1);
+INSERT INTO commentaire values (null, "2021-01-08","Pas ouf", 7, 2, 2);
+INSERT INTO commentaire values (null, "2021-01-08","Excellent", 18, 3, 1);
 
 #cette vue permet d'avoir le total des sommes collectées de tous les dons sans faire de trigger
 
