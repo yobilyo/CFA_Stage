@@ -34,7 +34,7 @@
 
 		<tr> 
 			<td> Id Utilisateur : </td> 
-			<td> <select name ="id_utilisateur">
+			<td> <select name ="id_Utilisateur">
 					 <?php
 					 	foreach ($lesUsers as $unUser) {
 					 		echo "<option value ='".$unUser['id']."'>".$unUser['nom']."  ".$unUser['prenom']."</option>";
@@ -46,7 +46,7 @@
 
 		<tr> 
 			<td> Id Association : </td> 
-			<td> <select name ="id_association">
+			<td> <select name ="id_Association">
 					 <?php
 					 	foreach ($lesAssos as $unAsso) {
 					 		echo "<option value ='".$unAsso['id']."'>".$unAsso['libelle']."</option>";

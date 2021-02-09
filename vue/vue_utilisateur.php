@@ -1,7 +1,7 @@
 <div class='container'>
 	<table class="table table-striped">
 		<thead>
-			<tr > 
+			<tr> 
 				<th> Id </th>
 				<th> Nom </th>
                 <th> Prenom</th>

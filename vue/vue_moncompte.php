@@ -25,8 +25,7 @@
         echo "<br/>
         <br/>
         <h2>Mes Projets</h2>";
-        // TODO renommer vue_projet.php
-        require_once("vue_les_projets.php");
+        require_once("vue_projet.php");
     }
 
 ?>

@@ -11,7 +11,7 @@
         $lesUtilisateurs = array($lUtilisateur); //on construit un deuxieme tableau pour le selectAll qui contient le tableau selectWhere
 
         // pour les participations et les autres tables, on utilise la méthode fetchAll qui retourne un tableau contenant plusieurs tableaux donc on n' a pas besoin de créer un tableau pour contenir les résutats car ils sont déjà dans un tableau
-        $unControleur->setTable ("projet");
+        $unControleur->setTable ("les_projets"); // vue qui auto update la somme des dons
         $where = array('id_Utilisateur' => $_SESSION['id']);
         // requete:
         // SELECT * from projet where id_Utilisateur = $_SESSION['id'];

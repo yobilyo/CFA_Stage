@@ -177,14 +177,19 @@ insert into utilisateur values	(null, "Zinedine", "Zidane", "administrateur", "a
 
 INSERT INTO association VALUES (null, "Restos du coeur", 0,0,0);
 
-INSERT INTO projet values (null, "Action contre la faim", "Distribution de nourriture", "2020-12-18", "France", "Paris", 30000, 22000,1,1); 
+INSERT INTO projet values (null, "Action contre la faim", "Distribution de nourriture", "2020-12-18", "France", "Paris", 30000, 22000,1,1);
+INSERT INTO projet values (null, "Action contre la soif", "Distribution d'eau", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
 
 INSERT  mode_de_paiement values (null, "carte");
 
 insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
+insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 1,2,1,1);
 
+#cette vue permet d'avoir le total des sommes collectées de tous les dons sans faire de trigger
+
+drop view if exists les_projets;
 CREATE VIEW les_projets AS (
-    SELECT p.id, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte + SUM(d.montant) AS "somme_collecte", p.id_utilisateur, p.id_association
+    SELECT p.id, p.nom, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte + SUM(d.montant) AS "somme_collecte", p.id_Utilisateur, p.id_Association
 	FROM Projet p
 	LEFT JOIN Don d
 	ON p.id = d.id_Projet
