@@ -30,6 +30,9 @@ if(isset($_SESSION['email']) && $_SESSION['droits'] =="administrateur")
 			}
 		}
 
+		echo "<br/>
+        <img src='lib/images/pages/projet.png' width='200'></img>
+        <br/>";
 		require_once("vue/vue_insert_projet.php"); 
 
 		if (isset($_POST['modifier'])){

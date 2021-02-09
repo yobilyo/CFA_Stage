@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <link rel="stylesheet" href="vue/navbar.css"/>
 
 <br/><br/><br/>
@@ -15,6 +16,27 @@
 	<li><a href="index.php?page=4">Don</a></li> | 
 	<li><a href="index.php?page=90">Mon Compte</a></li> | 
 
+=======
+<nav>
+	<div>
+		<a href="index.php?page=0"><img src=" " alt="Accueil"/></a>
+	</div> | 
+	<div>
+		<a href="index.php?page=2">Utilisateurs</a>
+	</div> | 
+	<div>
+		<a href="index.php?page=3">Projets</a>
+	</div> | 
+	<div>
+		<a href="index.php?page=6">Association</a>
+	</div> | 
+	<div>
+		<a href="index.php?page=90">Mon Compte</a>
+	</div>
+	<div>
+		<a href="index.php?page=5">Commentaire</a>
+	</div>
+>>>>>>> 97ba5838d16c5cf7669f6a2444c76901f5849889
 	<?php
 		if (isset($_SESSION['email']))
 		{
