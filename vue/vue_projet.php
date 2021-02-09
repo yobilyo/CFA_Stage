@@ -3,6 +3,7 @@
 		<thead>
 			<tr> 
 				<th> Id Projet </th>
+				<th> Nom </th>
 				<th> Description </th> <th> Date Lancement </th>
 				<th> Pays </th> <th> Ville </th>
 				<th> Budget </th> <th> Somme Collectée </th>
