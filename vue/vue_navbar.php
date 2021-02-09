@@ -9,7 +9,7 @@
 		<a href="index.php?page=3">Projets</a>
 	</div> | 
 	<div>
-		<a href="index.php?page=4">Page 4</a>
+		<a href="index.php?page=4">Donation</a>
 	</div>
 	<div>
 		<a href="index.php?page=90">Mon Compte</a>
