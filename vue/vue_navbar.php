@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="vue/navbar.css"/>
+<link rel="stylesheet" href="vue/style/navbar.css"/>
 
 <br/><br/><br/>
 
@@ -7,10 +7,12 @@
 	<li><a href="index.php?page=0"><img src="./lib/images/asso-logo-navbar.png" alt="Accueil" title="Accueil"/></a></li>
 	<li><a href="index.php?page=2">Utilisateurs</a></li> | 
 
-	<li id="afficher_dropdown"><a href="index.php?page=3">Projets ↓</a>
-		<ul id="dropdown">
+	<li class="afficher_dropdown"><a href="index.php?page=3">Projets <span style="font-size:0.70em;">▼</span></a>
+		<span class="baisser_le_dropdown">
+		<ul class="dropdown">
 			<li><a  class="lien_dropdown" href="index.php?page=31">Listes des projets</a></li>
 		</ul>
+		</span>
 	</li> | 
 	<li><a href="index.php?page=4">Dons</a></li> | 
 	<li><a href="index.php?page=5">Commentaires</a></li> | 

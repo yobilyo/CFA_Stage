@@ -23,7 +23,7 @@
 	-->
 
 	<script src="lib/js/helpers.js"></script>
-	<link rel="stylesheet" href="style/index.css"/>
+
 </head> 
 <body> 
 	<center>
@@ -60,6 +60,11 @@
 					case 3:
 						require_once("gestion_projet.php");
 						break;
+
+					case 31:
+						require_once("gestion_projet.php");
+						break;
+
 					case 4:
 						require_once("gestion_don.php");
 						break;

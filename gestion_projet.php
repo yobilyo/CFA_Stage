@@ -72,13 +72,23 @@ if(isset($_SESSION['email']) && $_SESSION['droits'] =="administrateur")
 		echo "<h2>Liste des Projets</h2>"; 
 		require_once("vue/vue_projet.php");
 		 
-	}else if (isset($_SESSION['droits']) && $_SESSION['droits'] =="membre")
-			{
+	}
+	else if (isset($_SESSION['droits']) && $_SESSION['droits'] =="membre")
+	{
 		$unControleur->setTable ("les_projets");
 		$tab=array("*");
 		$lesProjets = $unControleur->selectAll  ($tab);
-		echo "<h2>Liste des Projets</h2>";
-		require_once("vue/vue_projet.php"); 
+
+		if($_GET['page'] == 3)
+		{
+			require_once("vue/membre_projet.php"); 
+		}
+		else if($_GET['page'] == 31)
+		{
+
+			echo "<h2>Liste des Projets</h2>";
+			require_once("vue/vue_projet.php"); 
+		}
 	}
 		
 ?>
