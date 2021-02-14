@@ -35,10 +35,14 @@
 		<?php
 
             // on n'est pas connecté, donc on se connecte ou on s'inscrit
-            if (!isset($_SESSION['email'])) {
-                if (isset($_GET['page']) && $_GET['page'] == "001") {
+            if (!isset($_SESSION['email'])) 
+			{
+                if (isset($_GET['page']) && $_GET['page'] == "001") 
+				{
                     require_once("gestion_inscription.php");
-                } else {
+                } 
+				else 
+				{
                     // ?page=001 est la page d'inscription, si ce n'est pas set on est sur la page de connexion
                     require_once("gestion_connexion.php");
                 }
@@ -57,26 +61,46 @@
                     case 2:
                         require_once("gestion_utilisateur.php");
 						break;
+
+					//porjet et commentaire 
 					case 3:
-						require_once("gestion_projet.php");
+						
+						$unControleur->setTable ("les_projets");
+						$tab=array("*");
+						$lesProjets = $unControleur->selectAll($tab);
+
+						require_once("vue/projet/les_projets.php"); 
 						break;
 
-					case 31:
-						require_once("gestion_projet.php");
-						break;
+						//quand on clique sur un des projets
+						case 5:
+							require_once("vue/projet/un_projet.php");
+							break;
 
+						//Ajouter/Lister 
+						case 35:
+							require_once("gestion_projet.php");
+							break;
+						
+						case 36:
+							require_once("gestion_commentaire.php");
+							break;
+						
+						case 37:
+							require_once("gestion_don.php");
+							break;
+			
 					case 4:
 						require_once("gestion_don.php");
 						break;
+
 					case 6:
 						require_once("gestion_association.php");
 						break;
 					case 90:
 						require_once("gestion_moncompte.php");
 						break;
-					case 5:
-						require_once("gestion_commentaire.php");
-						break;
+
                     case 10:
                         session_destroy();   
                         header("Location: index.php");             

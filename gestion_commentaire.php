@@ -1,100 +1,69 @@
 <?php
-if(isset($_SESSION['email']) && $_SESSION['droits'] =="administrateur")
+	$unControleur->setTable ("Projet");
+	$tab=array("id", "nom","date_lancement");
+	$lesProjets = $unControleur->selectAll ($tab); 
+
+	$unControleur->setTable ("Utilisateur");
+	$tab=array("id", "nom", "prenom");
+	$lesUsers = $unControleur->selectAll ($tab);
+
+	$unControleur->setTable ("commentaire");
+		
+	$leCommentaire = null; 
+
+	if (isset($_GET['action']) && isset($_GET['id']))
 	{
-		$unControleur->setTable ("Projet");
-		$tab=array("id", "nom","date_lancement");
-		$lesProjets = $unControleur->selectAll ($tab); 
+		$idcomment = $_GET['id']; 
+		$action = $_GET['action'];
 
-		$unControleur->setTable ("Utilisateur");
-		$tab=array("id", "nom", "prenom");
-		$lesUsers = $unControleur->selectAll ($tab);
-
-		$unControleur->setTable ("commentaire");
-		
-		$leCommentaire = null; 
-		if (isset($_GET['action']) && isset($_GET['id']))
+		switch ($action)
 		{
-			$idcomment = $_GET['id']; 
-			$action = $_GET['action'];
+			case "sup" : 
+				$tab=array("id"=>$idcomment); 
+				$unControleur->delete($tab);
+				break;
 
-			switch ($action){
-				case "sup" : 
-						$tab=array("id"=>$idcomment); 
-						$unControleur->delete($tab);
-						break;
-				case "edit" : 
-						$tab=array("id"=>$idcomment); 
-						$leCommentaire = $unControleur->selectWhere ($tab);
-						break; 
-			}
+			case "edit" : 
+				$tab=array("id"=>$idcomment); 
+				$leCommentaire = $unControleur->selectWhere ($tab);
+				break; 
 		}
+	}
 
-		echo "<br/>
-        <img src='lib/images/pages/commentaire.png' width='200'></img>
-        <br/>";
-		require_once("vue/vue_insert_commentaire.php"); 
+	echo "<img src='lib/images/pages/commentaire.png' width='200'></img>";
+	
+	echo '<br/><br/>';
 
-		if (isset($_POST['modifier'])){
-		$tab=array("date"=>$_POST['date'], "contenu"=>$_POST['contenu'],
-			"note"=>$_POST['note'],"id_Utilisateur"=>$_POST['id_Utilisateur'],"id_Projet"=>$_POST['id_Projet']);
-			$where =array("id"=>$idcomment);
+	include "vue/commentaire/vue_insert_commentaire.php"; 
 
-			$unControleur->update($tab, $where);
-			header("Location: index.php?page=5");
-		}
-
-		if (isset($_POST['valider'])){
-		$tab=array("date"=>$_POST['date'], "contenu"=>$_POST['contenu'],
-			"note"=>$_POST['note'],"id_Utilisateur"=>$_POST['id_Utilisateur'],"id_Projet"=>$_POST['id_Projet']);
-			$unControleur->insert($tab);
-		}
-		$tab=array("*");
-		$lesCommentaires = $unControleur->selectAll ($tab);
-		echo "<h2>Liste des Commentaires</h2>"; 
-		require_once("vue/vue_commentaire.php");
-		 
-	} else if (isset($_SESSION['droits']) && $_SESSION['droits'] =="utilisateur")
-			{
-		$unControleur->setTable ("projet");
-		$tab=array("id", "nom","date_lancement");
-		$lesConcerts = $unControleur->selectAll ($tab); 
-
-		$unControleur->setTable ("utilisateur");
-		$tab=array("id", "nom", "prenom");
-		$lesUsers = $unControleur->selectAll ($tab);
-				
-		$leCommentaire = null;
-		$unControleur->setTable ("commentaire");
+	echo '<br/><br/>';
 		
-		require_once("vue/vue_insert_commentaire.php"); 
+	if (isset($_POST['modifier']))
+	{
+		$tab=array("dateCom"=>$_POST['dateCom'], 
+		"contenu"=>$_POST['contenu'],
+		"note"=>$_POST['note'],
+		"id_Utilisateur"=>$_POST['id_Utilisateur'],
+		"id_Projet"=>$_POST['id_Projet']);
+		$where =array("id"=>$idcomment);
 
-		if (isset($_POST['modifier'])){
-		$tab=array("date"=>$_POST['date'], "contenu"=>$_POST['contenu'],
-			"note"=>$_POST['note'],"id_Utilisateur"=>$_POST['id_Utilisateur'],"id_Projet"=>$_POST['id_Projet']);
+		$unControleur->update($tab, $where);
+		header("Location: index.php?page=5");
+	}
 
-			$unControleur->update($tab, $where);
-			header("Location: index.php?page=5");
-		}
+	if (isset($_POST['valider']))
+	{
+		$tab=array("dateCom"=>$_POST['dateCom'], 
+		"contenu"=>$_POST['contenu'],
+		"note"=>$_POST['note'],
+		"id_Utilisateur"=>$_POST['id_Utilisateur'],
+		"id_Projet"=>$_POST['id_Projet']);
+		$unControleur->insert($tab);
+	}
+	$tab=array("*");
+	$lesCommentaires = $unControleur->selectAll ($tab);
 
-		if (isset($_POST['valider'])){
-		$tab=array("date"=>$_POST['date'], "contenu"=>$_POST['contenu'],
-			"note"=>$_POST['note'],"id_Utilisateur"=>$_POST['id_Utilisateur'],"id_Projet"=>$_POST['id_Projet']);
-			var_dump($tab);
-		}
-		$tab=array("*");
-		$lesCommentaires = $unControleur->selectAll ($tab); 
-		echo "<h2>Liste des Commentaires</h2>";
-		require_once("vue/vue_commentaire.php");
-			}
-		/***** Si l'user n'est pas connecté *****/
+	echo "<br/><h2>Liste des Commentaires</h2><br/><br/>"; 
 
-		/*else{
-			$unControleur->setTable ("commentaire");
-			$leCommentaire = null;
-
-			$tab=array("*");
-			$lesCommentaires = $unControleur->selectAll ($tab);
-			require_once("vue/vue_commentaire.php");
-			echo "<center><p style = 'font-size : 50px;'>Veuillez vous connecter pour ajouter un commentaire !</p></center>";
-			} */
+	include "vue/commentaire/vue_commentaire.php";
 ?>
