@@ -15,6 +15,8 @@
 		</span>
 	</li> | 
 	<li><a href="index.php?page=4">Dons</a></li> | 
+	<li><a href="index.php?page=41">Faire un Don</a></li> | 
+	<li><a href="index.php?page=42&iddon=1">Reçu</a></li> | 
 	<li><a href="index.php?page=5">Commentaires</a></li> | 
 	<li><a href="index.php?page=6">Associations</a></li> | 
 	<li><a href="index.php?page=90">Mon Compte</a></li> | 
