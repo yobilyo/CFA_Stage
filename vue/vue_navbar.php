@@ -6,19 +6,25 @@
 <ul id="navbar">
 	<li><a href="index.php?page=0"><img src="./lib/images/asso-logo-navbar.png" alt="Accueil" title="Accueil"/></a></li>
 	<li><a href="index.php?page=2">Utilisateurs</a></li> | 
-
-	<li class="afficher_dropdown"><a href="index.php?page=3">Projets <span style="font-size:0.70em;">▼</span></a>
-		<span class="baisser_le_dropdown">
-		<ul class="dropdown">
-			<li><a  class="lien_dropdown" href="index.php?page=31">Listes des projets</a></li>
+	<li><a href="index.php?page=3">Projets</a></li> |
+	
+	<?php if($_SESSION["droits"] == "administrateur")
+	{	
+		echo "<li class='afficher_dropdown'>Ajouter/Lister<span style='font-size:0.70em;'>▼</span></a>
+		<span class='baisser_le_dropdown'>
+		<ul class='dropdown'>
+			<li><a  class='lien_dropdown' href='index.php?page=35'>Projets</a></li>
+			<li><a  class='lien_dropdown' href='index.php?page=36'>Commentaires</a></li>
+			<li><a  class='lien_dropdown' href='index.php?page=37'>Don</a></li>
 		</ul>
 		</span>
-	</li> | 
-	<li><a href="index.php?page=4">Dons</a></li> | 
-	<li><a href="index.php?page=41">Faire un Don</a></li> | 
+		</li> | ";
+	}
+	?>
+
+	<li><a href="index.php?page=4">Faire un don</a></li> | 
 	<li><a href="index.php?page=42&iddon=1">Reçu</a></li> | 
-	<li><a href="index.php?page=5">Commentaires</a></li> | 
-	<li><a href="index.php?page=6">Associations</a></li> | 
+	<li><a href="index.php?page=6">Association</a></li> | 
 	<li><a href="index.php?page=90">Mon Compte</a></li> | 
 
 	<?php
