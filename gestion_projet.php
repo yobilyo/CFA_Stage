@@ -54,7 +54,6 @@
 	
 		$where =array("id"=>$idprojet);
 		$unControleur->update($tab, $where);
-		header("Location: index.php?page=3");
 	}
 
 	if (isset($_POST['valider']))

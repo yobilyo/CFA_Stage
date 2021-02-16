@@ -34,10 +34,10 @@
 						<td>".$unProjet['id_Association']." </td>
 					
 						<td>
-						<a href='index.php?page=3&action=sup&id=".$unProjet['id']."'>
+						<a href='index.php?page=35&action=sup&id=".$unProjet['id']."'>
 						<img src ='lib/images/sup.png' height='30' witdh='30'> </a>
 
-						<a href='index.php?page=3&action=edit&id=".$unProjet['id']."'>
+						<a href='index.php?page=35&action=edit&id=".$unProjet['id']."'>
 						<img src ='lib/images/edition.png' height='30' witdh='30'> </a>
 
 						</td>
