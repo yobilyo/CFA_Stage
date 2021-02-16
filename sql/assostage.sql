@@ -111,9 +111,9 @@ CREATE TABLE Don(
 
 CREATE TABLE Commentaire(
         id             Int  Auto_increment  NOT NULL ,
-        date           Date NOT NULL ,
+        dateCom		   Datetime NOT NULL ,
         contenu        Varchar (1000) NOT NULL ,
-        note           Varchar (1000) NOT NULL ,
+		note 		   Int Not Null,
         id_Utilisateur Int NOT NULL ,
         id_Projet      Int NOT NULL
 	,CONSTRAINT Commentaire_PK PRIMARY KEY (id)
@@ -186,11 +186,7 @@ insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,
 insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 2,2,1,1);
 insert into Don values (NULL, 133, "2020-11-03", "Bien vu !", "valide", 3,3,1,1);
 
-INSERT INTO commentaire values (null, "2020-12-01","Bon projet", 14, 1, 1);
-INSERT INTO commentaire values (null, "2021-01-08","Pas ouf", 7, 2, 2);
-INSERT INTO commentaire values (null, "2021-01-08","Excellent", 18, 3, 1);
-
-#cette vue permet d'avoir le total des sommes collectées de tous les dons sans faire de trigger
+/*cette vue permet d avoir le total des sommes collectées de tous les dons sans faire de trigger*/
 
 drop view if exists les_projets;
 CREATE VIEW les_projets AS (
@@ -200,3 +196,8 @@ CREATE VIEW les_projets AS (
 	ON p.id = d.id_Projet
 	GROUP BY p.id
 );
+
+INSERT INTO commentaire values (null, "2020-12-01 10:34:09","Bon projet", 15, 1, 1);
+INSERT INTO commentaire values (null, "2021-01-08 8:18:58","Pas ouf", 6, 2, 2);
+INSERT INTO commentaire values (null, "2021-01-08 11:26:02","Excellent", 18, 3, 1);
+

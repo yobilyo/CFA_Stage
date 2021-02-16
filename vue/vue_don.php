@@ -38,10 +38,10 @@
                         $unDon['id_Association']." </td>
                         
 						<td>
-							<a href='index.php?page=4&action=sup&id=".$unDon['id']."'>
+							<a href='index.php?page=37&action=sup&id=".$unDon['id']."'>
 							<img src ='lib/images/sup.png' height='30' witdh='30'> </a>
 
-							<a href='index.php?page=4&action=edit&id=".$unDon['id']."'>
+							<a href='index.php?page=37&action=edit&id=".$unDon['id']."'>
 							<img src ='lib/images/edition.png' height='30' witdh='30'> </a>
 
 							</td>
