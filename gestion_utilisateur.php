@@ -98,5 +98,30 @@
             echo "<br/><h2> Modification des utilisateurs</h2>";
             require_once("vue/vue_utilisateur.php"); 
         //}
+        
+    }
+    // Modification du compte de la part de l'utilisateur
+    else if($_SESSION['droits'] == "membre")){
+        $unUtilisateur = null; 
+        if (isset($_GET['action']) && isset($_GET['id']))  {
+            $id_utilisateur = $_GET['id']; 
+            $action = $_GET['action'];
+            switch ($action){
+                case "edit" : 
+                    $unControleur->setTable ("utilisateur");
+                    $tab=array("id"=>$id_utilisateur); 
+                    $unUtilisateur = $unControleur->selectWhere ($tab);
+
+                    // refresh de la page en PHP
+                    //header("index.php?page=42");
+                    break; 
+                
+            }
+
+            $unControleur->setTable("utilisateur");
+            $unUtilisateur = $unControleur->selectWhere($id_utilisateur);
+            echo "<br/><h2>Modification de l'utilisateur</h2>";
+            require_once("vue/vue_utilisateur.php");    
+        }
     }
 ?>

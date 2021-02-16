@@ -29,3 +29,13 @@
     }
 
 ?>
+
+<?php 
+    if ($_SESSION['droits'] == "membre"){
+        echo"<br/>
+        <br/>
+        <h2>Modification du compte</h2>";
+        require_once("vue_modification_compte.php");
+    }
+
+?>

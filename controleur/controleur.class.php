@@ -60,6 +60,10 @@
 		}
 		public function update($tab, $where){
 			$this->unModele->update($tab, $where);
+	
+		}
+		public function modifierCompte($tab, $where){
+			$this->unModele->update($tab, $where);
 		}
 	}
 
