@@ -48,7 +48,6 @@
 		$where =array("id"=>$idcomment);
 
 		$unControleur->update($tab, $where);
-		header("Location: index.php?page=5");
 	}
 
 	if (isset($_POST['valider']))
