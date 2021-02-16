@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="vue/style/membre_projet.css"/>
+<link rel="stylesheet" href="vue/style/les_projets.css"/>
 
 <h1>Nos projets : </h1>
 

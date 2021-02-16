@@ -1,13 +1,36 @@
+<link rel="stylesheet" href="vue/style/un_projet.css"/>
+
 <?php
-    $unControleur->setTable ("projet");
-    $where = array("id", $_GET['idprojet']);
-    $leProjet = $unControleur->selectWhere($where);
-     // SELECT * from projet where id = $_GET['idprojet'];
+
+try 
+{ 
+    $bdd=new PDO('mysql:host=localhost;dbname=assostage;charset=utf8','root','',
+    array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+}
+catch (Exception $e)
+{
+    die('Erreur : ' .$e->getMessage()); 
+}
+
+// si l'erreur 'Call to a member function query() on string' apparait c'est parce que vous n'avez pas réalisé l'appel de la bdd 
+
+$requete = $bdd->query("select * from projet where id = ".$_GET['idprojet'].";"); 
+
+while($donnees=$requete->fetch() )					
+{
+	echo //"<img src='".$donnees=['']."'/>
+        "<h1>" .$donnees['nom']. "</h1><br/><br/>
+        <p>Date de lancement : <strong>" .$donnees['date_lancement']. "</strong></p>
+        <p> Description : <br/>" .$donnees['description']. "</p>
+        <p>Pays : " .$donnees['pays']. "</p>
+        <p>Ville : " .$donnees['ville']. "</p>
+        <p>Budget de l'association : " .$donnees['budget']. "</p>
+        <p>Somme colllectée : " .$donnees['somme_collecte']. "</p>";
+}
+
 ?>
 
-<strong> Cette section en gras est contenu dans le fichier 'un_projet.php' qui est un fichier dynamique qui montrera toutes les infos sur un projet au propre</strong>
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/>
 
 <h1 id="commentaires">Commentaires</h1>
 
@@ -17,6 +40,6 @@
 
 include "un_projet_commentaire.php";
 
-$lesCommentaires = $unControleur->selectAll ($tab);
+$lesCommentaires = $unControleur->selectAll($tab);
 
 ?>
