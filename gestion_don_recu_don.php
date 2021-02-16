@@ -78,6 +78,11 @@
                     echo "<div>Référence de l'association : ".$lAssoReceptrice['id']."</div>";
                     echo "<div>Libelle : ".$lAssoReceptrice['libelle']."</div>";
                     echo "<div>Nombre de projets : ".$lAssoReceptrice['nbprojets']."</div>";
+                    echo "<br/>";
+
+                    $dateActuelle = date("d/m/Y");
+                    echo "<br/>";
+                    echo "<div>Fait à Paris, le ".$dateActuelle."</div>";
                 } else {
                     echo "ACCES NON AUTORISE: ce don a été fait par un autre utilisateur, vous n'avez pas le droit d'y accéder.";
                 }
