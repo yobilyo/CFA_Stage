@@ -23,6 +23,7 @@
 	?>
 
 	<li><a href="index.php?page=4">Faire un don</a></li> | 
+	<li><a href="index.php?page=42&iddon=1">Reçu</a></li> | 
 	<li><a href="index.php?page=6">Association</a></li> | 
 	<li><a href="index.php?page=90">Mon Compte</a></li> | 
 
