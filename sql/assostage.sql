@@ -166,6 +166,24 @@ CREATE TABLE Decrire(
 	,CONSTRAINT Decrire_mot_clef0_FK FOREIGN KEY (id_mot_clef) REFERENCES mot_clef(id)
 )ENGINE=InnoDB;
 
+/*cette vue permet d avoir le total des sommes collectées de tous les dons sans faire de trigger*/
+
+drop view if exists les_projets;
+CREATE VIEW les_projets AS (
+    SELECT p.id, p.nom, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte + SUM(d.montant) AS "somme_collecte", p.id_Utilisateur, p.id_Association
+	FROM Projet p
+	LEFT JOIN Don d
+	ON p.id = d.id_Projet
+	GROUP BY p.id
+);
+
+drop view if exists commentaire_of_user;
+CREATE VIEW commentaire_of_user AS (
+        SELECT c.id, c.dateCom, c.contenu, c.note, c.id_Utilisateur, c.id_Projet, u.nom, u.prenom, u.photo_profil 
+        FROM utilisateur u, commentaire c
+        WHERE c.id_Utilisateur = u.id
+);
+
 
 # insertions
 
@@ -185,17 +203,6 @@ INSERT  mode_de_paiement values (null, "carte");
 insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
 insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 2,2,1,1);
 insert into Don values (NULL, 133, "2020-11-03", "Bien vu !", "valide", 3,3,1,1);
-
-/*cette vue permet d avoir le total des sommes collectées de tous les dons sans faire de trigger*/
-
-drop view if exists les_projets;
-CREATE VIEW les_projets AS (
-    SELECT p.id, p.nom, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte + SUM(d.montant) AS "somme_collecte", p.id_Utilisateur, p.id_Association
-	FROM Projet p
-	LEFT JOIN Don d
-	ON p.id = d.id_Projet
-	GROUP BY p.id
-);
 
 INSERT INTO commentaire values (null, "2020-12-01 10:34:09","Bon projet", 15, 1, 1);
 INSERT INTO commentaire values (null, "2021-01-08 8:18:58","Pas ouf", 6, 2, 2);

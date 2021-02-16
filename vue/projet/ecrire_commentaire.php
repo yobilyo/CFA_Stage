@@ -9,7 +9,7 @@
 
         <br/><br/>
 
-        <input type="reset" class='btn btn-dark' name="annnuler" value ="Annuler">
-        <input type="submit" class='btn btn-dark' name='valider' value='Valider'>
+        <input type="reset" class='btn btn-dark' name="annnuler_commentaire" value ="Annuler">
+        <input type="submit" class='btn btn-dark' name='valider_commentaire' value='Valider'>
     </form>
 </center>

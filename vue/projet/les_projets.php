@@ -25,12 +25,12 @@ foreach ($lesProjets as $unProjet)
     //<img src=" . $unProjet["image"] . "/> (peut etre inserer apres le h3)
     echo "
         <section id='un_projet'>
-        <a href='index.php?page=5'>
+        <a href='index.php?page=5&idprojet=".$unProjet['id']."'>
             <h3 id='titre_projet'>" . $unProjet['nom'] . "</h3>
             <p id='description_projet'>" . $unProjet['description'] . "</p>
             <p id='somme_collecte'> Somme collecté : " .$unProjet['somme_collecte']. " €</p>
         </a>
-        <a id='commentaire_projet' href='index.php?page=5#commentaires'>Voir les commentaires</a>
+        <a id='commentaire_projet' href='index.php?page=5&idprojet=".$unProjet['id']."#commentaires'>Voir les commentaires</a>
         </section><br/><br/>";
 }
 ?>
