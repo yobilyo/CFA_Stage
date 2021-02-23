@@ -191,11 +191,14 @@ create view recu_don as(
         d.id as id_Don, d.montant, d.dateDon, d.appreciation, d.statut,
         m.id as id_Mode_de_paiement, m.image_url,
         p.id as id_Projet, p.nom as nom_Projet, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte,
+        i.id, i.titre, i.adresse as adresse_Image,
         a.id as id_Association, a.photo_profil, a.libelle, a.nbprojets
-        from utilisateur u, don d, mode_de_paiement m, projet p, association a
+        from utilisateur u, don d, mode_de_paiement m, projet p, image i, association a
         where p.id_Utilisateur = u.id
         and d.id_Utilisateur = u.id
         and d.id_Mode_de_Paiement = m.id
+        and i.id_Projet = p.id
+        and i.titre like 'main'
         and p.id_Association = a.id
         and d.id_Association = a.id
 );
@@ -211,8 +214,12 @@ insert into utilisateur values
 INSERT INTO association VALUES (null, "Restos du coeur", 0,0,0, "lib/images/resto-du-coeur-logo.jpg");
 
 INSERT INTO projet values (null, "Action contre la faim", "Distribution de nourriture", "2020-12-18", "France", "Paris", 30000, 22000,1,1);
-INSERT INTO projet values (null, "Action contre la soif", "Distribution d'eau", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
+INSERT INTO projet values (null, "Lutte contre le froid", "Distribution de vêtements", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
 INSERT INTO projet values (null, "Action contre la pauvreté", "Distribution d'argent", "2020-12-20", "France", "Toulouse", 15000, 13000,2,1); 
+
+insert into image values (null, "lib/images/projet/faim/main.jpg", "main", 1);
+insert into image values (null, "lib/images/projet/froid/main.jpg", "main", 2);
+insert into image values (null, "lib/images/projet/pauvrete/main.jpg", "main", 3);
 
 INSERT  into mode_de_paiement values (null, "CB", "lib/images/mode_de_paiement/cb_logo.jpg");
 INSERT into mode_de_paiement values (null, "VISA", "lib/images/mode_de_paiement/visa_logo.jpg");
