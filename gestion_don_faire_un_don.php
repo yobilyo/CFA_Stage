@@ -62,7 +62,7 @@
             // transférer l'id du don dans le $GET
             echo "<div>Don fait avec succès !</div>
             <br/>
-            <a src='index.php?page=42&iddon=".$idDon."'>Cliquez ici pour télécharger un reçu de votre don</a>"   
+            <a src='index.php?page=42&iddon=".$idDon."'>Cliquez ici pour télécharger un reçu de votre don</a>";
         }
     }
 ?>

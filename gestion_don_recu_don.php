@@ -2,11 +2,10 @@
     if (!isset($_SESSION['email'])) {
         echo "ERREUR 404, page non identifiée ";
     } else {
-        echo "<br/>
-        <img src='lib/images/resto-du-coeur-logo.jpg' width='400'></img>
+        echo "<img src='lib/images/resto-du-coeur-logo.jpg' width='400'></img>
         <br/>";
 
-        print_r($_GET);
+        //print_r($_GET);
         if (!isset($_GET['iddon'])) {
             echo "ERREUR: référence de don non renseignée, impossible de générer un reçu de don.";
             print_r($_GET);
@@ -18,7 +17,7 @@
             $monDon = $unControleur->selectWhere($where);
             // SELECT * from recu_don where id_Don = $_GET['iddon'];
 
-            print_r($monDon);
+            //print_r($monDon);
 
             if ($monDon != null) {
                 if ($monDon['id_Utilisateur'] == $_SESSION['id'] || $_SESSION['droits'] == 'administrateur') {
