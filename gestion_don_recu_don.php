@@ -21,7 +21,7 @@
                     // les admins ont le droit d'accéder et de générer des dons pour tous les utilisateurs
 
                     echo "<div>Infos Association</div>";
-                    echo "<img src='".$monDon['photo_profil']."' width='170'></img>";
+                    echo "<img src='".$monDon['photo_profil']."' width='200'></img>";
                     echo "<div>Référence de l'association : ".$monDon['id_Association']."</div>";
                     echo "<div>Libelle : ".$monDon['libelle']."</div>";
                     echo "<div>Nombre de projets : ".$monDon['nbprojets']."</div>";
