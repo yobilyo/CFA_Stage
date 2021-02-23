@@ -211,7 +211,7 @@ INSERT INTO association VALUES (null, "Restos du coeur", 0,0,0, "lib/images/rest
 
 INSERT INTO projet values (null, "Action contre la faim", "Distribution de nourriture", "2020-12-18", "France", "Paris", 30000, 22000,1,1);
 INSERT INTO projet values (null, "Action contre la soif", "Distribution d'eau", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
-INSERT INTO projet values (null, "Action contre la pauvreté", "Distribution d'argent", "2020-12-20", "France", "Toulouse", 15000, 13000,2,1); 
+INSERT INTO projet values (null, "Action contre la pauvrete", "Distribution d'argent", "2020-12-20", "France", "Toulouse", 15000, 13000,2,1); 
 
 INSERT  mode_de_paiement values (null, "carte");
 

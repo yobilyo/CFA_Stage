@@ -29,6 +29,7 @@
 	<center>
 		<!-- Menu de navigation (navbar) -->
 		<?php
+			echo'<p id="top"></p>';
 			print_r($_SESSION);
 		?>
 
@@ -48,6 +49,7 @@
                 }
 
             } else {
+				
                 // on est connecté maintenant, donc on affiche le site
                 require_once("vue/vue_navbar.php");
 

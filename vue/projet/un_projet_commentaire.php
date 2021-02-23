@@ -94,7 +94,7 @@
 			echo '<div id="cadre_contenu_com">
 				<div id="info_com"> 
 					<span id="nom_com">' .$unCommentaire_of_user['nom']. ' ' .$unCommentaire_of_user['prenom']. '</span> 
-					<span id="note_com">Note : '.$unCommentaire_of_user['note']. '</span>
+					<span id="note_com">Note : <strong>'.$unCommentaire_of_user['note']. '</strong></span>
 				</div>
 				<div id="border_contenu_com">
 					<div id="contenu_com">' .$unCommentaire_of_user['contenu']. '</div>
