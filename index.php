@@ -72,27 +72,28 @@
 						require_once("vue/projet/les_projets.php"); 
 						break;
 
-						//quand on clique sur un des projets
-						case 5:
-							require_once("vue/projet/un_projet.php");
-							break;
+					//quand on clique sur un des projets
+					case 5:
+						require_once("vue/projet/un_projet.php");
+						break;
 
-						//Ajouter/Lister 
-						case 35:
-							require_once("gestion_projet.php");
-							break;
-						
-						case 36:
-							require_once("gestion_commentaire.php");
-							break;
-						
-						case 37:
-							require_once("gestion_don.php");
-							break;
-			
-					case 4:
+					//Ajouter/Lister 
+					case 35:
+						require_once("gestion_projet.php");
+						break;
+					
+					case 36:
+						require_once("gestion_commentaire.php");
+						break;
+					
+					case 37:
 						require_once("gestion_don.php");
 						break;
+			
+					/*case 4:
+						require_once("gestion_don.php");
+						break;*/
+					
 					case 41:
 						require_once("gestion_don_faire_un_don.php");
 						break;

@@ -166,8 +166,8 @@ CREATE TABLE Decrire(
 	,CONSTRAINT Decrire_mot_clef0_FK FOREIGN KEY (id_mot_clef) REFERENCES mot_clef(id)
 )ENGINE=InnoDB;
 
+/* VIEWS SQL */
 /*cette vue permet d avoir le total des sommes collectées de tous les dons sans faire de trigger*/
-
 drop view if exists les_projets;
 CREATE VIEW les_projets AS (
     SELECT p.id, p.nom, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte + SUM(d.montant) AS "somme_collecte", p.id_Utilisateur, p.id_Association
@@ -182,6 +182,21 @@ CREATE VIEW commentaire_of_user AS (
         SELECT c.id, c.dateCom, c.contenu, c.note, c.id_Utilisateur, c.id_Projet, u.nom, u.prenom, u.photo_profil 
         FROM utilisateur u, commentaire c
         WHERE c.id_Utilisateur = u.id
+);
+
+drop view if exists recu_don;
+create view recu_don as(
+        select u.id as id_Utilisateur, u.nom as nom_Utilisateur, u.prenom, u.email,
+        d.id as id_Don, d.montant, d.dateDon, d.appreciation, d.statut,
+        m.id as id_Mode_de_paiement,
+        p.id as id_Projet, p.nom as nom_Projet, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte,
+        a.id as id_Association, a.photo_profil, a.libelle, a.nbprojets
+        from utilisateur u, don d, mode_de_paiement m, projet p, association a
+        where p.id_Utilisateur = u.id
+        and d.id_Utilisateur = u.id
+        and d.id_Mode_de_Paiement = m.id
+        and p.id_Association = a.id
+        and d.id_Association = a.id
 );
 
 
@@ -200,6 +215,9 @@ INSERT INTO projet values (null, "Action contre la pauvreté", "Distribution d'a
 
 INSERT  mode_de_paiement values (null, "carte");
 
+insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
+insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 2,2,1,1);
+insert into Don values (NULL, 133, "2020-11-03", "Bien vu !", "valide", 3,3,1,1);
 insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
 insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 2,2,1,1);
 insert into Don values (NULL, 133, "2020-11-03", "Bien vu !", "valide", 3,3,1,1);
