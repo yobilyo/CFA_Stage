@@ -40,7 +40,8 @@ CREATE TABLE mot_clef(
 
 CREATE TABLE Mode_de_paiement(
         id   Int  Auto_increment  NOT NULL ,
-        mode Enum ("carte","cheque","espece") NOT NULL
+        mode Varchar(30) NOT NULL,
+        image_url Varchar(200) NOT NULL
 	,CONSTRAINT Mode_de_paiement_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
@@ -188,7 +189,7 @@ drop view if exists recu_don;
 create view recu_don as(
         select u.id as id_Utilisateur, u.nom as nom_Utilisateur, u.prenom, u.email,
         d.id as id_Don, d.montant, d.dateDon, d.appreciation, d.statut,
-        m.id as id_Mode_de_paiement,
+        m.id as id_Mode_de_paiement, m.image_url,
         p.id as id_Projet, p.nom as nom_Projet, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte,
         a.id as id_Association, a.photo_profil, a.libelle, a.nbprojets
         from utilisateur u, don d, mode_de_paiement m, projet p, association a
@@ -213,7 +214,11 @@ INSERT INTO projet values (null, "Action contre la faim", "Distribution de nourr
 INSERT INTO projet values (null, "Action contre la soif", "Distribution d'eau", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
 INSERT INTO projet values (null, "Action contre la pauvreté", "Distribution d'argent", "2020-12-20", "France", "Toulouse", 15000, 13000,2,1); 
 
-INSERT  mode_de_paiement values (null, "carte");
+INSERT  into mode_de_paiement values (null, "CB", "lib/images/mode_de_paiement/cb_logo.jpg");
+INSERT into mode_de_paiement values (null, "VISA", "lib/images/mode_de_paiement/visa_logo.jpg");
+
+INSERT into mode_de_paiement values (null, "Mastercard", "lib/images/mode_de_paiement/mastercard_logo.png");
+INSERT  mode_de_paiement values (null, "PayPal", "lib/images/mode_de_paiement/paypal_logo.jpg");
 
 insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
 insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 2,2,1,1);
