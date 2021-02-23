@@ -33,6 +33,17 @@
 			return $lesResultats; 
 		}
 
+		public function selectAllOrderByDesc ($tab, $order)
+		{
+			//on récupère les clienst 
+			$lesResultats = $this->unModele->selectAllOrderByDesc($tab, $order); 
+
+			//je traite les clients 
+
+			//je renvoie les clients 
+			return $lesResultats; 
+		}
+
 		public function insert ($tab){
 			//on controle les données s'il ya lieu
 			$this->unModele->insert($tab);

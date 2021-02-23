@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="vue/style/les_projets.css"/>
-
 <h1>Nos projets : </h1>
 
 <br/>
@@ -34,5 +33,4 @@ foreach ($lesProjets as $unProjet)
         </section><br/><br/>";
 }
 ?>
-
 <!--                -->

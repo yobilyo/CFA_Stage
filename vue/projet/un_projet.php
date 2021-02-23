@@ -39,7 +39,4 @@ while($donnees=$requete->fetch() )
 <?php
 
 include "un_projet_commentaire.php";
-
-$lesCommentaires = $unControleur->selectAll($tab);
-
 ?>
