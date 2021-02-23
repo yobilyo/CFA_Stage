@@ -17,7 +17,7 @@
 <br/>
 <h2>Mes Commentaires</h2>
 <?php
-    require_once("vue_commentaire.php");
+    require_once("commentaire/vue_commentaire.php");
 ?>
 
 <?php
@@ -25,17 +25,8 @@
         echo "<br/>
         <br/>
         <h2>Mes Projets</h2>";
-        require_once("vue_projet.php");
+        require_once("projet/vue_projet.php");
     }
 
 ?>
 
-<?php 
-    if ($_SESSION['droits'] == "membre"){
-        echo"<br/>
-        <br/>
-        <h2>Modification du compte</h2>";
-        require_once("vue_modification_compte.php");
-    }
-
-?>

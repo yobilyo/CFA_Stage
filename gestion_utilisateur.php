@@ -101,7 +101,7 @@
         
     }
     // Modification du compte de la part de l'utilisateur
-    else if($_SESSION['droits'] == "membre")){
+    else if($_SESSION['droits'] == "membre"){
         $unUtilisateur = null; 
         if (isset($_GET['action']) && isset($_GET['id']))  {
             $id_utilisateur = $_GET['id']; 
