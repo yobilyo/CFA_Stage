@@ -223,9 +223,9 @@ INSERT  mode_de_paiement values (null, "PayPal", "lib/images/mode_de_paiement/pa
 insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
 insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 2,2,1,1);
 insert into Don values (NULL, 133, "2020-11-03", "Bien vu !", "valide", 3,3,1,1);
-insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
-insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 2,2,1,1);
-insert into Don values (NULL, 133, "2020-11-03", "Bien vu !", "valide", 3,3,1,1);
+insert into Don values (NULL, 50, "2020-12-04", "Wow !", "en cours", 1,3,4,1);
+insert into Don values (NULL, 75, "2021-01-05", "Very nice !", "en cours", 2,1,3,1);
+insert into Don values (NULL, 133, "2021-02-06", "Ca va", "valide", 3,2,2,1);
 
 INSERT INTO commentaire values (null, "2020-12-01 10:34:09","Bon projet", 15, 1, 1);
 INSERT INTO commentaire values (null, "2021-01-08 8:18:58","Pas ouf", 6, 2, 2);
