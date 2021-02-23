@@ -7,19 +7,19 @@
         <br/>";
 
         $unControleur->setTable ("Projet");
-        $tab=array("id", "nom","date_lancement");
+        $tab=array("*");
         $lesProjets = $unControleur->selectAll ($tab); 
 
         $unControleur->setTable ("Utilisateur");
-        $tab=array("id", "nom", "prenom");
+        $tab=array("*");
         $lesUsers = $unControleur->selectAll ($tab);
 
         $unControleur->setTable ("Mode_de_paiement");
-        $tab=array("id", "mode", "image_url");
+        $tab=array("*");
         $lesModesdePaiements = $unControleur->selectAll ($tab);
 
         $unControleur->setTable ("Association");
-        $tab=array("id", "libelle");
+        $tab=array("*");
         $lesAssociations = $unControleur->selectAll ($tab);
 
         $unDon = null; 
@@ -42,7 +42,8 @@
             );
             $unControleur->insert($tab);
 
-            // TODO ensuite s'il n'y a pas d'erreur confirmer le don avec succès et aller à la page de génération d'un reçu
+            // après que le don soit fait avec succès, récupéaration de l'id du don
+            // et aller vers la page de génération d'un reçu
             $unControleur->setTable ("don");
             $where = array(
                 "montant"=>$_POST['montant'],
@@ -57,7 +58,11 @@
             $monDon = $unControleur->selectWhere($where);
 
             $idDon = $monDon['id']; // id du don inséré obtenu par un selectWhere
-            header("Location: index.php?page=42&iddon=".$idDon); // transférer l'id du don dans le $GET
+
+            // transférer l'id du don dans le $GET
+            echo "<div>Don fait avec succès !</div>
+            <br/>
+            <a src='index.php?page=42&iddon=".$idDon."'>Cliquez ici pour télécharger un reçu de votre don</a>"   
         }
     }
 ?>
