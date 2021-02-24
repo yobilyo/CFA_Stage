@@ -31,18 +31,60 @@ while($donnees=$requete->fetch() )
         <p class=info_projet><b>Somme collectée : </b>" .$donnees['somme_collecte']. " €</p>";
 }
 
-echo "<h2 class='h2_projet'>- Vidéos -</h2>
+//VIDEO
 
-    <p>Afficher vos vidéos</p>
+    echo "<h2 class='h2_projet'>- Vidéos -</h2>";
+
+    $videos = $bdd->query("select * from video where id_Projet = ".$_GET['idprojet'].";"); 
+
+    /*if(empty($donneesVideos=$videos->fetch() ) )
+    {*/
+        while($donneesVideos=$videos->fetch())
+        {
+            echo "
+            <div id='uneVideo'>
+                <h5>".$donneesVideos['titre']."</h5>
+
+                <!-- Intégration YouTube -->
+                <iframe width='560' height='315' src='".$donneesVideos['adresse']."' frameborder='0' 
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+                picture-in-picture' allowfullscreen></iframe>
+
+            </div>";
+        }
+    /*}
+    else
+    {
+        echo "<p>Il n'y a pas de vidéos relatives à ce projet</p>";
+    }*/
+
+//IMAGE
     
-    <h2 class='h2_projet'>- Images -</h2>
+    echo "<h2 class='h2_projet'>- Images -</h2>";
 
-    <p>Afficher vos images</p>";
+    $images = $bdd->query("select * from image where id_Projet = ".$_GET['idprojet'].";"); 
+    $erreurImage = "L image n\'apparait pas";
 
-?>
+    /*if(empty($images))
+    {
+        echo "<p>Il n'y a pas d'images relatives à ce projet</p>";
+    }
+    else
+    {*/
+        while($donneesImages=$images->fetch() )
+        {
+            echo "
+            <div id='uneImage'>
+                <h5>".$donneesImages['titre']."</h5>
+                <img id='tailleImage'  src='".$donneesImages['adresse']."' alt='".$erreurImage."'/>
+            </div>";
+        }
+    //}
 
-<h1 id="commentaires">Commentaires</h1>
+//COMMENTAIRE
 
-<?php
-    include "un_projet_commentaire.php";
+echo '<h1 id="commentaires">Commentaires</h1>';
+
+include "un_projet_commentaire.php";
+
 ?>

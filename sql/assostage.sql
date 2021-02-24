@@ -203,7 +203,6 @@ create view recu_don as(
         and d.id_Association = a.id
 );
 
-
 # insertions
 
 insert into utilisateur values
@@ -217,9 +216,11 @@ INSERT INTO projet values (null, "Action contre la faim", "Distribution de nourr
 INSERT INTO projet values (null, "Action contre la soif", "Distribution d'eau", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
 INSERT INTO projet values (null, "Action contre la pauvrete", "Distribution d'argent", "2020-12-20", "France", "Toulouse", 15000, 13000,2,1); 
 
-insert into image values (null, "lib/images/projet/faim/main.jpg", "main", 1);
-insert into image values (null, "lib/images/projet/froid/main.jpg", "main", 2);
-insert into image values (null, "lib/images/projet/pauvrete/main.jpg", "main", 3);
+insert into image values (null, "lib/images/projet/faim/img1.jpg", "A table !", 1);
+insert into image values (null, "lib/images/projet/froid/img1.jpg", "Tchin tchin !", 2);
+insert into image values (null, "lib/images/projet/pauvrete/img1.jpg", "L'éducation pour tous !", 3);
+
+INSERT INTO video values (null,"https://www.youtube.com/watch?v=jgVqr3lS_9U","La faim ne recule pas, nous non plus !", 1);
 
 INSERT  into mode_de_paiement values (null, "CB", "lib/images/mode_de_paiement/cb_logo.jpg");
 INSERT into mode_de_paiement values (null, "VISA", "lib/images/mode_de_paiement/visa_logo.jpg");
