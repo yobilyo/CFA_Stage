@@ -1,9 +1,16 @@
 <h1>Mon Compte<h1>
 <br/>
 
-<h2>Mes infos Utilisateur</h2>
+
 <?php
+    /*
+    echo"<h2>Mes infos Utilisateur</h2>";
     require_once("vue_utilisateur.php");
+    */
+    ?>
+<h2>Modifier Compte </h2>
+<?php 
+require_once("vue_modifiercompte.php")
 ?>
 
 <br/>
@@ -17,7 +24,7 @@
 <br/>
 <h2>Mes Commentaires</h2>
 <?php
-    require_once("vue_commentaire.php");
+    require_once("commentaire/vue_commentaire.php");
 ?>
 
 <?php
@@ -25,7 +32,8 @@
         echo "<br/>
         <br/>
         <h2>Mes Projets</h2>";
-        require_once("vue_projet.php");
+        require_once("projet/vue_projet.php");
     }
 
 ?>
+
