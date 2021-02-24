@@ -1,7 +1,7 @@
 <?php 
     //print_r($unUtilisateur);
     echo "<form method='post' action=''>
-            <img src='".$unUtilisateur['photo_profil']."' class='rounded'/>
+            <img src='".$unUtilisateur['photo_profil']."' class='rounded' width='150'/>
             <br/>
             ".$unUtilisateur['nom'].' '.$unUtilisateur['prenom']."
             <br/><input class='btn btn-primary' type='submit' name='Modifier' value='Modifier'/> 
@@ -17,7 +17,7 @@
                         <h3>Information Personnelle</h3>
                         <form method='post' class='form-horizontal' role='form' action''>
                             <div class='form-group'>
-                                <img src=".$unUtilisateur['photo_profil']." class='rounded'/>
+                                <img src=".$unUtilisateur['photo_profil']." class='rounded' width='100' />
                                 <h6>Chargez une autre image</h6>
                                 <input type='text' class='form-control' name='photo_profil' value='".$unUtilisateur['photo_profil']."'>
                             </div>

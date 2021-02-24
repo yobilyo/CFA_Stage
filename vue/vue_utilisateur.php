@@ -18,7 +18,7 @@
 		echo "<tbody>";
 			
 				
-		print_r($lesUtilisateurs);
+		//print_r($lesUtilisateurs);
 		foreach ($lesUtilisateurs as $unUtilisateur) {
 			echo"<tr> 
 				<td>".$unUtilisateur['id']." </td>
