@@ -70,7 +70,7 @@
                 echo "<div>Don fait avec succès !</div>
                 <br/>
                 <a href='index.php?page=42&iddon=".$idDon."'>
-                    Cliquez ici pour télécharger un reçu de votre don
+                    <img src='lib/images/ddl-txt.png' width = '80'></img>Cliquez ici pour télécharger un reçu de votre don
                 </a>";
             } else {
                 echo "erreur lors de la transaction, opération annulée.";
