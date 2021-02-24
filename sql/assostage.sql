@@ -168,15 +168,43 @@ CREATE TABLE Decrire(
 )ENGINE=InnoDB;
 
 /* VIEWS SQL */
-/*cette vue permet d avoir le total des sommes collectées de tous les dons sans faire de trigger*/
 drop view if exists les_projets;
 CREATE VIEW les_projets AS (
-    SELECT p.id, p.nom, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte + SUM(d.montant) AS "somme_collecte", p.id_Utilisateur, p.id_Association
-	FROM Projet p
-	LEFT JOIN Don d
-	ON p.id = d.id_Projet
-	GROUP BY p.id
+    SELECT * from projet
 );
+
+drop trigger if exists ajout_sommecollecte_don;
+delimiter $
+create trigger ajout_sommecollecte_don
+after insert on don
+for each row
+begin
+        update projet set somme_collecte = somme_collecte + new.montant
+        where id = new.id_Projet;
+end $
+delimiter ;
+
+drop trigger if exists modifie_sommecollecte_don;
+delimiter $
+create trigger modifie_sommecollecte_don
+after update on don
+for each row
+begin
+        update projet set somme_collecte = somme_collecte - old.montant + new.montant
+        where id = new.id_Projet;
+end $
+delimiter ;
+
+drop trigger if exists supprime_sommecollecte_don;
+delimiter $
+create trigger supprime_sommecollecte_don
+after delete on don
+for each row
+begin
+        update projet set somme_collecte = somme_collecte - old.montant
+        where id = old.id_Projet;
+end $
+delimiter ;
 
 drop view if exists commentaire_of_user;
 CREATE VIEW commentaire_of_user AS (
