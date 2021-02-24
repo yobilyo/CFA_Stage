@@ -72,6 +72,12 @@
 		public function update($tab, $where){
 			$this->unModele->update($tab, $where);
 		}
+
+		//pour rechercher un projet
+		public function selectByNomProjet($nomProjet)
+		{
+			return $this->unModele->selectByNomProjet($nomProjet);
+		}
 	}
 
 ?>

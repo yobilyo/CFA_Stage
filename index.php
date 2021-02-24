@@ -4,6 +4,8 @@
 	require_once ("conf/config.ini"); 
 	//instacier la classe Controleur 
 	$unControleur = new Controleur($serveur, $bdd, $user, $mdp);
+
+	$FiltrerProjet = new Controleur($serveur,$bdd,$user,$mdp);
 ?>
 
 <DOCTYPE !html> 
@@ -29,7 +31,7 @@
 	<center>
 		<!-- Menu de navigation (navbar) -->
 		<?php
-			echo'<p id="top"></p>';
+			echo'<p id="hautdepage"></p>';
 			print_r($_SESSION);
 		?>
 
