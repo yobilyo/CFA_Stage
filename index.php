@@ -4,6 +4,8 @@
 	require_once ("conf/config.ini"); 
 	//instacier la classe Controleur 
 	$unControleur = new Controleur($serveur, $bdd, $user, $mdp);
+
+	$FiltrerProjet = new Controleur($serveur,$bdd,$user,$mdp);
 ?>
 
 <DOCTYPE !html> 
@@ -29,6 +31,7 @@
 	<center>
 		<!-- Menu de navigation (navbar) -->
 		<?php
+			echo'<p id="hautdepage"></p>';
 			print_r($_SESSION);
 		?>
 
@@ -48,6 +51,7 @@
                 }
 
             } else {
+				
                 // on est connecté maintenant, donc on affiche le site
                 require_once("vue/vue_navbar.php");
 
@@ -72,27 +76,28 @@
 						require_once("vue/projet/les_projets.php"); 
 						break;
 
-						//quand on clique sur un des projets
-						case 5:
-							require_once("vue/projet/un_projet.php");
-							break;
+					//quand on clique sur un des projets
+					case 5:
+						require_once("vue/projet/un_projet.php");
+						break;
 
-						//Ajouter/Lister 
-						case 35:
-							require_once("gestion_projet.php");
-							break;
-						
-						case 36:
-							require_once("gestion_commentaire.php");
-							break;
-						
-						case 37:
-							require_once("gestion_don.php");
-							break;
-			
-					case 4:
+					//Ajouter/Lister 
+					case 35:
+						require_once("gestion_projet.php");
+						break;
+					
+					case 36:
+						require_once("gestion_commentaire.php");
+						break;
+					
+					case 37:
 						require_once("gestion_don.php");
 						break;
+			
+					/*case 4:
+						require_once("gestion_don.php");
+						break;*/
+					
 					case 41:
 						require_once("gestion_don_faire_un_don.php");
 						break;

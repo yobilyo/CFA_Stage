@@ -40,7 +40,8 @@ CREATE TABLE mot_clef(
 
 CREATE TABLE Mode_de_paiement(
         id   Int  Auto_increment  NOT NULL ,
-        mode Enum ("carte","cheque","espece") NOT NULL
+        mode Varchar(30) NOT NULL,
+        image_url Varchar(200) NOT NULL
 	,CONSTRAINT Mode_de_paiement_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
@@ -166,6 +167,70 @@ CREATE TABLE Decrire(
 	,CONSTRAINT Decrire_mot_clef0_FK FOREIGN KEY (id_mot_clef) REFERENCES mot_clef(id)
 )ENGINE=InnoDB;
 
+/* VIEWS SQL */
+drop view if exists les_projets;
+CREATE VIEW les_projets AS (
+    SELECT * from projet
+);
+
+drop trigger if exists ajout_sommecollecte_don;
+delimiter $
+create trigger ajout_sommecollecte_don
+after insert on don
+for each row
+begin
+        update projet set somme_collecte = somme_collecte + new.montant
+        where id = new.id_Projet;
+end $
+delimiter ;
+
+drop trigger if exists modifie_sommecollecte_don;
+delimiter $
+create trigger modifie_sommecollecte_don
+after update on don
+for each row
+begin
+        update projet set somme_collecte = somme_collecte - old.montant + new.montant
+        where id = new.id_Projet;
+end $
+delimiter ;
+
+drop trigger if exists supprime_sommecollecte_don;
+delimiter $
+create trigger supprime_sommecollecte_don
+after delete on don
+for each row
+begin
+        update projet set somme_collecte = somme_collecte - old.montant
+        where id = old.id_Projet;
+end $
+delimiter ;
+
+drop view if exists commentaire_of_user;
+CREATE VIEW commentaire_of_user AS (
+        SELECT c.id, c.dateCom, c.contenu, c.note, c.id_Utilisateur, c.id_Projet, u.nom, u.prenom, u.photo_profil 
+        FROM utilisateur u, commentaire c
+        WHERE c.id_Utilisateur = u.id
+);
+
+drop view if exists recu_don;
+create view recu_don as(
+        select u.id as id_Utilisateur, u.nom as nom_Utilisateur, u.prenom, u.email,
+        d.id as id_Don, d.montant, d.dateDon, d.appreciation, d.statut,
+        m.id as id_Mode_de_paiement, m.image_url,
+        p.id as id_Projet, p.nom as nom_Projet, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte,
+        i.id, i.titre, i.adresse as adresse_Image,
+        a.id as id_Association, a.photo_profil, a.libelle, a.nbprojets
+        from utilisateur u, don d, mode_de_paiement m, projet p, image i, association a
+        where p.id_Utilisateur = u.id
+        and d.id_Utilisateur = u.id
+        and d.id_Mode_de_Paiement = m.id
+        and i.id_Projet = p.id
+        and i.titre like 'main'
+        and p.id_Association = a.id
+        and d.id_Association = a.id
+);
+
 
 # insertions
 
@@ -177,25 +242,25 @@ insert into utilisateur values
 INSERT INTO association VALUES (null, "Restos du coeur", 0,0,0, "lib/images/resto-du-coeur-logo.jpg");
 
 INSERT INTO projet values (null, "Action contre la faim", "Distribution de nourriture", "2020-12-18", "France", "Paris", 30000, 22000,1,1);
-INSERT INTO projet values (null, "Action contre la soif", "Distribution d'eau", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
-INSERT INTO projet values (null, "Action contre la pauvreté", "Distribution d'argent", "2020-12-20", "France", "Toulouse", 15000, 13000,2,1); 
+INSERT INTO projet values (null, "Lutte contre le froid", "Distribution de vetements", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
+INSERT INTO projet values (null, "Action contre la pauvrete", "Distribution d'argent", "2020-12-20", "France", "Toulouse", 15000, 13000,2,1); 
 
-INSERT  mode_de_paiement values (null, "carte");
+insert into image values (null, "lib/images/projet/faim/main.jpg", "main", 1);
+insert into image values (null, "lib/images/projet/froid/main.jpg", "main", 2);
+insert into image values (null, "lib/images/projet/pauvrete/main.jpg", "main", 3);
+
+INSERT  into mode_de_paiement values (null, "CB", "lib/images/mode_de_paiement/cb_logo.jpg");
+INSERT into mode_de_paiement values (null, "VISA", "lib/images/mode_de_paiement/visa_logo.jpg");
+
+INSERT into mode_de_paiement values (null, "Mastercard", "lib/images/mode_de_paiement/mastercard_logo.png");
+INSERT  mode_de_paiement values (null, "PayPal", "lib/images/mode_de_paiement/paypal_logo.jpg");
 
 insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
 insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 2,2,1,1);
 insert into Don values (NULL, 133, "2020-11-03", "Bien vu !", "valide", 3,3,1,1);
-
-/*cette vue permet d avoir le total des sommes collectées de tous les dons sans faire de trigger*/
-
-drop view if exists les_projets;
-CREATE VIEW les_projets AS (
-    SELECT p.id, p.nom, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte + SUM(d.montant) AS "somme_collecte", p.id_Utilisateur, p.id_Association
-	FROM Projet p
-	LEFT JOIN Don d
-	ON p.id = d.id_Projet
-	GROUP BY p.id
-);
+insert into Don values (NULL, 50, "2020-12-04", "Wow !", "en cours", 1,3,4,1);
+insert into Don values (NULL, 75, "2021-01-05", "Very nice !", "en cours", 2,1,3,1);
+insert into Don values (NULL, 133, "2021-02-06", "Ca va", "valide", 3,2,2,1);
 
 INSERT INTO commentaire values (null, "2020-12-01 10:34:09","Bon projet", 15, 1, 1);
 INSERT INTO commentaire values (null, "2021-01-08 8:18:58","Pas ouf", 6, 2, 2);
