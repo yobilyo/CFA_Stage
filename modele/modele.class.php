@@ -41,7 +41,21 @@
 			}
 		}
 
-
+		public function selectAllOrderByDesc ($tab, $order) 
+		{
+			if ($this->unPdo != null)
+			{
+				$chaine = implode(", ", $tab); 
+				$requete = "select ".$chaine." from " .$this->uneTable. " order by " .$order." DESC ; ";
+				$select = $this->unPdo->prepare ($requete); 
+				$select->execute (); 
+				return $select->fetchAll();  
+			} 
+			else 
+			{
+				return null; 
+			}
+		}
 
 		public function insert ($tab){
 			//$tab est le $_POST du formulaire 

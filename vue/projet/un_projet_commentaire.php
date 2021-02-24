@@ -17,13 +17,13 @@
 		switch ($action)
 		{
 			case "sup" : 
-				$unControleur->setTable ("commentaire");
+				$unControleur->setTable("commentaire");
 				$tab=array("id"=>$id_commentaire); 
 				$unControleur->delete($tab);
 				break;
 	
 			case "edit" : 
-				$unControleur->setTable ("commentaire");
+				$unControleur->setTable("commentaire");
 				$tab=array("id"=>$id_commentaire); 
 				$unCom = $unControleur->selectWhere($tab);
 				break; 
@@ -37,8 +37,8 @@
 	<center>
     	<form method ="post" action ="">
 
-			<legend>Rédiger un commentaire :</legend>
-			<textarea id='textarea_com' placeholder="Ecrire..." style="resize:none;" name="contenu" required autocomplete="on" 
+			<legend>Ajouter un commentaire :</legend>
+			<textarea id='textarea_com' placeholder="Ecrire..." style="resize:none;" maxlength="500" name="contenu" required autocomplete="on" 
 			autofocus><?php echo(isset($unCom)) ? $unCom['contenu']:"";?></textarea>
 			<table>
 				<tr><td>Note : </td><td><input type="number" name="note" min="0" max="20" 
@@ -64,9 +64,8 @@
 		$tab=array("dateCom"=> $date, //pour récupéré la date et l'heure actuelle
 		"contenu"=>$_POST['contenu'],
 		"note"=>$_POST['note'],
-		"id_Utilisateur"=>$_SESSION['id'],	//c'est bon
+		"id_Utilisateur"=>$_SESSION['id'],
 		"id_Projet"=>$_GET['idprojet']);
-		$unControleur->insert($tab);
 		
 		$where =array("id"=>$id_commentaire);
 		$unControleur->update($tab, $where);
@@ -78,35 +77,46 @@
 		$tab=array("dateCom"=> $date, //pour récupéré la date et l'heure actuelle
 		"contenu"=>$_POST['contenu'],
 		"note"=>$_POST['note'],
-		"id_Utilisateur"=>$_SESSION['id'],	//c'est bon
+		"id_Utilisateur"=>$_SESSION['id'],
 		"id_Projet"=>$_GET['idprojet']);
 		$unControleur->insert($tab);
 	}
 
-	$unControleur->setTable ("commentaire_of_user");
-	$tab=array("*");
-	$lesCommentaires_of_user = $unControleur->selectAll($tab);
+		$unControleur->setTable ("commentaire_of_user");
+		$tab=array("*");
+		$order="datecom";
+		$lesCommentaires_of_user = $unControleur->selectAllOrderByDesc($tab, $order);
 
 	foreach($lesCommentaires_of_user as $unCommentaire_of_user)
 	{
 		if($unCommentaire_of_user['id_Projet'] == $_GET['idprojet'] )
 		{
-			echo '<em>Ecrit par : </em>' .$unCommentaire_of_user['nom']. ' ' .$unCommentaire_of_user['prenom']. '<br/>'
-			.$unCommentaire_of_user['contenu']. '<br/>'
-			.$unCommentaire_of_user['note']. '<br/>'
-			.$unCommentaire_of_user['dateCom'] . '<br/>';
-			
-			if($unCommentaire_of_user['id_Utilisateur'] == $_SESSION['id'])
-			{
-				echo "
+			echo '<div id="cadre_contenu_com">
+				<div id="info_com"> 
+					<span id="nom_com">' .$unCommentaire_of_user['nom']. ' ' .$unCommentaire_of_user['prenom']. '</span> 
+					<span id="note_com">Note : <strong>'.$unCommentaire_of_user['note']. '</strong></span>
+				</div>
+				<div id="border_contenu_com">
+					<div id="contenu_com">' .$unCommentaire_of_user['contenu']. '</div>
+				</div>
 				
-				<a href='index.php?page=5&idprojet=".$_GET['idprojet']."&action=sup&id=".$unCommentaire_of_user['id']."'>
-				<img src ='lib/images/sup.png' height='15' witdh='15' title='Supprimer'></a>
-				 | 
-				<a href='index.php?page=5&idprojet=".$_GET['idprojet']."&action=edit&id=".$unCommentaire_of_user['id']."#commentaires'>
-				<img src ='lib/images/edition.png' height='15' witdh='15' title='Modifier'></a>";
-			}
-			echo'<br/><br/><br/>';
+				<div id="bas_com">
+					<span id="action_com">';
+				
+				if($unCommentaire_of_user['id_Utilisateur'] == $_SESSION['id'])
+				{
+					echo"	
+						<a href='index.php?page=5&idprojet=".$_GET['idprojet']."&action=sup&id=".$unCommentaire_of_user['id']."'>
+						<img src ='lib/images/sup.png' height='15' witdh='10' title='Supprimer'></a>
+						<a href='index.php?page=5&idprojet=".$_GET['idprojet']."&action=edit&id=".$unCommentaire_of_user['id']."#commentaires'>
+						<img src ='lib/images/edition.png' height='15' witdh='10' title='Modifier'></a>";
+				};
+				
+				echo '</span>
+				<span id="date_com">'.$unCommentaire_of_user['dateCom'] . '<span>
+				</div>';
+
+			echo '</div>';
 		}
 	}
 ?>
