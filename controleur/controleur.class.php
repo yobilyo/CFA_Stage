@@ -74,7 +74,7 @@
 	
 		}
 
-		//pour rechercher un projet
+		//pour rechercher dans une table par son nom
 		public function selectByNomProjet($nomProjet)
 		{
 			return $this->unModele->selectByNomProjet($nomProjet);

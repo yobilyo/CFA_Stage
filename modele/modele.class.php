@@ -161,7 +161,7 @@
 			if($this->unPdo!=null)
 			{
 				//selectionne tout les projets qui ont dans leur nom le mot nomProjet
-				$requete='SELECT * FROM projet WHERE nom LIKE :nomProjet;';
+				$requete='SELECT * FROM '.$this->uneTable.' WHERE nom LIKE :nomProjet;';
 				
 				$donnees = array(':nomProjet'=>"%".$nomProjet."%");	//% signifie n'importe(s) qu'elle(s) caractere(s) 	(un ou plusieurs)
 															//? signifie n'importe qu'elle caractère 			(un seul)

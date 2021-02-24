@@ -131,7 +131,8 @@ CREATE TABLE Commentaire(
 CREATE TABLE Image(
         id        Int  Auto_increment  NOT NULL ,
         adresse   Varchar (1000) NOT NULL ,
-        titre     Varchar (1000) NOT NULL ,
+        titre     Varchar (100) NOT NULL ,
+        alt     Varchar (100) NOT NULL ,
         id_Projet Int NOT NULL
 	,CONSTRAINT Image_PK PRIMARY KEY (id)
 
@@ -146,7 +147,8 @@ CREATE TABLE Image(
 CREATE TABLE Video(
         id        Int  Auto_increment  NOT NULL ,
         adresse   Varchar (1000) NOT NULL ,
-        titre     Varchar (1000) NOT NULL ,
+        titre     Varchar (100) NOT NULL ,
+        alt     Varchar (100) NOT NULL ,
         id_Projet Int NOT NULL
 	,CONSTRAINT Video_PK PRIMARY KEY (id)
 
@@ -171,6 +173,17 @@ CREATE TABLE Decrire(
 drop view if exists les_projets;
 CREATE VIEW les_projets AS (
     SELECT * from projet
+);
+
+drop view if exists les_projets_image_main;
+CREATE VIEW les_projets_image_main AS (
+    SELECT p.id, p.nom, p.description, p.date_lancement,
+    p.pays, p.ville, p.budget, p.somme_collecte,
+    p.id_Utilisateur, p.id_Association,
+    i.id as id_Image, i.adresse, i.titre, i.alt
+    from projet p, image i
+    where p.id = i.id_Projet
+    and i.titre = 'main'
 );
 
 drop trigger if exists ajout_sommecollecte_don;
@@ -219,7 +232,7 @@ create view recu_don as(
         d.id as id_Don, d.montant, d.dateDon, d.appreciation, d.statut,
         m.id as id_Mode_de_paiement, m.image_url,
         p.id as id_Projet, p.nom as nom_Projet, p.description, p.date_lancement, p.pays, p.ville, p.budget, p.somme_collecte,
-        i.id, i.titre, i.adresse as adresse_Image,
+        i.id, i.adresse as adresse_Image, i.titre, i.alt,
         a.id as id_Association, a.photo_profil, a.libelle, a.nbprojets
         from utilisateur u, don d, mode_de_paiement m, projet p, image i, association a
         where p.id_Utilisateur = u.id
@@ -245,9 +258,11 @@ INSERT INTO projet values (null, "Action contre la faim", "Distribution de nourr
 INSERT INTO projet values (null, "Lutte contre le froid", "Distribution de vetements", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
 INSERT INTO projet values (null, "Action contre la pauvrete", "Distribution d'argent", "2020-12-20", "France", "Toulouse", 15000, 13000,2,1); 
 
-insert into image values (null, "lib/images/projet/faim/main.jpg", "main", 1);
-insert into image values (null, "lib/images/projet/froid/main.jpg", "main", 2);
-insert into image values (null, "lib/images/projet/pauvrete/main.jpg", "main", 3);
+insert into image values (null, "lib/images/projet/faim/main.jpg", "main", "A table !", 1);
+insert into image values (null, "lib/images/projet/froid/main.jpg", "main", "Tchin tchin !", 2);
+insert into image values (null, "lib/images/projet/pauvrete/main.jpg", "main", "L'éducation pour tous !", 3);
+
+INSERT INTO video values (null,"https://www.youtube.com/embed/jgVqr3lS_9U", "main", "La faim ne recule pas, nous non plus !", 1);
 
 INSERT  into mode_de_paiement values (null, "CB", "lib/images/mode_de_paiement/cb_logo.jpg");
 INSERT into mode_de_paiement values (null, "VISA", "lib/images/mode_de_paiement/visa_logo.jpg");

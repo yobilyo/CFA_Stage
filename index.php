@@ -4,8 +4,6 @@
 	require_once ("conf/config.ini"); 
 	//instacier la classe Controleur 
 	$unControleur = new Controleur($serveur, $bdd, $user, $mdp);
-
-	$FiltrerProjet = new Controleur($serveur,$bdd,$user,$mdp);
 ?>
 
 <DOCTYPE !html> 
