@@ -1,9 +1,16 @@
 <h1>Mon Compte<h1>
 <br/>
 
-<h2>Mes infos Utilisateur</h2>
+
 <?php
+    /*
+    echo"<h2>Mes infos Utilisateur</h2>";
     require_once("vue_utilisateur.php");
+    */
+    ?>
+<h2>Modifier Compte </h2>
+<?php 
+require_once("vue_modifiercompte.php")
 ?>
 
 <br/>
