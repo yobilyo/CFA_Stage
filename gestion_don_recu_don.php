@@ -2,7 +2,7 @@
     if (!isset($_SESSION['email'])) {
         echo "ERREUR 404, page non identifiée ";
     } else {
-        //print_r($_GET);
+        print_r($_GET);
         if (!isset($_GET['iddon'])) {
             echo "ERREUR: référence de don non renseignée, impossible de générer un reçu de don.";
             print_r($_GET);
@@ -10,11 +10,12 @@
             $monDon = null;
 
             $unControleur->setTable ("recu_don");
-            $where = array("id_Don", $_GET['iddon']);
+            $where = array("id_Don"=>$_GET['iddon']);
             $monDon = $unControleur->selectWhere($where);
             // SELECT * from recu_don where id_Don = $_GET['iddon'];
 
-            //print_r($monDon);
+            echo "a";
+            var_dump($monDon);
 
             if ($monDon != null) {
                 if ($monDon['id_Utilisateur'] == $_SESSION['id'] || $_SESSION['droits'] == 'administrateur') {

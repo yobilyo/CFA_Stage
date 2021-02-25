@@ -123,7 +123,9 @@
 				$requete = "select * from   ".$this->uneTable. " where ".$chaineChamps.";" ;
 				$select = $this->unPdo->prepare ($requete); 
 				$select->execute ($donnees); 
+				echo $requete;
 				return $select->fetch(); //un seul résultat.
+				
 			}
 			else
 			{

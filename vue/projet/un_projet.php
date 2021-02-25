@@ -17,7 +17,7 @@ catch (Exception $e)
 $requete = $bdd->query("select * from projet where id = ".$_GET['idprojet'].";"); */
 
 $unControleur->setTable ("projet");
-$where=array("id", $_GET['idprojet']);
+$where=array("id"=> $_GET['idprojet']);
 $unProjet = $unControleur->selectWhere ($where);
 var_dump($unProjet);
 
@@ -67,7 +67,7 @@ $videosProjet = $unControleur->selectWhereAll($where);
 // exemple de video: https://www.youtube.com/watch?v=jgVqr3lS_9U
 
 
-var_dump($videosProjet);
+//var_dump($videosProjet);
 if (!empty($videosProjet)) 
 {
     foreach ($videosProjet as $uneVideoProjet) {
