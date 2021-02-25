@@ -110,7 +110,7 @@ else
 
 var_dump($imagesProjet);
 
-if ($imagesProjet != null) 
+if (!empty($imagesProjet)) 
 {
     foreach ($imagesProjet as $uneImageProjet) 
     {
