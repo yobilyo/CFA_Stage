@@ -34,7 +34,7 @@
         //<img src=" . $unProjet["image"] . "/> (peut etre inserer apres le h3)
         echo "
             <section id='un_projet'>
-                <img src='".$unProjet['adresse']."' width='300'></img>
+                <img id='imageUnProjet' src='".$unProjet['adresse']."' width='300'></img>
                 <a href='index.php?page=5&idprojet=".$unProjet['id']."#hautdepage'>
                     <h3 id='titre_projet'>" . $unProjet['nom'] . "</h3>
                     <p>Date de lancement : " .$unProjet['date_lancement']. "</p>

@@ -15,3 +15,9 @@ a
     text-decoration: none;
     color:black;
 }
+
+#imageUnProjet
+{ 
+    margin-top: 22px;
+    box-shadow: 2px 2px 3px grey;
+}

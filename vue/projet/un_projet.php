@@ -68,7 +68,8 @@ $videosProjet = $unControleur->selectWhereAll($where);
 
 
 var_dump($videosProjet);
-if (!empty($videosProjet)) {
+if (!empty($videosProjet)) 
+{
     foreach ($videosProjet as $uneVideoProjet) {
         echo "
         <div id='uneVideo'>
@@ -86,11 +87,10 @@ if (!empty($videosProjet)) {
 $unControleur->setTable ("image");
 $where = array("id_Projet"=>$_GET['idprojet']);
 $imagesProjet = $unControleur->selectWhereAll($where);
+
 echo "<h2 class='h2_projet'>- Images -</h2>";
 
 /*$images = $bdd->query("select * from image where id_Projet = ".$_GET['idprojet'].";"); */
-
-$erreurImage = "L image n\'apparait pas";
 
 /*if(empty($images))
 {
@@ -110,15 +110,19 @@ else
 
 var_dump($imagesProjet);
 
-if ($imagesProjet != null) {
-    foreach ($imagesProjet as $uneImageProjet) {
+if ($imagesProjet != null) 
+{
+    foreach ($imagesProjet as $uneImageProjet) 
+    {
         echo "
-        <div id='uneVideo'>
+        <div id='uneImage'>
             <h3>".$uneImageProjet['titre']."</h3>
-            <img src='".$uneImageProjet['adresse']."' alt='".$erreurVideo."'/>
+            <img id='tailleImage' src='".$uneImageProjet['adresse']."' alt='L image n\'apparait pas'/>
         </div>";
     }
-} else {
+} 
+else
+{
     echo "<p>Il n'y a pas d'images pour ce projet</p>";
 }
 
