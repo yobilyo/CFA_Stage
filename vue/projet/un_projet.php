@@ -112,14 +112,41 @@ var_dump($imagesProjet);
 
 if (!empty($imagesProjet)) 
 {
-    foreach ($imagesProjet as $uneImageProjet) 
-    {
-        echo "
-        <div id='uneImage'>
-            <h3>".$uneImageProjet['titre']."</h3>
-            <img id='tailleImage' src='".$uneImageProjet['adresse']."' alt='L image n\'apparait pas'/>
-        </div>";
-    }
+?>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade w-50" data-ride="carousel">
+      <div class="carousel-inner">
+        <?php
+        
+        $i = 0;
+        foreach ($imagesProjet as $uneImageProjet) {
+          $actives = '';
+          if($i == 0){
+            $actives ='active';
+        }    
+          ?>
+        <div class="carousel-item <?= $actives; ?>">
+          <?php echo "<img class='d-block w-100' src=".$uneImageProjet['adresse'].">"; ?>
+            <div class="carousel-caption d-none d-md-block">
+              <h5><?php echo $uneImageProjet['titre'];  ?></h5>
+              <p>...</p>
+            </div>
+        </div>
+       <?php
+        $i++;
+        } ?>
+
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Précédent</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Suivant</span>
+      </a>
+
+    </div>
+<?php
 } 
 else
 {
