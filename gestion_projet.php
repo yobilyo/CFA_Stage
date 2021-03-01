@@ -43,6 +43,7 @@
 
 	if (isset($_POST['modifier']))
 	{
+		// d'abord on insère le projet
 		$tab=array(
 			"nom"=>$_POST["nom"],
 			"description"=>$_POST['description'],
@@ -50,19 +51,29 @@
 			"pays"=>$_POST['pays'],
 			"ville"=>$_POST['ville'],
 			"budget"=>$_POST['budget'],
-			"somme_collecte"=>$_POST['somme_collecte'],
-			"id_Utilisateur"=> $_SESSION['id'],
-			"id_Association"=>$_POST['id_Association']
+			"somme_collecte"=>$_POST['somme_collecte']
 		);
-	
-		$where =array("id"=>$idprojet);
+		// pour le update on n'insère les clés étrangères, elles sont dans le where uniquement pour la recherche de l'entrée sql à modifier
+		$where =array(
+			"id"=>$idprojet,
+			"id_Utilisateur"=> $_SESSION['id'],
+			"id_Association"=>"1"
+		);
 		$unControleur->update($tab, $where);
+		//update projet set nom = "ooo", description = "uuuu" etc... where id = $_GET['id'] and id_Utilisateur = $_POST['id_Utilisateur'] and id_Association = '1';
+
+		//puis on insère l'image correspondante
+		$id = $_GET['id'];
+		require_once("index.php?page=351&id=".$id);
 	}
 
 	if (isset($_POST['valider']))
 	{
 		var_dump($_POST);
 		var_dump($_FILES);
+
+		// on insère le projet
+		$unControleur->setTable("projet");
 		$tab=array(
 			"nom"=>$_POST["nom"],
 			"description"=>$_POST['description'],
@@ -72,10 +83,28 @@
 			"budget"=>$_POST['budget'],
 			"somme_collecte"=>$_POST['somme_collecte'],
 			"id_Utilisateur"=>$_SESSION['id'],
-			"id_Association"=>1//$_POST['id_Association']
+			"id_Association"=>"1"
 		);
-
+		var_dump($tab);
 		$unControleur->insert($tab);
+
+		//puis on insère l'image
+		//pour cela, on doit d'abord récupérer l'id du projet qui vient d'etre inséré
+		$unControleur->setTable("projet");
+		$where = array(
+			"nom"=>$_POST["nom"],
+			"description"=>$_POST['description'],
+			"date_lancement"=>$date,
+			"pays"=>$_POST['pays'],
+			"ville"=>$_POST['ville'],
+			"budget"=>$_POST['budget'],
+			"somme_collecte"=>$_POST['somme_collecte'],
+			"id_Utilisateur"=>$_SESSION['id'],
+			"id_Association"=>1
+		);
+		$unProjet = $unControleur->selectWhereLike($where);
+		$id = $unProjet['id'];
+		require_once("index.php?page=351&id=".$id);
 	}
 
 	$unControleur->setTable ("les_projets");

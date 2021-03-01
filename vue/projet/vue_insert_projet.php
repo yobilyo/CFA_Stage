@@ -3,7 +3,7 @@
 
 <br/>
 <?php 
-	echo "<form action='index.php?page=351&id=".$_GET['id']."' method='post' enctype='multipart/form-data'>
+	echo "<form action='' method='post' enctype='multipart/form-data'>
 	<input type='file' name='file' />
 	<button type='submit' name='upload'>upload</button>
 	</form>";
@@ -63,7 +63,9 @@
 
 		<tr>
 		
+			<!--
 			<td><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload"></td>
+			-->
 
 			<?php/*
 

@@ -136,6 +136,33 @@
 			}
 		}
 
+		public function selectWhereLike ($tab)
+		{
+			if ($this->unPdo != null){
+				//construction du where 
+				$listeChamps = array(); 
+				$donnees =array();
+				foreach ($tab as $cle => $valeur) {
+					$listeChamps[] = $cle." like ".":".$cle ;
+					$donnees[":".$cle] = "%".$valeur."%";
+				}
+				//select * from projet where nom like :nom
+				// :nom => "%songoku%"
+				$chaineChamps = implode(" and ", $listeChamps); 
+
+				$requete = "select * from   ".$this->uneTable. " where ".$chaineChamps.";" ;
+				$select = $this->unPdo->prepare ($requete); 
+				$select->execute ($donnees); 
+				echo $requete;
+				return $select->fetch(); //un seul résultat.
+				
+			}
+			else
+			{
+				return null; 
+			}
+		}
+
 
 		public function selectWhereAll ($tab)
 		{
@@ -169,7 +196,7 @@
 				$requete='SELECT * FROM '.$this->uneTable.' WHERE nom LIKE :nomProjet;';
 				
 				$donnees = array(':nomProjet'=>"%".$nomProjet."%");	//% signifie n'importe(s) qu'elle(s) caractere(s) 	(un ou plusieurs)
-															//? signifie n'importe qu'elle caractère 			(un seul)
+				//? signifie n'importe qu'elle caractère 			(un seul)
 				$select=$this->unPdo->prepare($requete);
 				$select->execute($donnees);
 				return $select->fetchAll();
@@ -227,8 +254,8 @@
 				}
 				$chaineValeurs = implode(", ", $listeValeurs);
 				$requete = " update  ".$this->uneTable." set ".$chaineValeurs."  where  ".$chaineChamps.";"; 
-				//var_dump($donnees);
-				//var_dump($requete);
+				var_dump($donnees);
+				var_dump($requete);
 				
 				$update = $this->unPdo->prepare ($requete); 
 				$update->execute ($donnees); 
