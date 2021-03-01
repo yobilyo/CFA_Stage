@@ -83,6 +83,11 @@
 					case 35:
 						require_once("gestion_projet.php");
 						break;
+
+					// upload
+					case 351: 
+						require_once("upload.php");
+						break;
 					
 					case 36:
 						require_once("gestion_commentaire.php");

@@ -61,6 +61,8 @@
 
 	if (isset($_POST['valider']))
 	{
+		var_dump($_POST);
+		var_dump($_FILES);
 		$tab=array(
 			"nom"=>$_POST["nom"],
 			"description"=>$_POST['description'],

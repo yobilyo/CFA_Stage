@@ -73,7 +73,10 @@
 
 				$requete = "insert  into  ".$this->uneTable."(".$chaineAttributs.")  values( ".$chaineChamps.") ; " ;
 				$insert = $this->unPdo->prepare ($requete); 
+				echo $requete;
+				var_dump($donnees);
 				$insert->execute ($donnees); 
+				
 			}
 		}
 

@@ -2,6 +2,13 @@
 <h2> Ajout d'un projet </h2>
 
 <br/>
+<?php 
+	echo "<form action='index.php?page=351&id=".$_GET['id']."' method='post' enctype='multipart/form-data'>
+	<input type='file' name='file' />
+	<button type='submit' name='upload'>upload</button>
+	</form>";
+?>
+
 
 <form method ="post" action ="">
 	<table>
@@ -56,8 +63,7 @@
 
 		<tr>
 		
-			<td><input style="margin:50px 0px;" type="file" name="fileToUpload" id="fileToUpload"></td>
-  			<td><input style="margin:50px 0px;" type="submit" value="Télécharger une image" name="submit"></td>
+			<td><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload"></td>
 
 			<?php/*
 
