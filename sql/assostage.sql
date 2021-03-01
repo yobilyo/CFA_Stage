@@ -261,6 +261,7 @@ INSERT INTO projet values (null, "Action contre la pauvrete", "Distribution d'ar
 insert into image values (null, "lib/images/projet/faim/main.jpg", "main", "A table !", 1);
 insert into image values (null, "lib/images/projet/froid/main.jpg", "main", "Tchin tchin !", 2);
 insert into image values (null, "lib/images/projet/pauvrete/main.jpg", "main", "L'éducation pour tous !", 3);
+insert into image values (null, "lib/images/projet/faim/main.jpg", "main", "A table !", 1);
 
 INSERT INTO video values (null,"https://www.youtube.com/embed/jgVqr3lS_9U", "main", "La faim ne recule pas, nous non plus !", 1);
 
@@ -273,8 +274,8 @@ INSERT  mode_de_paiement values (null, "PayPal", "lib/images/mode_de_paiement/pa
 insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
 insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 2,2,1,1);
 insert into Don values (NULL, 133, "2020-11-03", "Bien vu !", "valide", 3,3,1,1);
-insert into Don values (NULL, 50, "2020-12-04", "Wow !", "en cours", 1,3,4,1);
-insert into Don values (NULL, 75, "2021-01-05", "Very nice !", "en cours", 2,1,3,1);
+insert into Don values (NULL, 50, "2020-12-04", "Wow !", "en_attente", 1,3,4,1);
+insert into Don values (NULL, 75, "2021-01-05", "Very nice !", "en_attente", 2,1,3,1);
 insert into Don values (NULL, 133, "2021-02-06", "Ca va", "valide", 3,2,2,1);
 
 INSERT INTO commentaire values (null, "2020-12-01 10:34:09","Bon projet", 15, 1, 1);
