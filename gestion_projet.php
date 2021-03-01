@@ -10,6 +10,9 @@
 	$unControleur->setTable ("projet");
 		
 	$leProjet = null; 
+
+	$date = date('d-m-y');
+	echo $date ."<br/>";
 	
 	if (isset($_GET['action']) && isset($_GET['id']))
 	{
@@ -43,12 +46,12 @@
 		$tab=array(
 			"nom"=>$_POST["nom"],
 			"description"=>$_POST['description'],
-			"date_lancement"=>$_POST['date_lancement'],
+			"date_lancement"=>$date,
 			"pays"=>$_POST['pays'],
 			"ville"=>$_POST['ville'],
 			"budget"=>$_POST['budget'],
 			"somme_collecte"=>$_POST['somme_collecte'],
-			"id_Utilisateur"=>$_POST['id_Utilisateur'],
+			"id_Utilisateur"=> $_SESSION['id'],
 			"id_Association"=>$_POST['id_Association']
 		);
 	
@@ -61,13 +64,13 @@
 		$tab=array(
 			"nom"=>$_POST["nom"],
 			"description"=>$_POST['description'],
-			"date_lancement"=>$_POST['date_lancement'],
+			"date_lancement"=>$date,
 			"pays"=>$_POST['pays'],
 			"ville"=>$_POST['ville'],
 			"budget"=>$_POST['budget'],
 			"somme_collecte"=>$_POST['somme_collecte'],
-			"id_Utilisateur"=>$_POST['id_Utilisateur'],
-			"id_Association"=>$_POST['id_Association']
+			"id_Utilisateur"=>$_SESSION['id'],
+			"id_Association"=>1//$_POST['id_Association']
 		);
 
 		$unControleur->insert($tab);

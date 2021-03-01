@@ -10,8 +10,8 @@
 				<th>Ville</th>
 				<th>Budget</th> 
 				<th>Somme Collectée</th>
-				<th>Id Utilisateur</th> 
-				<th>Id Association</th> 
+				<th>Publié par</th> 
+				<!--<th>Id Association</th>-->
 				<th>Opérations</th>	
 			</tr>
 
@@ -21,7 +21,8 @@
 			<?php 
 			foreach ($lesProjets as $unProjet) 
 			{
-				echo "<tr> 
+				echo //<td>".$unProjet['somme_collecte']." </td>
+					"<tr> 
 						<td>".$unProjet['id']." </td>
 						<td>".$unProjet['nom']." </td>
 						<td>".$unProjet['description']." </td>
@@ -30,8 +31,8 @@
 						<td>".$unProjet['ville']." </td>
 						<td>".$unProjet['budget']." </td>
 						<td>".$unProjet['somme_collecte']." </td>
-						<td>".$unProjet['id_Utilisateur']."
-						<td>".$unProjet['id_Association']." </td>
+						<td> User ".$unProjet['id_Utilisateur']."</td>
+						
 					
 						<td>
 						<a href='index.php?page=35&action=sup&id=".$unProjet['id']."'>

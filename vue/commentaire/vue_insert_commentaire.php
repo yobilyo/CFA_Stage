@@ -6,10 +6,6 @@
 <form method ="post" action ="">
 	<table>
 		<tr> 
-			<td> Date : </td> 
-			<td> <input type="date" class="form-control" name="dateCom" value ="<?php echo ($leCommentaire!=null) ? $leCommentaire['dateCom']:""; ?>"></td>
-		</tr>
-		<tr> 
 			<td> Contenu : </td> 
 			<td> 
 				<textarea  class="form-control" name="contenu"  rows="5" cols="33"> </textarea>

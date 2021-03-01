@@ -11,6 +11,9 @@
 		
 	$leCommentaire = null; 
 
+	$date = date('d-m-y h:m:s');
+	echo $date ."<br/>";
+
 	if (isset($_GET['action']) && isset($_GET['id']))
 	{
 		$idcomment = $_GET['id']; 
@@ -40,7 +43,7 @@
 		
 	if (isset($_POST['modifier']))
 	{
-		$tab=array("dateCom"=>$_POST['dateCom'], 
+		$tab=array("dateCom"=>$date, 
 		"contenu"=>$_POST['contenu'],
 		"note"=>$_POST['note'],
 		"id_Utilisateur"=>$_POST['id_Utilisateur'],
@@ -52,7 +55,7 @@
 
 	if (isset($_POST['valider']))
 	{
-		$tab=array("dateCom"=>$_POST['dateCom'], 
+		$tab=array("dateCom"=>$date, 
 		"contenu"=>$_POST['contenu'],
 		"note"=>$_POST['note'],
 		"id_Utilisateur"=>$_POST['id_Utilisateur'],

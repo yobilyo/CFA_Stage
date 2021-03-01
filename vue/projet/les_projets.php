@@ -23,7 +23,7 @@
     /*LA RECHERCHE*/
 	if(isset($_POST['ok'])) //recherche la ville
 	{
-		$unControleur->setTable ("les_projets_image_main");
+		$unControleur->setTable("les_projets_image_main");
         $lesProjets = $unControleur->selectByNomProjet($_POST['nomProjet']);
         //var_dump($lesProjets);
 	}

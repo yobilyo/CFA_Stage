@@ -5,7 +5,6 @@
 
 <ul id="navbar">
 	<li><a href="index.php?page=0"><img src="./lib/images/asso-logo-navbar.png" alt="Accueil" title="Accueil"/></a></li>
-	<li><a href="index.php?page=2">Utilisateurs</a></li> | 
 	<li><a href="index.php?page=3">Projets</a></li> |
 	
 	<?php if($_SESSION["droits"] == "administrateur")
@@ -13,6 +12,7 @@
 		echo "<li class='afficher_dropdown'>Ajouter/Lister<span style='font-size:0.70em;'>▼</span></a>
 		<span class='baisser_le_dropdown'>
 		<ul class='dropdown'>
+			<li><a class='lien_dropdown' href='index.php?page=2'>Utilisateurs</a></li>
 			<li><a  class='lien_dropdown' href='index.php?page=35'>Projets</a></li>
 			<li><a  class='lien_dropdown' href='index.php?page=36'>Commentaires</a></li>
 			<li><a class='lien_dropdown' href='index.php?page=6'>Association</a></li>
