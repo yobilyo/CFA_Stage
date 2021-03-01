@@ -1,0 +1,79 @@
+*
+{
+    margin:0;
+    padding:0;
+}
+
+#textarea_com
+{
+    width: 520px;
+    height: 130px;
+    margin-bottom:8px;
+    padding:10px 15px 10px 15px;
+}
+
+.boutton_com
+{
+    margin-top:30px;
+}
+
+#info_com
+{
+    margin-bottom:5px; 
+    display:flex;
+    justify-content: space-between;
+}
+
+#nom_com
+{
+    font-style: italic;
+    color:grey;
+    align-content: flex-start;
+}
+
+#note_com 
+{
+    font-size: 0.75em;
+    align-content: flex-end;
+}
+
+#cadre_contenu_com
+{
+    width:700px;
+    margin-bottom:20px;
+}
+
+#border_contenu_com 
+{
+    box-shadow: 0px 0px 2px grey;
+    border-radius: 12px;
+    padding:35px; 
+    width:700px;
+}
+
+#contenu_com
+{
+    text-align:left;
+}
+
+/*traite la date et la modification et la suppression*/
+
+    #bas_com 
+    {
+        margin-top: 5px;
+        display:flex;
+        justify-content: space-between;
+        width: 700px;
+    }
+
+    #action_com
+    {
+        align-content: flex-start;
+    }
+
+    #date_com 
+    {
+        font-size:0.8em;
+        color:grey;
+        align-content: flex-end;
+    }

@@ -1,38 +1,49 @@
-<link rel="stylesheet" href="vue/style/membre_projet.css"/>
-
+<link rel="stylesheet" href="vue/style/les_projets.css"/>
 <h1>Nos projets : </h1>
 
 <br/>
 
 <form method="post" action="">
     <table>
-       
         <tr>
-            <td><input type="text" name="recherche" placeholder="Entrer un projet"/></td>
+            <td><input type="text" name="nomProjet" placeholder="Entrer le nom d'un projet" style="width: 300px;"></td>
             <td><input type="submit" name='ok' value='Rechercher'></td>
 	    </tr>
     </table>
 </form> 
 
-<br/><br/>
+<?php
+    // initialisation à placer avant la recherche qui pourrait
+    // actualiser cette valuer
+    //on utilise la vue projet main qui contient aussi l'image main
+    $unControleur->setTable ("les_projets_image_main");
+    $tab = array("*");
+    $lesProjets = $unControleur->selectAll($tab);
 
-<?php 
+    /*LA RECHERCHE*/
+	if(isset($_POST['ok'])) //recherche la ville
+	{
+		$unControleur->setTable ("les_projets_image_main");
+        $lesProjets = $unControleur->selectByNomProjet($_POST['nomProjet']);
+        //var_dump($lesProjets);
+	}
+    echo "<br/>";
 
-//$lesProjets est declare dans l'index
-
-foreach ($lesProjets as $unProjet)
-{
-    //<img src=" . $unProjet["image"] . "/> (peut etre inserer apres le h3)
-    echo "
-        <section id='un_projet'>
-        <a href='index.php?page=5'>
-            <h3 id='titre_projet'>" . $unProjet['nom'] . "</h3>
-            <p id='description_projet'>" . $unProjet['description'] . "</p>
-            <p id='somme_collecte'> Somme collecté : " .$unProjet['somme_collecte']. " €</p>
-        </a>
-        <a id='commentaire_projet' href='index.php?page=5#commentaires'>Voir les commentaires</a>
-        </section><br/><br/>";
-}
+    foreach ($lesProjets as $unProjet)
+    {
+        //<img src=" . $unProjet["image"] . "/> (peut etre inserer apres le h3)
+        echo "
+            <section id='un_projet'>
+                <img id='imageUnProjet' src='".$unProjet['adresse']."' width='300'></img>
+                <a href='index.php?page=5&idprojet=".$unProjet['id']."#hautdepage'>
+                    <h3 id='titre_projet'>" . $unProjet['nom'] . "</h3>
+                    <p>Date de lancement : " .$unProjet['date_lancement']. "</p>
+                    <p id='somme_collecte'>Somme collecté : " .$unProjet['somme_collecte']. " €</p>
+                </a>
+                <p style='padding-top: 80px;'>Faire un don pour ce projet</p>
+                <p style='padding-bottom: 20px;'><a href='index.php?page=5&idprojet=".$unProjet['id']."#commentaires'>Voir les commentaires</a></p>       
+            </section>
+            
+            <br/>";
+    }
 ?>
-
-<!--                -->

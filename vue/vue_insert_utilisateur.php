@@ -11,18 +11,18 @@
 		</tr>
 		<tr> 
 			<td> Droits : </td> 
-			<!-- $lUtilisateur -->
+			<!-- $unUtilisateur -->
 			<td>
 				<select name='droits' class="form-control form-control-sm">
 					<!-- choix de la valeur sélectionnée en cours avec le mot clé HTML selected https://www.geeksforgeeks.org/how-to-set-the-default-value-for-an-html-select-element/-->
 					<?php
-						if ($lUtilisateur == null) {
+						if ($unUtilisateur == null) {
 							echo "<option value='utilisateur'>utilisateur</option>
 								  <option value='administrateur'>administrateur</option>";
-						} else if ($lUtilisateur['droits'] == "utilisateur") {
+						} else if ($unUtilisateur['droits'] == "utilisateur") {
 							echo "<option value='utilisateur' selected>utilisateur</option>
 								  <option value='administrateur'>administrateur</option>";
-						} else if ($lUtilisateur['droits'] == "administrateur") {
+						} else if ($unUtilisateur['droits'] == "administrateur") {
 							echo "<option value='utilisateur' >utilisateur</option>
 								  <option value='administrateur' selected>administrateur</option>";
 						}
@@ -36,7 +36,7 @@
 		</tr>
         <tr> 
 			<td> Mot de passe : </td> 
-			<!-- $lUtilisateur -->
+			<!-- $unUtilisateur -->
 			<td> <input type="password" class="form-control" required="required" name="mdp" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['mdp']:""; ?>" ></td>
 		</tr>
         <tr> 

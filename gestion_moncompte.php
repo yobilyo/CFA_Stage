@@ -5,10 +5,10 @@
         $unControleur->setTable ("utilisateur");
         $where = array('id' => $_SESSION['id']);
         //pour les salariés on utilise un fetch qui retourne un seul résultat donc on le stock dans une array de arraydeRésultat
-        $lUtilisateur = $unControleur->selectWhere ($where);
+        $unUtilisateur = $unControleur->selectWhere ($where);
         // requete:
         // SELECT * from utilisateur where id = $_SESSION['id'];
-        $lesUtilisateurs = array($lUtilisateur); //on construit un deuxieme tableau pour le selectAll qui contient le tableau selectWhere
+        $lesUtilisateurs = array($unUtilisateur); //on construit un deuxieme tableau pour le selectAll qui contient le tableau selectWhere
 
         // pour les participations et les autres tables, on utilise la méthode fetchAll qui retourne un tableau contenant plusieurs tableaux donc on n' a pas besoin de créer un tableau pour contenir les résutats car ils sont déjà dans un tableau
         $unControleur->setTable ("les_projets"); // vue qui auto update la somme des dons

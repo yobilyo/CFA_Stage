@@ -41,7 +41,21 @@
 			}
 		}
 
-
+		public function selectAllOrderByDesc ($tab, $order) 
+		{
+			if ($this->unPdo != null)
+			{
+				$chaine = implode(", ", $tab); 
+				$requete = "select ".$chaine." from " .$this->uneTable. " order by " .$order." DESC ; ";
+				$select = $this->unPdo->prepare ($requete); 
+				$select->execute (); 
+				return $select->fetchAll();  
+			} 
+			else 
+			{
+				return null; 
+			}
+		}
 
 		public function insert ($tab){
 			//$tab est le $_POST du formulaire 
@@ -109,7 +123,9 @@
 				$requete = "select * from   ".$this->uneTable. " where ".$chaineChamps.";" ;
 				$select = $this->unPdo->prepare ($requete); 
 				$select->execute ($donnees); 
+				echo $requete;
 				return $select->fetch(); //un seul résultat.
+				
 			}
 			else
 			{
@@ -138,6 +154,22 @@
 			else
 			{
 				return null; 
+			}
+		}
+		
+		//pour rechercher un projet
+		public function selectByNomProjet($nomProjet)
+		{
+			if($this->unPdo!=null)
+			{
+				//selectionne tout les projets qui ont dans leur nom le mot nomProjet
+				$requete='SELECT * FROM '.$this->uneTable.' WHERE nom LIKE :nomProjet;';
+				
+				$donnees = array(':nomProjet'=>"%".$nomProjet."%");	//% signifie n'importe(s) qu'elle(s) caractere(s) 	(un ou plusieurs)
+															//? signifie n'importe qu'elle caractère 			(un seul)
+				$select=$this->unPdo->prepare($requete);
+				$select->execute($donnees);
+				return $select->fetchAll();
 			}
 		}
 

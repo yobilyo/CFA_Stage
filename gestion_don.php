@@ -12,19 +12,19 @@
         echo "<br/><h2> Modification des dons</h2>";
 
         $unControleur->setTable ("Projet");
-        $tab=array("id", "nom","date_lancement");
+        $tab=array("*");
         $lesProjets = $unControleur->selectAll ($tab); 
 
         $unControleur->setTable ("Utilisateur");
-        $tab=array("id", "nom", "prenom");
+        $tab=array("*");
         $lesUsers = $unControleur->selectAll ($tab);
 
         $unControleur->setTable ("Mode_de_paiement");
-        $tab=array("id", "mode");
+        $tab=array("*");
         $lesModesdePaiements = $unControleur->selectAll ($tab);
 
         $unControleur->setTable ("Association");
-        $tab=array("id", "libelle");
+        $tab=array("*");
         $lesAssociations = $unControleur->selectAll ($tab);
 
         $unControleur->setTable ("don");

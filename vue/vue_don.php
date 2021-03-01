@@ -17,7 +17,7 @@
 
 		<tbody>
             <?php 
-            print_r($lesDons);
+            //print_r($lesDons);
 			foreach ($lesDons as $unDon) {
 				echo "<tr> 
 						<td>".$unDon['id']." </td>

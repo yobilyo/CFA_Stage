@@ -1,0 +1,31 @@
+#description 
+{
+    text-align: justify;
+    width: 900px;
+    margin: 90px 0px 90px 0px;
+    padding: 40px 75px 40px 75px;
+    background-color: #F8F9F9;
+    box-shadow: 0px 0px 2px grey;
+}
+
+.info_projet
+{
+    color:#A6ACAF;
+    margin:10px 0px 10px 0px;
+}
+
+.h2_projet
+{
+    margin:100px 0px 100px 0px;
+}
+
+#commentaires 
+{
+    margin:100px 0px 100px 0px;
+}
+
+#tailleImage
+{
+    box-shadow: 2px 2px 10px grey;
+    width: 600px;
+}

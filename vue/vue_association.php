@@ -14,7 +14,7 @@
 
 		<tbody>
             <?php 
-            print_r($lesAssociations);
+            //print_r($lesAssociations);
 			foreach ($lesAssociations as $uneAssociation) {
 				echo "<tr> 
 						<td>".$uneAssociation['id']." </td>
