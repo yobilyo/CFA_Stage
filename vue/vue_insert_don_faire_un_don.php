@@ -35,18 +35,18 @@
         <h3 class='title_faireDon'>3. Mon réglement</h3>
         <input type='text' placeholder='Numéro de carte bancaire'/>
         <input type='number' placeholder="CVC" max="999" name="CVC">
+        <br/>
         <legend>Mode de Paiement : </legend>
-        
-
+        <div id="modePaiement">
         <?php foreach ($lesModesdePaiements as $unModeDePaiement)
         {
-            echo "<div class='container-fluid'>
+            echo "<div id='colonnePaiement'>
                     <img src='".$unModeDePaiement['image_url']."' width='30'></img>
-                    <input class='form-check-input' type='radio' name='id_Mode_de_paiement' value='".$unModeDePaiement['id']."'>  
+                    <input class='form-check-input' type='radio' name='id_Mode_de_paiement' value='".$unModeDePaiement['id']."'>
                 </div> ";
         }
-
         ?>
+        </div>
     </div>
 </div>
 </form>
