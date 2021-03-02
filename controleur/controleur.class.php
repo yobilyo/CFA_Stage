@@ -65,6 +65,11 @@
 			return $this->unModele->selectWhere($tab);
 		}
 
+		public function selectWhereLike ($tab)
+		{
+			return $this->unModele->selectWhereLike($tab);
+		}
+
 		public function selectWhereAll ($tab)
 		{
 			return $this->unModele->selectWhereAll($tab);
