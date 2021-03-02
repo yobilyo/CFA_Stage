@@ -8,7 +8,7 @@
 		<tr> 
 			<td> Contenu : </td> 
 			<td> 
-				<textarea  class="form-control" name="contenu"  rows="5" cols="33"> </textarea>
+				<textarea  class="form-control" name="contenu"  rows="5" cols="33"><?php echo ($leCommentaire!=null) ? $leCommentaire['contenu']:""; ?></textarea>
 			</td>
 		</tr>
 		<tr> 

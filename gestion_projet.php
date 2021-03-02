@@ -11,7 +11,7 @@
 		
 	$leProjet = null; 
 
-	$date = date('d-m-y');
+	$date = date('y-m-d');
 	echo $date ."<br/>";
 	
 	if (isset($_GET['action']) && isset($_GET['id']))

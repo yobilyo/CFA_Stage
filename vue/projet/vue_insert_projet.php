@@ -21,7 +21,7 @@
 		<tr> 
 			<td>Description : </td> 
 			<td> 
-				<textarea  class="form-control" name="description"  rows="5" cols="33" required> </textarea>
+				<textarea  class="form-control" name="description"  rows="5" cols="33" required><?php echo ($leProjet!=null) ? $leProjet['description']:""; ?></textarea>
 			</td>
 		</tr>
 
@@ -63,7 +63,7 @@
 
 		<tr>
 		
-			<td><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload"></td>
+			<!--<td><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload"></td>-->
 
 			<?php/*
 
