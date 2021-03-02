@@ -14,17 +14,18 @@
 			<!-- $unUtilisateur -->
 			<td>
 				<select name='droits' class="form-control form-control-sm">
-					<!-- choix de la valeur sélectionnée en cours avec le mot clé HTML selected https://www.geeksforgeeks.org/how-to-set-the-default-value-for-an-html-select-element/-->
 					<?php
-						if ($unUtilisateur == null) {
-							echo "<option value='utilisateur'>utilisateur</option>
-								  <option value='administrateur'>administrateur</option>";
-						} else if ($unUtilisateur['droits'] == "utilisateur") {
-							echo "<option value='utilisateur' selected>utilisateur</option>
-								  <option value='administrateur'>administrateur</option>";
-						} else if ($unUtilisateur['droits'] == "administrateur") {
-							echo "<option value='utilisateur' >utilisateur</option>
-								  <option value='administrateur' selected>administrateur</option>";
+						$lesDroits = array("utilisateur", "administrateur");
+						foreach ($lesDroits as $unDroit) {
+							// sélection du droit égal à celui de l'utilisateur actuel
+
+							$selected = "";
+							if ($unDroit == $unUtilisateur['droits']) {
+								$selected = " selected";
+							} else {
+								$selected = " ";
+							}
+							echo "<option value ='".$unDroit."' ".$selected.">".$unDroit."</option>";
 						}
 					?>
 				</select>
