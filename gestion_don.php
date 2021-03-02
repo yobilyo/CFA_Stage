@@ -87,7 +87,7 @@
                         "id_Utilisateur"=>$_POST['id_Utilisateur'],
                         "id_Projet"=>$_POST['id_Projet'],
                         "id_Mode_de_paiement"=>$_POST['id_Mode_de_paiement'],
-                        "id_Association"=>$_POST['id_Association']  
+                        "id_Association"=>1 
                     );
             $unControleur->setTable ("don");
             $where =array("id"=>$id_don);
@@ -107,7 +107,7 @@
                         "id_Utilisateur"=>$_POST['id_Utilisateur'],
                         "id_Projet"=>$_POST['id_Projet'],
                         "id_Mode_de_paiement"=>$_POST['id_Mode_de_paiement'],
-                        "id_Association"=>$_POST['id_Association']  
+                        "id_Association"=>1 
                     );
             $unControleur->insert($tab);
             //header("Location: index.php?page=42");

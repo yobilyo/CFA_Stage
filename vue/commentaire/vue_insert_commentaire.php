@@ -21,7 +21,15 @@
 			<td> <select class="form-control form-control-sm" name ="id_Utilisateur">
 					 <?php
 					 	foreach ($lesUsers as $unUser) {
-					 		echo "<option value ='".$unUser['id']."'>".$unUser['nom']."  ".$unUser['prenom']."</option>";
+							// sélection de l'utilisateur qui a fait le commentaire
+							$selected = "";
+							if ($unUser['id'] == $leCommentaire['id_Utilisateur']) {
+								$selected = " selected";
+							} else {
+								$selected = " ";
+							}
+
+					 		echo "<option value ='".$unUser['id']."' ".$selected.">".$unUser['nom']."  ".$unUser['prenom']."</option>";
 					 	}
 					 ?>
 				</select>
@@ -34,8 +42,15 @@
 					 <?php
 					 	foreach ($lesProjets as $unProjet) 
 						{
+							// sélection du projet correspondant au commentaire actuel
+							$selected = "";
+							if ($unProjet['id'] == $leCommentaire['id_Projet']) {
+								$selected = " selected";
+							} else {
+								$selected = " ";
+							}
 					 		echo "<option value ='"
-							 	.$unProjet['id']."'>"
+							 	.$unProjet['id']."' ".$selected.">"
 								.$unProjet['nom']." - "
 								.$unProjet['date_lancement'].
 							 "</option>";
