@@ -1,4 +1,6 @@
 
+<link rel="stylesheet" href="vue/style/slider.css"/>
+
 
 <div id="carouselExampleFade" class="carousel slide carousel-fade w-75" data-ride="carousel">
   <div class="carousel-inner">
@@ -14,8 +16,7 @@
     <div class="carousel-item <?= $actives; ?>">
       <?php echo "<img class='d-block w-100' src=".$lImage['adresse'].">"; ?>
         <div class="carousel-caption d-none d-md-block">
-          <h5><?php echo $lImage['titre'];  ?></h5>
-          <p>...</p>
+          <h5 id="titre_Img"><?php echo $lImage['titre'];  ?></h5>
         </div>
     </div>
    <?php
