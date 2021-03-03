@@ -22,13 +22,40 @@
     </div>
 
     <div class="colonne">
-        <h3 class='title_faireDon'>2. Mes coordonnées</h3> 
-        <!-- <input type='text' placeholder='Civilité' name='genre'> -->
-        <input type='text' placeholder='Prénom' name='prenom'>
-        <input type='text' placeholder='Nom' name='nom'>
-        <input type='text' placeholder='E-mail' name='email'>
-        <!-- <input type='text' placeholder='Adresse' name='adresse'>
-        <input type='text' placeholder='Date de naissance' name='naissance'> -->
+        <?php
+            $nom = "";
+            $prenom = "";
+            $email = "";
+            $password = "";
+            //$adresse = "";
+            //$datenaissance = "";
+
+            if (isset($_SESSION['id'])) {
+                // si l'utilisateur est connecté, on met les champs existants en readonly
+                // on actualise la dernière version des données directement dans la table sql
+                $unControleur->setTable("utilisateur");
+                $tab = array("id"=>$_SESSION['id']);
+                $lUtilisateur = $unControleur->selectWhere($tab);
+
+                $nom = "value ='".$lUtilisateur['nom']."' style='background-color:gainsboro;' readonly";
+                $prenom = "value ='".$lUtilisateur['prenom']."' style='background-color:gainsboro;' readonly";
+                $email = "value ='".$lUtilisateur['email']."' style='background-color:gainsboro;' readonly";
+                $password = "value ='hiddenpassword' readonly style='background-color:gainsboro;'";
+                //$adresse = "value ='".$lUtilisateur['adresse']."' style='background-color:gainsboro;' readonly";
+                //$datenaissance = "value ='".$lUtilisateur['datenaissance']."' style='background-color:gainsboro;' readonly";
+            }
+
+            echo "
+            <h3 class='title_faireDon'>2. Mes coordonnées</h3> 
+            <!-- <input type='text' placeholder='Civilité' name='genre'> -->
+            <input type='text' placeholder='Prénom' name='prenom' ".$prenom.">
+            <input type='text' placeholder='Nom' name='nom'".$nom.">
+            <input type='text' placeholder='E-mail' name='email'".$email.">
+            <input type='password' placeholder='Mot de passe' name='password'".$password.">
+            ";
+            //<!-- <input type='text' placeholder='Adresse' name='adresse'".$adresse.">
+            //<input type='text' placeholder='Date de naissance' name='naissance'".$datenaissance."> -->
+        ?>
     </div>
     
     <div class="colonne">
