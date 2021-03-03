@@ -28,6 +28,22 @@
 	</div>
 	<br/>
 
+	Civilite * :
+	<div class='form-group'>
+		<div class='col-sm-8'>
+		<input type="text" required='required' name="civilite" class='form-control'>
+		</div>
+	</div>
+	<br/>
+
+	Date de naissance * :
+	<div class='form-group'>
+		<div class='col-sm-8'>
+		<input type="date" required='required' name="date_naissance" class='form-control'>
+		</div>
+	</div>
+	<br/>
+
 	E-mail * :
 	<div class='form-group'>
 		<div class='col-sm-8'>
@@ -42,6 +58,30 @@
 		
 		<input type="password" required='required' name="mdp" id='myMdp' autocomplete='on' class='form-control'><br/>
 		<input type='checkbox' onclick='showMdp()'> Afficher
+		</div>
+	</div>
+	<br/>
+
+	Adresse * :
+	<div class='form-group'>
+		<div class='col-sm-8'>
+		<input type="text" required='required' name="adresse" class='form-control'><br/>
+		</div>
+	</div>
+	<br/>
+
+	Code Postal * :
+	<div class='form-group'>
+		<div class='col-sm-8'>
+		<input type="text" required='required' name="codePostal" class='form-control'><br/>
+		</div>
+	</div>
+	<br/>
+
+	Ville * :
+	<div class='form-group'>
+		<div class='col-sm-8'>
+		<input type="text" required='required' name="Ville" class='form-control'><br/>
 		</div>
 	</div>
 	<br/>
