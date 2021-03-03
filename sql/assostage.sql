@@ -252,7 +252,7 @@ insert into utilisateur values
 (null, "Fabien", "Barthez", "administrateur", "b@gmail.com", "456","lib/images/photo_profil/membre1.jpg"),
 (null, "Lilian", "Thuram", "membre", "c@gmail.com", "789","lib/images/photo_profil/anonymous.jpg");
 
-INSERT INTO association VALUES (null, "Restos du coeur", 0,0,0, "lib/images/resto-du-coeur-logo.jpg");
+INSERT INTO association VALUES (null, "Restos du coeur", 0,0,0, "lib/images/asso-logo.png");
 
 INSERT INTO projet values (null, "Action contre la faim", "Distribution de nourriture", "2020-12-18", "France", "Paris", 30000, 22000,1,1);
 INSERT INTO projet values (null, "Lutte contre le froid", "Distribution de vetements", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
@@ -275,7 +275,7 @@ insert into image values (null, "lib/images/projet/pauvrete/main.jpg", "main", "
 INSERT INTO video values (null,"https://www.youtube.com/embed/jgVqr3lS_9U", "main", "La faim ne recule pas, nous non plus !", 1);
 INSERT INTO video values (null,"https://www.youtube.com/embed/q8ipLLaS1Vs", "main", "La pauvreté tue. Nous devons lutter contre ça ! ", 2);
 INSERT INTO video values (null,"https://www.youtube.com/embed/UcwtcUSY0YY", "SDF-crise", "La pauvreté tue. Nous devons lutter contre ça ! ", 2);
-INSERT INTO video values (null,"https://www.youtube.com/embed/BR5TsVdQZbo", "main", "La pauvreté du au covid, nous devons pas abandonné !", 3;
+INSERT INTO video values (null,"https://www.youtube.com/embed/BR5TsVdQZbo", "main", "La pauvreté du au covid, nous devons pas abandonner !", 3);
 
 
 INSERT  into mode_de_paiement values (null, "CB", "lib/images/mode_de_paiement/cb_logo.jpg");
