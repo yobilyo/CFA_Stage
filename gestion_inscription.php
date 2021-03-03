@@ -28,6 +28,7 @@
 
         // une fois qu'on est inscrit, on revient à l'index pour se connecter (donc on enlève le get page = 001 de la page d'inscription)
         header('Location: index.php');
+        //var_dump($_POST);
     }
 
 ?>

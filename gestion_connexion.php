@@ -1,6 +1,7 @@
 <?php
     // pour se connecter, on affiche le formulaire de connexion
     require_once("vue/vue_connexion.php");
+    var_dump($_POST);
 
     // lorsqu'on clique sur le bouton se connecter, on teste les infos de connexion dans la table utilisateur, et si cet utilisateur existe bien dans notre base de données sql on se connecte et on entre ses informations dans la $_SESSION
     if (isset($_POST['seconnecter'])) {
