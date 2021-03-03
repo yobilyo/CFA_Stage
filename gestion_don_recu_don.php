@@ -2,7 +2,7 @@
     if (!isset($_SESSION['email'])) {
         echo "ERREUR 404, page non identifiée ";
     } else {
-        print_r($_GET);
+        //print_r($_GET);
         if (!isset($_GET['iddon'])) {
             echo "ERREUR: référence de don non renseignée, impossible de générer un reçu de don.";
             print_r($_GET);
@@ -14,15 +14,15 @@
             $monDon = $unControleur->selectWhere($where);
             // SELECT * from recu_don where id_Don = $_GET['iddon'];
 
-            echo "a";
-            var_dump($monDon);
+            //echo "a";
+            //var_dump($monDon);
 
             if ($monDon != null) {
                 if ($monDon['id_Utilisateur'] == $_SESSION['id'] || $_SESSION['droits'] == 'administrateur') {
                     // les admins ont le droit d'accéder et de générer des dons pour tous les utilisateurs
 
                     echo "<div>Infos Association</div>";
-                    echo "<img src='".$monDon['photo_profil']."' width='200'></img>";
+                    echo "<img src='".$monDon['photo_profil']."' width='170'></img>";
                     echo "<div>Référence de l'association : ".$monDon['id_Association']."</div>";
                     echo "<div>Libelle : ".$monDon['libelle']."</div>";
                     echo "<div>Nombre de projets : ".$monDon['nbprojets']."</div>";
@@ -47,7 +47,7 @@
                     echo "<br/><br/>";
 
                     echo "<div>Infos Projet de ce don</div>";
-                    echo "<img src='".$monDon['adresse_Image']."' width='120'></img>
+                    echo "<img src='".$monDon['adresse_Image']."' width='130'></img>
                     <br/>";
                     echo "<br/>";
                     echo "<div>Référence Projet : ".$monDon['id_Projet']."</div>";
@@ -68,7 +68,7 @@
                 }
             } else {
                 echo "ERREUR: référence de don introuvable dans la base de données, impossible de générer un reçu de don.";
-                print_r($monDon);
+                //print_r($monDon);
             }       
         }
     }

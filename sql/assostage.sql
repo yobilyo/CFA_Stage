@@ -235,13 +235,13 @@ create view recu_don as(
         i.id, i.adresse as adresse_Image, i.titre, i.alt,
         a.id as id_Association, a.photo_profil, a.libelle, a.nbprojets
         from utilisateur u, don d, mode_de_paiement m, projet p, image i, association a
-        where p.id_Utilisateur = u.id
-        and d.id_Utilisateur = u.id
-        and d.id_Mode_de_Paiement = m.id
-        and i.id_Projet = p.id
-        and i.titre like 'main'
-        and p.id_Association = a.id
+        where u.id = d.id_Utilisateur
+        and d.id_Mode_de_paiement = m.id
         and d.id_Association = a.id
+        and d.id_Projet = p.id
+        and p.id = i.id_Projet
+        and i.titre like 'main'
+        #and p.id_Association = a.id
 );
 
 
