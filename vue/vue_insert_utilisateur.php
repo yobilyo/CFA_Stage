@@ -9,13 +9,42 @@
 			<td> Prenom : </td> 
 			<td> <input type="text" class="form-control" name="prenom" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['prenom']:""; ?>" ></td>
 		</tr>
+
+		<tr> 
+			<td> Civilite : </td> 
+			<!-- $unUtilisateur -->
+			<td>
+				<select name='civilite' class="form-control form-control-sm">
+					<?php
+						$lesCivilites = array("M", "Mme", "Mlle");
+						foreach ($lesCivilites as $uneCivilite) {
+							// sélection du droit égal à celui de l'utilisateur actuel
+
+							$selected = "";
+							if ($uneCivilite == $unUtilisateur['civilite']) {
+								$selected = " selected";
+							} else {
+								$selected = " ";
+							}
+							echo "<option value ='".$uneCivilite."' ".$selected.">".$uneCivilite."</option>";
+						}
+					?>
+				</select>
+			</td>
+		</tr>
+
+		<tr> 
+			<td> Date de naissance : </td> 
+			<td> <input type="date" class="form-control" name="date_naissance" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['date_naissance']:""; ?>" ></td>
+		</tr>
+
 		<tr> 
 			<td> Droits : </td> 
 			<!-- $unUtilisateur -->
 			<td>
 				<select name='droits' class="form-control form-control-sm">
 					<?php
-						$lesDroits = array("utilisateur", "administrateur");
+						$lesDroits = array("membre", "administrateur");
 						foreach ($lesDroits as $unDroit) {
 							// sélection du droit égal à celui de l'utilisateur actuel
 
@@ -40,7 +69,28 @@
 			<!-- $unUtilisateur -->
 			<td> <input type="password" class="form-control" required="required" name="mdp" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['mdp']:""; ?>" ></td>
 		</tr>
-        <tr> 
+        <tr>
+
+		<tr> 
+			<td> Adresse : </td> 
+			<td> <input type="text" class="form-control" name="adresse" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['adresse']:""; ?>" ></td>
+		</tr>
+
+		<tr> 
+			<td> Code postal : </td> 
+			<td> <input type="text" class="form-control" name="codePostal" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['codePostal']:""; ?>" ></td>
+		</tr>
+
+		<tr> 
+			<td> Ville : </td> 
+			<td> <input type="text" class="form-control" name="ville" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['ville']:""; ?>" ></td>
+		</tr>
+
+		<tr> 
+			<td> Pays : </td> 
+			<td> <input type="text" class="form-control" name="pays" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['pays']:""; ?>" ></td>
+		</tr>
+
 			<td> Photo de profil (URL) : </td> 
 			<td> <input type="text" class="form-control" name="photo_profil" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['photo_profil']:"lib/images/photo_profil/nom_image.jpg"; ?>" ></td>
 		</tr>
