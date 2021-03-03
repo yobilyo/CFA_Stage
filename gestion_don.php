@@ -2,7 +2,7 @@
     if (!isset($_SESSION['email'])) {
         echo "ERREUR 404, page non identifiée ";
     } else if ($_SESSION['droits'] == "administrateur") {
-        echo "<br/>
+        echo "
         <img src='lib/images/pages/don.png' width='200'></img>
         <br/>";
         
