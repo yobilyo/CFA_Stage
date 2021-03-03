@@ -241,7 +241,6 @@ create view recu_don as(
         and d.id_Projet = p.id
         and p.id = i.id_Projet
         and i.titre like 'main'
-        #and p.id_Association = a.id
 );
 
 
