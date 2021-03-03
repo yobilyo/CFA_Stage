@@ -22,20 +22,13 @@
 				echo "<tr> 
 						<td>".$unDon['id']." </td>
 						<td>".$unDon['montant']." </td>
-                        <td>".
-                        $unDon['dateDon']." </td>
-                        <td>".
-                        $unDon['appreciation']." </td>
-                        <td>".
-                        $unDon['statut']." </td>
-                        <td>".
-                        $unDon['id_Utilisateur']." </td>
-                        <td>".
-                        $unDon['id_Projet']." </td>
-                        <td>".
-                        $unDon['id_Mode_de_paiement']." </td>
-                        <td>".
-                        $unDon['id_Association']." </td>
+                        <td>".$unDon['dateDon']." </td>
+                        <td>".$unDon['appreciation']." </td>
+                        <td>".$unDon['statut']." </td>
+                        <td>".$unDon['id_Utilisateur']." </td>
+                        <td>".$unDon['id_Projet']." </td>
+                        <td>".$unDon['id_Mode_de_paiement']." </td>
+                        <td>".$unDon['id_Association']." </td>
                         
 						<td>
 							<a href='index.php?page=37&action=sup&id=".$unDon['id']."'>
@@ -44,7 +37,7 @@
 							<a href='index.php?page=37&action=edit&id=".$unDon['id']."'>
 							<img src ='lib/images/edition.png' height='30' witdh='30'> </a>
 
-							</td>
+						</td>
 					</tr>";
 			}
 			?>

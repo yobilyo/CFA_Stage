@@ -16,9 +16,15 @@
             $_SESSION['id'] = $membreConnecte['id'];
             $_SESSION['nom'] = $membreConnecte['nom'];
             $_SESSION['prenom'] = $membreConnecte['prenom'];
+            $_SESSION['civilite'] = $membreConnecte['civilite'];
+            $_SESSION['date_naissance'] = $membreConnecte['date_naissance'];
             $_SESSION['droits'] = $membreConnecte['droits'];
             $_SESSION['email'] = $membreConnecte['email'];
             $_SESSION['mdp'] = $membreConnecte['mdp']; 
+            $_SESSION['adresse'] = $membreConnecte['adresse'];
+            $_SESSION['codePostal'] = $membreConnecte['codePostal'];
+            $_SESSION['ville'] = $membreConnecte['ville'];
+            $_SESSION['pays'] = $membreConnecte['pays'];
             $_SESSION['photo_profil'] = $membreConnecte['photo_profil']; 
 
             // maintenant que l'utilisateur est connecté, on rafraichît la page d'index qui n'affichera plus le formulaire de connexion, mais l'accueil

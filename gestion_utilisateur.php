@@ -55,13 +55,20 @@
         if (isset($_POST['modifier'])){
             //var_dump($_POST);
 
-            $tab=array("id"=>$_POST['id'],
-                        "nom"=>$_POST['nom'],
-                        "prenom"=>$_POST['prenom'],
-                        "droits"=>$_POST['droits'],
-                        "email"=>$_POST['email'],
-                        "mdp"=>$_POST['mdp'],
-                        "photo_profil"=>$_POST['photo_profil']);
+            $tab=array(
+                "nom"=>$_POST['nom'],
+                "prenom"=>$_POST['prenom'],
+                "civilite"=>$_POST['civilite'],
+                "date_naissance"=>$_POST['date_naissance'],
+                "droits"=>$droits,
+                "email"=>$_POST['email'],
+                "mdp"=>$_POST['mdp'],
+                "adresse"=>$_POST['adresse'],
+                "codePostal"=>$_POST['codePostal'],
+                "ville"=>$_POST['ville'],
+                "pays"=>$_POST['pays'],
+                "photo_profil"=>$_POST['photo_profil']
+            );
             $unControleur->setTable ("utilisateur");
             $where =array("id"=>$id_utilisateur);
 
@@ -73,13 +80,20 @@
         if (isset($_POST['valider'])){
             //var_dump($_POST);
             $unControleur->setTable ("utilisateur");
-            $tab=array("id"=>$_POST['id'],
-                        "nom"=>$_POST['nom'],
-                        "prenom"=>$_POST['prenom'],
-                        "droits"=>$_POST['droits'],
-                        "email"=>$_POST['email'],
-                        "mdp"=>$_POST['mdp'],
-                        "photo_profil"=>$_POST['photo_profil']);
+            $tab=array(
+                "nom"=>$_POST['nom'],
+                "prenom"=>$_POST['prenom'],
+                "civilite"=>$_POST['civilite'],
+                "date_naissance"=>$_POST['date_naissance'],
+                "droits"=>$droits,
+                "email"=>$_POST['email'],
+                "mdp"=>$_POST['mdp'],
+                "adresse"=>$_POST['adresse'],
+                "codePostal"=>$_POST['codePostal'],
+                "ville"=>$_POST['ville'],
+                "pays"=>$_POST['pays'],
+                "photo_profil"=>$_POST['photo_profil']
+            );
             $unControleur->insert($tab);
             //header("Location: index.php?page=42");
         }

@@ -12,9 +12,15 @@
             // et pas besoin non plus pour l'update, car c'est un UPDATE utilisateurname,email,... WHERE idmembre est stocké dans le $where
             "nom"=>$_POST['nom'],
             "prenom"=>$_POST['prenom'],
+            "civilite"=>$_POST['civilite'],
+            "date_naissance"=>$_POST['date_naissance'],
             "droits"=>$droits,
             "email"=>$_POST['email'],
             "mdp"=>$_POST['mdp'],
+            "adresse"=>$_POST['adresse'],
+            "codePostal"=>$_POST['codePostal'],
+            "ville"=>$_POST['ville'],
+            "pays"=>$_POST['pays'],
             "photo_profil"=>$_POST['photo_profil']
         );
         $unControleur->setTable ("utilisateur");
