@@ -1,0 +1,53 @@
+.h1_monCompte
+{
+    margin: 50px 0px;
+    text-align: left;
+    font-size: 1.5em;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d6d6d6;
+    width: 1000px;
+    clear:both;
+}
+
+.h3_monCompte
+{
+    font-size: 1.2em;
+    color:grey;
+    margin-bottom:40px;
+}
+
+#img_monCompte
+{
+    float:left;
+    width:130px;
+}
+
+.input_monCompte
+{
+    margin:5px 0px;
+    width: 400px;
+}
+
+
+.legend_mesInfos
+{
+    color:grey;
+}
+
+.p_mesInfos
+{
+    text-align:left;
+}
+.flex 
+{
+    display:flex;
+    width:800px;
+    justify-content: space-around;
+}
+
+#legend_maPhoto
+{
+    margin-top:40px;
+    font-size:0.6em;
+    color:grey;
+}

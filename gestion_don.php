@@ -75,7 +75,6 @@
 
         require_once("vue/vue_insert_don.php"); 
 
-
         if (isset($_POST['modifier'])){
             //var_dump($_POST);
 

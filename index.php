@@ -93,22 +93,25 @@
 					case 37:
 						require_once("gestion_don.php");
 						break;
-			
-					/*case 4:
-						require_once("gestion_don.php");
-						break;*/
 					
 					case 41:
 						require_once("gestion_don_faire_un_don.php");
 						break;
+
 					case 42:
 						require_once("gestion_don_recu_don.php");
 						break;
+
 					case 6:
 						require_once("gestion_association.php");
 						break;
+						
 					case 90:
 						require_once("gestion_moncompte.php");
+						break;
+
+					case 91 :
+						require_once('vue/modifier_mesInfos.php');
 						break;
 
                     case 10:
