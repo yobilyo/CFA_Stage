@@ -47,14 +47,17 @@
 
             echo "
             <h3 class='title_faireDon'>2. Mes coordonnées</h3> 
-            <!-- <input type='text' placeholder='Civilité' name='genre'> -->
+            <input type='text' placeholder='Civilité' name='genre'>
             <input type='text' placeholder='Prénom' name='prenom' ".$prenom.">
             <input type='text' placeholder='Nom' name='nom'".$nom.">
             <input type='text' placeholder='E-mail' name='email'".$email.">
             <input type='password' placeholder='Mot de passe' name='password'".$password.">
+            <input type='text' placeholder='Adresse' name='adresse'>
+            <input type='text' placeholder='Code Postal' name='codePostal'>
+            <input type='text' placeholder='Ville' name='ville'>            
+            <input type='text' placeholder='Date de naissance' name='naissance'>
             ";
-            //<!-- <input type='text' placeholder='Adresse' name='adresse'".$adresse.">
-            //<input type='text' placeholder='Date de naissance' name='naissance'".$datenaissance."> -->
+            
         ?>
     </div>
     

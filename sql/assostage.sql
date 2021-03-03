@@ -18,7 +18,12 @@ CREATE TABLE Utilisateur(
         droits       Enum ("administrateur","membre") NOT NULL ,
         email        Varchar (100) NOT NULL ,
         mdp          Varchar (50) NOT NULL ,
+        adresse      Varchar (100) NOT NULL,
+        codePostal  INT (5) NOT NULL ,
+        Ville        Varchar (50) NOT NULL,
+        civilite     Enum("Homme","Femme") NOT NULL,
         photo_profil Varchar (100) NOT NULL
+
 	,CONSTRAINT Utilisateur_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
@@ -247,9 +252,9 @@ create view recu_don as(
 # insertions
 
 insert into utilisateur values
-(null, "Zinedine", "Zidane", "administrateur", "a@gmail.com", "123", "lib/images/photo_profil/admin1.jpg"),
-(null, "Fabien", "Barthez", "administrateur", "b@gmail.com", "456","lib/images/photo_profil/membre1.jpg"),
-(null, "Lilian", "Thuram", "membre", "c@gmail.com", "789","lib/images/photo_profil/anonymous.jpg");
+(null, "Zinedine", "Zidane", "administrateur", "a@gmail.com", "123", "rue de Paris", "95316", "Clignancourt", "Homme", "lib/images/photo_profil/admin1.jpg"),
+(null, "Fabien", "Barthez", "administrateur", "b@gmail.com", "456", "avenue du 11 novembre 1918", "92008", "Neuilly", "Homme","lib/images/photo_profil/membre1.jpg"),
+(null, "Frida", "Kahlo", "membre", "c@gmail.com", "789", "rue de Paris", "95316", "Clignancourt", "Femme","lib/images/photo_profil/anonymous.jpg");
 
 INSERT INTO association VALUES (null, "Restos du coeur", 0,0,0, "lib/images/asso-logo.png");
 
