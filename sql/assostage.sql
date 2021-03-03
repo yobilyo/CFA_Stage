@@ -15,13 +15,15 @@ CREATE TABLE Utilisateur(
         id           Int  Auto_increment  NOT NULL ,
         nom          Varchar (50) NOT NULL ,
         prenom       Varchar (50) NOT NULL ,
+        civilite     Enum("M","Mme", "Mlle") NOT NULL,
+        date_naissance Date NOT NULL,
         droits       Enum ("administrateur","membre") NOT NULL ,
         email        Varchar (100) NOT NULL ,
         mdp          Varchar (50) NOT NULL ,
         adresse      Varchar (100) NOT NULL,
         codePostal  INT (5) NOT NULL ,
-        Ville        Varchar (50) NOT NULL,
-        civilite     Enum("Homme","Femme") NOT NULL,
+        ville        Varchar (50) NOT NULL,
+        pays        Varchar (50) NOT NULL,
         photo_profil Varchar (100) NOT NULL
 
 	,CONSTRAINT Utilisateur_PK PRIMARY KEY (id)
@@ -252,9 +254,10 @@ create view recu_don as(
 # insertions
 
 insert into utilisateur values
-(null, "Zinedine", "Zidane", "administrateur", "a@gmail.com", "123", "rue de Paris", "95316", "Clignancourt", "Homme", "lib/images/photo_profil/admin1.jpg"),
-(null, "Fabien", "Barthez", "administrateur", "b@gmail.com", "456", "avenue du 11 novembre 1918", "92008", "Neuilly", "Homme","lib/images/photo_profil/membre1.jpg"),
-(null, "Frida", "Kahlo", "membre", "c@gmail.com", "789", "rue de Paris", "95316", "Clignancourt", "Femme","lib/images/photo_profil/anonymous.jpg");
+(null, "Zinedine", "Zidane", "M", "1972-06-23", "administrateur", "a@gmail.com", "123", "15 rue de Paris", "95316", "Clignancourt", "France", "lib/images/photo_profil/zidane.jpg"),
+(null, "Fabien", "Barthez", "M", "1971-06-28", "administrateur", "b@gmail.com", "456", "87 avenue du 11 novembre 1918", "92008", "Neuilly", "France", "lib/images/photo_profil/barthez.jpg"),
+(null, "Frida", "Kahlo", "Mme", "1907-07-06", "membre", "c@gmail.com", "789", "53 rue de Paris", "95316", "Clignancourt", "France", "lib/images/photo_profil/frida.jpg"),
+(null, "Rihanna", "Robyn", "Mlle", "1988-02-20", "membre", "d@gmail.com", "abc", "68 rue Saint Michael", "12345", "Londres", "Royaume-Uni", "lib/images/photo_profil/rihanna.jpg");
 
 INSERT INTO association VALUES (null, "Restos du coeur", 0,0,0, "lib/images/asso-logo.png");
 
