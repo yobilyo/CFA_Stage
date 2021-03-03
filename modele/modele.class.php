@@ -73,7 +73,7 @@
 
 				$requete = "insert  into  ".$this->uneTable."(".$chaineAttributs.")  values( ".$chaineChamps.") ; " ;
 				$insert = $this->unPdo->prepare ($requete); 
-				echo $requete;
+				//echo $requete;
 				var_dump($donnees);
 				$insert->execute ($donnees); 
 				
@@ -126,7 +126,7 @@
 				$requete = "select * from   ".$this->uneTable. " where ".$chaineChamps.";" ;
 				$select = $this->unPdo->prepare ($requete); 
 				$select->execute ($donnees); 
-				echo $requete;
+				//echo $requete;
 				return $select->fetch(); //un seul résultat.
 				
 			}
@@ -177,7 +177,7 @@
 				$requete = "select * from   ".$this->uneTable. " where ".$chaineChamps.";" ;
 				$select = $this->unPdo->prepare ($requete); 
 				$select->execute ($donnees); 
-				echo $requete;
+				//echo $requete;
 				return $select->fetch(); //un seul résultat.
 				
 			}
@@ -204,7 +204,7 @@
 				$requete = "select * from   ".$this->uneTable. " where ".$chaineChamps.";" ;
 				$select = $this->unPdo->prepare ($requete); 
 				$select->execute ($donnees); 
-				echo $requete;
+				//echo $requete;
 				return $select->fetchAll(); //plusieurs résultats.
 				
 			}
