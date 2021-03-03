@@ -12,7 +12,7 @@
 	$leProjet = null; 
 
 	$date = date('y-m-d');
-	echo $date ."<br/>";
+	//echo $date ."<br/>";
 	
 	if (isset($_GET['action']) && isset($_GET['id']))
 	{
@@ -38,8 +38,6 @@
 	echo '<br/><br/>';
 
 	require_once("vue/projet/vue_insert_projet.php"); 
-
-	echo '<br/><br/>';
 
 	if (isset($_POST['modifier']))
 	{
@@ -82,6 +80,6 @@
 	$tab=array("*");
 	$lesProjets = $unControleur->selectAll ($tab);
 
-	echo "<br/><h2>Liste des Projets</h2><br/><br/>";
+	echo "<h2>Liste des Projets</h2><br/>";
 	require_once("vue/projet/vue_projet.php"); 
 ?>

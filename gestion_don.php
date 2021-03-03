@@ -9,7 +9,6 @@
         $unControleur->setTable ("don");
         $tab=array("*");
         $lesDons = $unControleur->selectAll ($tab);
-        echo "<br/><h2> Modification des dons</h2>";
 
         $unControleur->setTable ("Projet");
         $tab=array("*");
@@ -124,7 +123,7 @@
             $unControleur->setTable ("don");
             $tab=array("*");
             $lesDons = $unControleur->selectAll ($tab);
-            echo "<br/><h2> Modification des dons</h2>";  
+            echo "<br/><h2>Liste des dons</h2>";  
 
             require_once("vue/vue_don.php"); 
         //}
