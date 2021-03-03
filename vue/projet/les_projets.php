@@ -23,8 +23,9 @@
     /*LA RECHERCHE*/
 	if(isset($_POST['ok'])) //recherche la ville
 	{
-		$unControleur->setTable("les_projets_image_main");
-        $lesProjets = $unControleur->selectByNomProjet($_POST['nomProjet']);
+        $unControleur->setTable("les_projets_image_main");
+        $tab = array("nom"=>$_POST['nomProjet']);
+        $lesProjets = $unControleur->selectWhereAllLike($tab);
         //var_dump($lesProjets);
 	}
     echo "<br/>";

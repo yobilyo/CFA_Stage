@@ -159,9 +159,63 @@
 				return null; 
 			}
 		}
+
+		public function selectWhereLike ($tab)
+		{
+			if ($this->unPdo != null){
+				//construction du where 
+				$listeChamps = array(); 
+				$donnees =array();
+				foreach ($tab as $cle => $valeur) {
+					$listeChamps[] = $cle." like ".":".$cle ;
+					$donnees[":".$cle] = "%".$valeur."%";
+				}
+				//select * from projet where nom like :nom
+				// :nom => "%songoku%"
+				$chaineChamps = implode(" and ", $listeChamps); 
+
+				$requete = "select * from   ".$this->uneTable. " where ".$chaineChamps.";" ;
+				$select = $this->unPdo->prepare ($requete); 
+				$select->execute ($donnees); 
+				echo $requete;
+				return $select->fetch(); //un seul résultat.
+				
+			}
+			else
+			{
+				return null; 
+			}
+		}
+
+		public function selectWhereAllLike ($tab)
+		{
+			if ($this->unPdo != null){
+				//construction du where 
+				$listeChamps = array(); 
+				$donnees =array();
+				foreach ($tab as $cle => $valeur) {
+					$listeChamps[] = $cle." like ".":".$cle ;
+					$donnees[":".$cle] = "%".$valeur."%";
+				}
+				//select * from projet where nom like :nom
+				// :nom => "%songoku%"
+				$chaineChamps = implode(" and ", $listeChamps); 
+
+				$requete = "select * from   ".$this->uneTable. " where ".$chaineChamps.";" ;
+				$select = $this->unPdo->prepare ($requete); 
+				$select->execute ($donnees); 
+				echo $requete;
+				return $select->fetchAll(); //plusieurs résultats.
+				
+			}
+			else
+			{
+				return null; 
+			}
+		}
 		
 		//pour rechercher un projet
-		public function selectByNomProjet($nomProjet)
+		/*public function selectByNomProjet($nomProjet)
 		{
 			if($this->unPdo!=null)
 			{
@@ -174,7 +228,7 @@
 				$select->execute($donnees);
 				return $select->fetchAll();
 			}
-		}
+		}*/
 
 
 

@@ -74,11 +74,21 @@
 	
 		}
 
-		//pour rechercher dans une table par son nom
+		public function selectWhereLike ($tab)
+		{
+			return $this->unModele->selectWhereLike($tab);
+		}
+
+		public function selectWhereAllLike ($tab)
+		{
+			return $this->unModele->selectWhereAllLike($tab);
+		}
+
+		/*//pour rechercher dans une table par son nom
 		public function selectByNomProjet($nomProjet)
 		{
 			return $this->unModele->selectByNomProjet($nomProjet);
-		}
+		}*/
 	}
 
 ?>

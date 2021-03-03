@@ -21,7 +21,7 @@ $requete = $bdd->query("select * from projet where id = ".$_GET['idprojet'].";")
 $unControleur->setTable ("projet");
 $where=array("id"=> $_GET['idprojet']);
 $unProjet = $unControleur->selectWhere ($where);
-var_dump($unProjet);
+//var_dump($unProjet);
 
 //while($donnees=$requete->fetch() )	
 //{
@@ -75,7 +75,7 @@ if (!empty($videosProjet))
     foreach ($videosProjet as $uneVideoProjet) {
         echo "
         <div id='uneVideo'>
-            <h3>".$uneVideoProjet['titre']."</h3>
+            <h3>".$uneVideoProjet['alt']."</h3>
             <iframe width='560' height='315' src='".$uneVideoProjet['adresse']."' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
         </div>";
     }
@@ -110,7 +110,7 @@ else
     }
 }*/
 
-var_dump($imagesProjet);
+//var_dump($imagesProjet);
 
 if (!empty($imagesProjet)) 
 {
@@ -129,7 +129,7 @@ if (!empty($imagesProjet))
         <div class="carousel-item <?= $actives; ?>">
           <?php echo "<img id='uneImg_carousel' class='d-block w-100' src=".$uneImageProjet['adresse'].">"; ?>
             <div class="carousel-caption d-none d-md-block">
-              <h5 id="titre_Img"><?php echo $uneImageProjet['titre'];  ?></h5>
+              <h5 id="titre_Img"><?php echo $uneImageProjet['alt'];  ?></h5>
             </div>
         </div>
        <?php
