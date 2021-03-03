@@ -258,18 +258,32 @@ INSERT INTO projet values (null, "Action contre la faim", "Distribution de nourr
 INSERT INTO projet values (null, "Lutte contre le froid", "Distribution de vetements", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
 INSERT INTO projet values (null, "Action contre la pauvrete", "Distribution d'argent", "2020-12-20", "France", "Toulouse", 15000, 13000,2,1); 
 
+
+--  Action contre la faim 
 insert into image values (null, "lib/images/projet/faim/main.jpg", "main", "A table !", 1);
+insert into image values (null, "lib/images/projet/faim/restaurant.jpg", "restaurant", "Service nourriture !", 1);
+insert into image values (null, "lib/images/projet/faim/faim.jpg", "faim", "Action contre la faim !", 1);
+
+
 insert into image values (null, "lib/images/projet/froid/main.jpg", "main", "Tchin tchin !", 2);
+insert into image values (null, "lib/images/projet/froid/froid_pauvrete.jpeg", "froid", "Aidez les sans abris!", 2);
+
+insert into image values (null, "lib/images/projet/froid/lutter_contre_pauvrete.jpg", "pauvrete", "Eradiquer la pauvrete!", 3);
 insert into image values (null, "lib/images/projet/pauvrete/main.jpg", "main", "L'éducation pour tous !", 3);
-insert into image values (null, "lib/images/projet/faim/main.jpg", "main", "A table !", 1);
+
 
 INSERT INTO video values (null,"https://www.youtube.com/embed/jgVqr3lS_9U", "main", "La faim ne recule pas, nous non plus !", 1);
+INSERT INTO video values (null,"https://www.youtube.com/embed/q8ipLLaS1Vs", "main", "La pauvreté tue. Nous devons lutter contre ça ! ", 2);
+INSERT INTO video values (null,"https://www.youtube.com/embed/UcwtcUSY0YY", "SDF-crise", "La pauvreté tue. Nous devons lutter contre ça ! ", 2);
+INSERT INTO video values (null,"https://www.youtube.com/embed/BR5TsVdQZbo", "main", "La pauvreté du au covid, nous devons pas abandonné !", 3;
+
 
 INSERT  into mode_de_paiement values (null, "CB", "lib/images/mode_de_paiement/cb_logo.jpg");
 INSERT into mode_de_paiement values (null, "VISA", "lib/images/mode_de_paiement/visa_logo.jpg");
 
 INSERT into mode_de_paiement values (null, "Mastercard", "lib/images/mode_de_paiement/mastercard_logo.png");
-INSERT  mode_de_paiement values (null, "PayPal", "lib/images/mode_de_paiement/paypal_logo.jpg");
+INSERT into mode_de_paiement values (null, "PayPal", "lib/images/mode_de_paiement/paypal.png");
+INSERT into mode_de_paiement values (null, "Stripe", "lib/images/mode_de_paiement/stripe.png");
 
 insert into Don values (NULL, 50, "2020-12-01", "Très bien !", "valide", 1,1,1,1);
 insert into Don values (NULL, 75, "2020-11-02", "Pas mal !", "valide", 2,2,1,1);

@@ -1,12 +1,62 @@
-<h2> Aidez nos activités en faisant un don ! </h2>
-<br/>
-<div class='container'>
-	<div class="row">
+<link rel="stylesheet" href="vue/style/faire_un_don.css">
 
+<!--<h2 id='grand_titre'>Faire un don</h2>
+<img id='img' src='lib/images/pages/faire-don-asso.png' width='200'></img>-->
+
+<form method="post" action="">
+<div id="faire_un_don">
+
+    <div class="colonne">
+        <h3 class='title_faireDon'>1. Mon soutien</h3> 
+        <input type="number" placeholder="€" name="montant" min="2"/> 
+        <br/>   
+        <legend>Le projet que vous souhaitez soutenir : </legend>
+        <select name='id_Projet'>
         <?php
-        echo"
-        <div class='col-sm-4'>
-            <!-- //https://getbootstrap.com/docs/4.0/components/forms/ -->
+            foreach ($lesProjets as $unProjet) 
+            {
+                echo "<option value='".$unProjet['id']."'>".$unProjet['nom']."</option>";
+            }
+        ?>
+        </select>
+    </div>
+
+    <div class="colonne">
+        <h3 class='title_faireDon'>2. Mes coordonnées</h3> 
+        <!-- <input type='text' placeholder='Civilité' name='genre'> -->
+        <input type='text' placeholder='Prénom' name='prenom'>
+        <input type='text' placeholder='Nom' name='nom'>
+        <input type='text' placeholder='E-mail' name='email'>
+        <!-- <input type='text' placeholder='Adresse' name='adresse'>
+        <input type='text' placeholder='Date de naissance' name='naissance'> -->
+    </div>
+    
+    <div class="colonne">
+        <h3 class='title_faireDon'>3. Mon réglement</h3>
+        <input type='text' placeholder='Numéro de carte bancaire'/>
+        <input type='number' placeholder="CVC" max="999" name="CVC">
+        <br/>
+        <legend>Mode de Paiement : </legend>
+        <div id="modePaiement">
+        <?php foreach ($lesModesdePaiements as $unModeDePaiement)
+        {
+            echo "<div id='colonnePaiement'>
+                    <img src='".$unModeDePaiement['image_url']."' width='30'></img>
+                    <input class='form-check-input' type='radio' name='id_Mode_de_paiement' value='".$unModeDePaiement['id']."'>
+                </div> ";
+        }
+        ?>
+        </div>
+    </div>
+</div>
+</form>
+
+
+
+<?php
+    /*echo"
+    <div class='col-sm-4'>
+        <!-- //https://getbootstrap.com/docs/4.0/components/forms/ -->
             <form method='post' action=''>
                 <div>
                     <h3>(1/3) Choix du Projet</h3><br/>

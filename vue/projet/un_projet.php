@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="vue/style/un_projet.css"/>
 
+<link rel="stylesheet" href="vue/style/slider.css"/>    <!--pour le slider -->
+
 <?php
 
 /*try 
@@ -125,10 +127,9 @@ if (!empty($imagesProjet))
         }    
           ?>
         <div class="carousel-item <?= $actives; ?>">
-          <?php echo "<img class='d-block w-100' src=".$uneImageProjet['adresse'].">"; ?>
+          <?php echo "<img id='uneImg_carousel' class='d-block w-100' src=".$uneImageProjet['adresse'].">"; ?>
             <div class="carousel-caption d-none d-md-block">
-              <h5><?php echo $uneImageProjet['titre'];  ?></h5>
-              <p>...</p>
+              <h5 id="titre_Img"><?php echo $uneImageProjet['titre'];  ?></h5>
             </div>
         </div>
        <?php

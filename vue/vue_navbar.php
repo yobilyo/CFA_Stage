@@ -9,7 +9,7 @@
 	
 	<?php if($_SESSION["droits"] == "administrateur")
 	{	
-		echo "<li class='afficher_dropdown'>Ajouter/Lister<span style='font-size:0.70em;'>▼</span></a>
+		echo "<li class='afficher_dropdown'>Ajouter/Lister <span style='font-size:0.70em;'>▼</span></a>
 		<span class='baisser_le_dropdown'>
 		<ul class='dropdown'>
 			<li><a class='lien_dropdown' href='index.php?page=2'>Utilisateurs</a></li>

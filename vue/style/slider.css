@@ -1,0 +1,12 @@
+#titre_Img
+{
+    width:auto;
+    padding:30px;
+    background-color : rgba(0,0,0,0.5);
+    color:white;
+}
+
+#uneImg_carousel
+{
+    width:100px;
+}

@@ -2,9 +2,6 @@
     if (!isset($_SESSION['email'])) {
         echo "ERREUR 404, page non identifiée ";
     } else {
-        echo "<br/>
-        <img src='lib/images/pages/faire-don-asso.png' width='200'></img>
-        <br/>";
 
         $unControleur->setTable ("Projet");
         $tab=array("*");

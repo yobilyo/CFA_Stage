@@ -1,0 +1,55 @@
+.colonne
+{
+    display:flex;
+    flex-direction: column;
+    width:300px;
+}
+
+#faire_un_don
+{
+    display:flex;
+    justify-content: space-around;
+    width:1300px;
+    margin-bottom:300px;
+}
+
+
+#grand_titre
+{
+    margin:50px 0px;
+}
+
+.title_fairedon
+{
+    margin:50px 0px;
+}
+
+input
+{
+    margin:5px 0px;
+}
+
+legend
+{
+    font-size:1.15em;
+    color:black;
+}
+
+#modePaiement
+{
+    display:flex;
+    justify-content: space-around;
+    /*width:200px;*/
+}
+
+#colonnePaiement
+{
+    display:flex;
+    flex-direction:column;
+    align-items:baseline;
+}
+
+img
+{
+    margin: 10px 0px;
+}
