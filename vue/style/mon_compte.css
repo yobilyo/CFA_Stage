@@ -13,7 +13,7 @@
 {
     font-size: 1.2em;
     color:grey;
-    margin-bottom:40px;
+    margin:40px;
 }
 
 #img_monCompte
@@ -50,4 +50,9 @@
     margin-top:40px;
     font-size:0.6em;
     color:grey;
+}
+
+.police-tableau
+{
+    font-size:0.8em;
 }

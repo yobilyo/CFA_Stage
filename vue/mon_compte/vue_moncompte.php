@@ -37,21 +37,30 @@ if(isset($_POST["Modifier"]))
     header('Location:index.php?page=91');
 }
 
-//require_once('vue_modifiercompte.php');
+echo "<h1 class='h1_monCompte'>Mes activités</h1>
 
-echo "<h1 class='h1_monCompte'>Mes activités</h1>";
+<div style='width:800px;'>";
 
-//require_once('vue_don.php');
+// < DONS 
 
-echo "<h3 class='h3_monCompte'>Mes Commentaires</h3>";
+    include("don_moncompte.php");
 
-//require_once("commentaire/vue_commentaire.php");
+// >
 
-if ($_SESSION['droits'] == "administrateur") 
-{
-    echo "<h3 class='h3_monCompte'>Mes Projets</h3>";
-    //require_once("projet/vue_projet.php");
-}
+// < COMMENTAIRE
+
+    include("commentaire_moncompte.php");
+
+// >
+
+// < PROJET
+
+    include("projet_moncompte.php");
+
+// >
+
+echo "</div>";
 
 ?>
 
+<br/><br/><br/><br/><br/>

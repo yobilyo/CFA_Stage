@@ -250,6 +250,21 @@ create view recu_don as(
         and i.titre like 'main'
 );
 
+drop view if exists commentaires_et_projets;
+create view commentaires_et_projets as(
+        SELECT p.nom as nom_projet, c.dateCom, c.contenu, c.note, c.id_Utilisateur, c.id_Projet
+        FROM projet p, commentaire c
+        WHERE p.id = c.id_Projet
+);
+
+drop view if exists dons_et_projets;
+create view dons_et_projets as(
+        SELECT p.nom as nom_projet, d.montant, d.dateDon, d.appreciation, d.statut, d.id_Utilisateur, d.id_Projet
+        FROM projet p, don d
+        WHERE p.id = d.id_Projet
+);
+
+
 
 # insertions
 
