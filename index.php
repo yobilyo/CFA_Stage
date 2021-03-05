@@ -57,7 +57,7 @@
                     else  $page = 0;
                 switch ($page)
                 {
-                    case 0:
+					case 0:
                         require_once("accueil.php");
                         break;
                     case 2:
