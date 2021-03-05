@@ -24,14 +24,6 @@
 	?>
 
 	<li><a href='index.php?page=41'>Faire un don</a></li> | 
-	
-	<?php
-		if (isset($_SESSION['email'])) {
-			echo "
-			<li><a href='index.php?page=90'>Mon Compte</a></li> | 
-			";
-		}
-	?>
 
 	<?php
 		if (isset($_SESSION['email']))
@@ -42,7 +34,9 @@
 
 			echo "<li><a href='index.php?page=10'>Déconnexion</a></li>";
 			echo "
-			<li><img src='".$lUtilisateur['photo_profil']."' width='30'></a>  ".$lUtilisateur['prenom']."  ".$lUtilisateur['nom']."</li>
+			<li><a href='index.php?page=90'>
+				<img src='".$lUtilisateur['photo_profil']."' width='35'>  ".$lUtilisateur['prenom']."  ".$lUtilisateur['nom']."
+			</a></li>
 			";
 		} 
 		else 
