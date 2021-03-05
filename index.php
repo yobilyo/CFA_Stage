@@ -27,28 +27,31 @@
 		<!-- Menu de navigation (navbar) -->
 		<?php
 			echo'<p id="hautdepage"></p>';
+			//pas besoin d'être connecté pour voir la navbar
+			require_once("vue/vue_navbar.php");
 			print_r($_SESSION);
 		?>
 
 		<?php
 
             // on n'est pas connecté, donc on se connecte ou on s'inscrit
-            if (!isset($_SESSION['email'])) 
-			{
+            //if (!isset($_SESSION['email'])) 
+			//{
                 if (isset($_GET['page']) && $_GET['page'] == "001") 
 				{
                     require_once("gestion_inscription.php");
                 } 
-				else 
+				else if (isset($_GET['page']) && $_GET['page'] == "002")
 				{
                     // ?page=001 est la page d'inscription, si ce n'est pas set on est sur la page de connexion
                     require_once("gestion_connexion.php");
-                }
+				}
 
-            } else {
+			//pas besoin d'être connecté pour consulter certaines pages du site
+            //} else {
 				
                 // on est connecté maintenant, donc on affiche le site
-                require_once("vue/vue_navbar.php");
+                //require_once("vue/vue_navbar.php");
 
                 if(isset($_GET['page'])) $page = $_GET['page']; 
                     else  $page = 0;
@@ -118,7 +121,7 @@
                         session_destroy();   
                         header("Location: index.php");             
                     }
-            }
+            //}
 
 			require_once("vue/vue_footer.php");
 		?>

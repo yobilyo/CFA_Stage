@@ -18,7 +18,7 @@ CREATE TABLE Utilisateur(
         civilite     Enum("M","Mme", "Mlle") NOT NULL,
         date_naissance Date NOT NULL,
         droits       Enum ("administrateur","membre") NOT NULL ,
-        email        Varchar (100) NOT NULL ,
+        email        Varchar (100) UNIQUE NOT NULL ,
         mdp          Varchar (50) NOT NULL ,
         adresse      Varchar (100) NOT NULL,
         codePostal  INT (5) NOT NULL ,
