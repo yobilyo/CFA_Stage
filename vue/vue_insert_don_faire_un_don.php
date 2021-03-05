@@ -3,7 +3,7 @@
 <!--<h2 id='grand_titre'>Faire un don</h2>
 <img id='img' src='lib/images/pages/faire-don-asso.png' width='200'></img>-->
 
-<form method="post" action="">
+<form method="post" action="index.php?page=411">
 <div id="faire_un_don">
 
     <div class="colonne">
