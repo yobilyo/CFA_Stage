@@ -35,6 +35,7 @@
             $codePostal = " ";
             $ville = " ";
             $civilite = " ";
+            $civiliteDisabled = " ";
             $datenaissance = " ";
 
             $lUtilisateur = null; 
@@ -52,17 +53,18 @@
                 $email = " value ='".$lUtilisateur['email']."' style='background-color:gainsboro;' readonly";
                 $password = " value ='hiddenpassword' readonly style='background-color:gainsboro;'";
                 $adresse = " value ='".$lUtilisateur['adresse']."' style='background-color:gainsboro;' readonly";
-                $codePostal = " value = '".$lUtilisateur['codePostal']."' style='background-color:gainsboro;'readonly";
-                $ville = " value = '".$lUtilisateur['ville']."' style='background-color:gainsboro;'readonly";
-                $civilite = " value = '".$lUtilisateur['civilite']."' style='background-color:gainsboro;'readonly";
-                $pays = " value = '".$lUtilisateur['pays']."' style='background-color:gainsboro;'readonly";
+                $codePostal = " value = '".$lUtilisateur['codePostal']."' style='background-color:gainsboro;' readonly";
+                $ville = " value = '".$lUtilisateur['ville']."' style='background-color:gainsboro;' readonly";
+                $civilite = " value = '".$lUtilisateur['civilite']."' style='background-color:gainsboro;'";
+                $civiliteDisabled = "style='background-color:gainsboro;' disabled";
+                $pays = " value = '".$lUtilisateur['pays']."' style='background-color:gainsboro;' readonly";
                 $datenaissance = " value ='".$lUtilisateur['date_naissance']."' style='background-color:gainsboro;' readonly";
             }
 
             echo "
             <h3 class='title_faireDon'>2. Mes coordonnées</h3> 
 
-            <select name='civilite'>";
+            <select name='civilite' ".$civiliteDisabled.">";
 
             $lesCivilites = array("M", "Mme", "Mlle");
             foreach ($lesCivilites as $uneCivilite) 
