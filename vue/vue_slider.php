@@ -16,7 +16,7 @@
     <div class="carousel-item <?= $actives; ?>">
       <?php echo "<img class='d-block w-100' src=".$lImage['adresse'].">"; ?>
         <div class="carousel-caption d-none d-md-block">
-          <h5 id="titre_Img"><?php echo $lImage['titre'];  ?></h5>
+          <h5 id="titre_Img"><?php echo $lImage['alt'];  ?></h5>
         </div>
     </div>
    <?php
