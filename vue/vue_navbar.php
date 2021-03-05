@@ -36,7 +36,14 @@
 	<?php
 		if (isset($_SESSION['email']))
 		{
+			$unControleur->setTable ("utilisateur");
+			$where = array('id' => $_SESSION['id']);
+			$lUtilisateur = $unControleur->selectWhere ($where);
+
 			echo "<li><a href='index.php?page=10'>Déconnexion</a></li>";
+			echo "
+			<li><img src='".$lUtilisateur['photo_profil']."' width='30'></a>  ".$lUtilisateur['prenom']."  ".$lUtilisateur['nom']."</li>
+			";
 		} 
 		else 
 		{
