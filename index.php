@@ -30,6 +30,7 @@
 			//pas besoin d'être connecté pour voir la navbar
 			require_once("vue/vue_navbar.php");
 			print_r($_SESSION);
+			echo "<br/>";
 		?>
 
 		<?php

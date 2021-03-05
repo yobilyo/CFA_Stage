@@ -36,6 +36,9 @@
 
 							<a href='index.php?page=37&action=edit&id=".$unDon['id']."'>
 							<img src ='lib/images/edition.png' height='30' witdh='30'> </a>
+							<a href='index.php?page=42&iddon=".$unDon['id']."'>
+                            <img src ='lib/images/ddl-txt.png' height='30' witdh='30'>
+							</a>
 
 						</td>
 					</tr>";

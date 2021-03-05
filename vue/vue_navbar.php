@@ -28,8 +28,6 @@
 	<?php
 		if (isset($_SESSION['email'])) {
 			echo "
-			
-			<li><a href='index.php?page=42&iddon=1'>Reçu</a></li> |  
 			<li><a href='index.php?page=90'>Mon Compte</a></li> | 
 			";
 		}

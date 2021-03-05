@@ -13,6 +13,7 @@ if(!empty($lesDons))
                 <th class='police-tableau'>Appreciation</th>
                 <th class='police-tableau'>Statut</th>
                 <th class='police-tableau'>Pour le projet </th>
+                <th class='police-tableau'>Opérations </th>
             </tr>
         </thead>
 
@@ -25,8 +26,26 @@ if(!empty($lesDons))
                 <td class='police-tableau'>".$unDon['appreciation']." </td>
                 <td class='police-tableau'>".$unDon['statut']." </td>
                 <td class='police-tableau'>".$unDon['nom_projet']." </td>
+                ";
+
+                echo "
+                <td>";
+
+                    if (($unDon['id_Utilisateur'] == $_SESSION['id']) 
+                    || $_SESSION['droits'] == 'admininistrateur') {
+                        echo "
+                        <a href='index.php?page=42&iddon=".$unDon['id']."'>
+                            <img src ='lib/images/ddl-txt.png' height='30' witdh='30'>
+                        </a>";
+                    }
+                echo "
+                </td>
+                ";
+
+            echo "
             </tr>";
             }
+            //			<li><a href='index.php?page=42&iddon=1'>Reçu</a></li> |  
             
             echo"</tbody>
         </table>

@@ -259,7 +259,7 @@ create view commentaires_et_projets as(
 
 drop view if exists dons_et_projets;
 create view dons_et_projets as(
-        SELECT p.nom as nom_projet, d.montant, d.dateDon, d.appreciation, d.statut, d.id_Utilisateur, d.id_Projet
+        SELECT p.nom as nom_projet, d.montant, d.dateDon, d.appreciation, d.id, d.statut, d.id_Utilisateur, d.id_Projet
         FROM projet p, don d
         WHERE p.id = d.id_Projet
 );
