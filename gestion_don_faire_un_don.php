@@ -24,8 +24,8 @@
         require_once("vue/vue_insert_don_faire_un_don.php"); 
 
         // pour l'instant seulement disponible pour les utilisateurs déjà authentifiés/connectés (pas de don anonyme):
-        if (isset($_POST['ok2'])){
-            //var_dump($_POST);
+        if (isset($_POST['payer'])){
+            var_dump($_POST);
 
             // valeurs par défaut codées en dur
             $date = date("Y-m-d");

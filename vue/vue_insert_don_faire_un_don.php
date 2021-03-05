@@ -19,6 +19,9 @@
             }
         ?>
         </select>
+        <br/>
+        <legend>Un petit message : </legend>
+        <textarea name='appreciation' rows='3' cols='3'></textarea>
     </div>
 
     <div class="colonne">
@@ -146,7 +149,7 @@
         }
         ?>
         </div>
-        <center><input style="margin-top:30px;width:120px;" type="submit" value="Payer" name="Payer"/></center>
+        <center><input style="margin-top:30px;width:120px;" type="submit" value="Payer" name="payer"/></center>
     </div>
 </div>
 </form>
