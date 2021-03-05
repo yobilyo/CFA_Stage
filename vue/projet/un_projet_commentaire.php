@@ -35,24 +35,38 @@
 
 	<!--Pour que l'utilisateur puisse écrire un commentaire-->
 	<center>
-    	<form method ="post" action ="">
+		<?php
+			echo "
+			<form method ='post' action =''>
+			";
 
-			<legend>Ajouter un commentaire :</legend>
-			<textarea id='textarea_com' placeholder="Ecrire..." style="resize:none;" maxlength="500" name="contenu" required autocomplete="on" 
-			autofocus><?php echo(isset($unCom)) ? $unCom['contenu']:"";?></textarea>
-			<table>
-				<tr><td>Note : </td><td><input type="number" name="note" min="0" max="20" 
-				value ="<?php echo(isset($unCom)) ? $unCom['note']:"";?>" required></td></tr>
-				<tr>
-					<td><input style="margin-top:30px;" type="reset" class='btn btn-dark' value ="Annuler"></td>
-					<td><input style="margin-top:30px;" type="submit" class='btn btn-dark' <?php echo (isset($unCom)) 
-						? "name='modifier_com' value='Modifier'"
-						: "name='valider_com' value='Valider'";?>/>
-					</td>
-				</tr>
-			</table>
-			
-		</form>
+				$contenu = " ";
+				$note = " ";
+				$com = " name='valider_com' value='Valider'";
+
+				if (isset($unCom)) {
+					$contenu = $unCom['contenu'];
+					$note = $unCom['note'];
+					$com = " name='modifier_com' value='Modifier'";
+				}
+
+				echo "
+				<legend>Ajouter un commentaire :</legend>
+				<textarea id='textarea_com' placeholder='Ecrire...' style='resize:none;' maxlength='500' name='contenu' required autocomplete='on' 
+				autofocus>".$contenu."</textarea>
+				<table>
+					<tr><td>Note : </td><td><input type='number' name='note' min='0' max='20' 
+					value ='".$note."' required></td></tr>
+					<tr>
+						<td><input style='margin-top:30px;' type='reset' class='btn btn-dark' value ='Annuler'></td>
+						<td><input style='margin-top:30px;' type='submit' class='btn btn-dark' ".$com."/>
+						</td>
+					</tr>
+				</table>
+				
+			</form>
+			";
+		?>
 	</center>
 
 	<br/><br/>
@@ -103,7 +117,7 @@
 				<div id="bas_com">
 					<span id="action_com">';
 				
-				if($unCommentaire_of_user['id_Utilisateur'] == $_SESSION['id'])
+				if (isset($_SESSION['email']) && $unCommentaire_of_user['id_Utilisateur'] == $_SESSION['id'])
 				{
 					echo"	
 						<a href='index.php?page=5&idprojet=".$_GET['idprojet']."&action=sup&id=".$unCommentaire_of_user['id']."'>

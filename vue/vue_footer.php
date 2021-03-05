@@ -41,7 +41,7 @@ https://mdbootstrap.com/docs/jquery/content/icons-list/ -->
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2021 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    <a href="https://mdbootstrap.com/"> MonAsso.com</a>
   </div>
   <!-- Copyright -->
 
