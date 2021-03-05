@@ -134,6 +134,11 @@
                 <option value='".($date+3)."'>".($date+3)."</option>
                 <option value='".($date+4)."'>".($date+4)."</option>
                 <option value='".($date+5)."'>".($date+5)."</option>
+                <option value='".($date+6)."'>".($date+6)."</option>
+                <option value='".($date+7)."'>".($date+7)."</option>
+                <option value='".($date+8)."'>".($date+8)."</option>
+                <option value='".($date+9)."'>".($date+9)."</option>
+                <option value='".($date+10)."'>".($date+10)."</option>
             </select>";
             ?>
         </div>
