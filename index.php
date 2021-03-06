@@ -42,7 +42,7 @@
 				{
                     require_once("gestion_inscription.php");
                 } 
-				else if (isset($_GET['page']) && $_GET['page'] == "002")
+				else if (isset($_GET['page']) && $_GET['page'] == "11")
 				{
                     // ?page=001 est la page d'inscription, si ce n'est pas set on est sur la page de connexion
                     require_once("gestion_connexion.php");
@@ -60,7 +60,11 @@
                 {
 					case 0:
                         require_once("accueil.php");
-                        break;
+						break;
+					
+					//1 est pour l'inscription, ne pas utiliser ici
+					//11 est pour la connexion, ne pas utiliser ici
+
                     case 2:
                         require_once("gestion_utilisateur.php");
 						break;
@@ -127,7 +131,9 @@
                     case 10:
                         session_destroy();   
                         header("Location: index.php");             
-                    }
+					}
+					
+					//attention 11 est déjà utilisé pour la connexion
             //}
 
 			require_once("vue/vue_footer.php");

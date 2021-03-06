@@ -1,7 +1,7 @@
 <?php
-    if (!isset($_SESSION['email'])) {
+    if (!isset($_SESSION['email']) || $_SESSION['droits'] != "administrateur") {
         echo "ERREUR 404, page non identifiée ";
-    } else if ($_SESSION['droits'] == "administrateur") {
+    } else {
         echo "<br/>
         <img src='lib/images/pages/utilisateur.png' width='200'></img>
         <br/>";
@@ -113,7 +113,7 @@
             require_once("vue/vue_utilisateur.php"); 
         //}
         
-    }
+    /*}
     // Modification du compte de la part de l'utilisateur
     else if($_SESSION['droits'] == "membre"){
         $unUtilisateur = null; 
@@ -137,5 +137,6 @@
             echo "<br/><h2>Modification de l'utilisateur</h2>";
             require_once("vue/vue_utilisateur.php");    
         }
+    }*/
     }
 ?>

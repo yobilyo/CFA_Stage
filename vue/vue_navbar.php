@@ -41,7 +41,7 @@
 		} 
 		else 
 		{
-			echo "<li><a href='index.php?page=002'>Connexion</a></li>";
+			echo "<li><a href='index.php?page=11'>Connexion</a></li>";
 		}
 	?>
 </ul>
