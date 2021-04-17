@@ -20,6 +20,7 @@ CREATE TABLE Utilisateur(
         droits       Enum ("administrateur","membre") NOT NULL ,
         email        Varchar (100) UNIQUE NOT NULL ,
         mdp          Varchar (50) NOT NULL ,
+        tel          Varchar (10) NOT NULL ,
         adresse      Varchar (100) NOT NULL,
         codePostal  INT (5) NOT NULL ,
         ville        Varchar (50) NOT NULL,
@@ -60,6 +61,7 @@ CREATE TABLE Mode_de_paiement(
 CREATE TABLE Association(
         id                Int  Auto_increment  NOT NULL ,
         libelle           Varchar (30) NOT NULL ,
+        email              Varchar (50) NOT NULL ,
         nbprojets         Int NOT NULL ,
         budgetProjetsTot  Float NOT NULL ,
         sommeCollecteeTot Float NOT NULL,
@@ -269,12 +271,12 @@ create view dons_et_projets as(
 # insertions
 
 insert into utilisateur values
-(null, "Zinedine", "Zidane", "M", "1972-06-23", "administrateur", "a@gmail.com", "123", "15 rue de Paris", "95316", "Clignancourt", "France", "lib/images/photo_profil/zidane.jpg"),
-(null, "Fabien", "Barthez", "M", "1971-06-28", "administrateur", "b@gmail.com", "456", "87 avenue du 11 novembre 1918", "92008", "Neuilly", "France", "lib/images/photo_profil/barthez.jpg"),
-(null, "Frida", "Kahlo", "Mme", "1907-07-06", "membre", "c@gmail.com", "789", "53 rue de Paris", "95316", "Clignancourt", "France", "lib/images/photo_profil/frida.jpg"),
-(null, "Rihanna", "Robyn", "Mlle", "1988-02-20", "membre", "d@gmail.com", "abc", "68 rue Saint Michael", "12345", "Londres", "Royaume-Uni", "lib/images/photo_profil/rihanna.jpg");
+(null, "Zinedine", "Zidane", "M", "1972-06-23", "administrateur", "a@gmail.com", "123", "0102030405", "15 rue de Paris", "95316", "Clignancourt", "France", "lib/images/photo_profil/zidane.jpg"),
+(null, "Fabien", "Barthez", "M", "1971-06-28", "administrateur", "b@gmail.com", "456", "0202030405", "87 avenue du 11 novembre 1918", "92008", "Neuilly", "France", "lib/images/photo_profil/barthez.jpg"),
+(null, "Frida", "Kahlo", "Mme", "1907-07-06", "membre", "c@gmail.com", "789", "0302030405", "53 rue de Paris", "95316", "Clignancourt", "France", "lib/images/photo_profil/frida.jpg"),
+(null, "Rihanna", "Robyn", "Mlle", "1988-02-20", "membre", "d@gmail.com", "abc", "0402030405", "68 rue Saint Michael", "12345", "Londres", "Royaume-Uni", "lib/images/photo_profil/rihanna.jpg");
 
-INSERT INTO association VALUES (null, "Restos du coeur", 0,0,0, "lib/images/asso-logo.png");
+INSERT INTO association VALUES (null, "Restos du coeur", "boutiqueassocfa@gmail.com", 0,0,0, "lib/images/asso-logo.png");
 
 INSERT INTO projet values (null, "Action contre la faim", "Distribution de nourriture", "2020-12-18", "France", "Paris", 30000, 22000,1,1);
 INSERT INTO projet values (null, "Lutte contre le froid", "Distribution de vetements", "2020-11-15", "France", "Marseille", 15000, 8000,1,1); 
