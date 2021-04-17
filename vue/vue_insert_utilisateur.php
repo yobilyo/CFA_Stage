@@ -39,6 +39,11 @@
 		</tr>
 
 		<tr> 
+			<td> Téléphone : </td> 
+			<td> <input type="text" maxlength="10" class="form-control" name="tel" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['tel']:""; ?>" ></td>
+		</tr>
+
+		<tr> 
 			<td> Droits : </td> 
 			<!-- $unUtilisateur -->
 			<td>
