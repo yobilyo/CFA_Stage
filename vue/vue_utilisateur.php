@@ -9,8 +9,8 @@
 					<th> Prenom</th>
 					<th> Civilité</th>
 					<th> Date de naissance</th>
-					<th> Droits</th>
 					<th> Téléphone</th>
+					<th> Droits</th>
 					<th> Email</th>
 					<th> Mdp</th> 
 					<th> Adresse</th>
