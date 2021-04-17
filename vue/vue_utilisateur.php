@@ -1,6 +1,6 @@
 <div class='container'>
 <?php 
-	if($_SESSION['droits'] == "administrateur"){
+	//if($_SESSION['droits'] == "administrateur"){
 		echo"<table class='table table-striped'>
 			<thead>
 				<tr> 
@@ -56,12 +56,13 @@
 			</tr>";	
 		}		
 					
-	}
+	/*}
 	else if($_SESSION['droits'] == "membre"){
 	
 		echo"<img src='".$unUtilisateur['photo_profil']."' class='rounded mx-auto d-block' />";
 	}
-			?>
+			*/?>
+			
 		</tbody>
 
 	</table>

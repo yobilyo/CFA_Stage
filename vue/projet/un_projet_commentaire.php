@@ -36,36 +36,38 @@
 	<!--Pour que l'utilisateur puisse écrire un commentaire-->
 	<center>
 		<?php
-			echo "
-			<form method ='post' action =''>
-			";
-
-				$contenu = " ";
-				$note = " ";
-				$com = " name='valider_com' value='Valider'";
-
-				if (isset($unCom)) {
-					$contenu = $unCom['contenu'];
-					$note = $unCom['note'];
-					$com = " name='modifier_com' value='Modifier'";
-				}
-
+			if (isset($_SESSION['email'])) {
 				echo "
-				<legend>Ajouter un commentaire :</legend>
-				<textarea id='textarea_com' placeholder='Ecrire...' style='resize:none;' maxlength='500' name='contenu' required autocomplete='on' 
-				autofocus>".$contenu."</textarea>
-				<table>
-					<tr><td>Note : </td><td><input type='number' name='note' min='0' max='20' 
-					value ='".$note."' required></td></tr>
-					<tr>
-						<td><input style='margin-top:30px;' type='reset' class='btn btn-dark' value ='Annuler'></td>
-						<td><input style='margin-top:30px;' type='submit' class='btn btn-dark' ".$com."/>
-						</td>
-					</tr>
-				</table>
-				
-			</form>
-			";
+				<form method ='post' action =''>
+				";
+
+					$contenu = " ";
+					$note = " ";
+					$com = " name='valider_com' value='Valider'";
+
+					if (isset($unCom)) {
+						$contenu = $unCom['contenu'];
+						$note = $unCom['note'];
+						$com = " name='modifier_com' value='Modifier'";
+					}
+
+					echo "
+					<legend>Ajouter un commentaire :</legend>
+					<textarea id='textarea_com' placeholder='Ecrire...' style='resize:none;' maxlength='500' name='contenu' required autocomplete='on' 
+					autofocus>".$contenu."</textarea>
+					<table>
+						<tr><td>Note : </td><td><input type='number' name='note' min='0' max='20' 
+						value ='".$note."' required></td></tr>
+						<tr>
+							<td><input style='margin-top:30px;' type='reset' class='btn btn-dark' value ='Annuler'></td>
+							<td><input style='margin-top:30px;' type='submit' class='btn btn-dark' ".$com."/>
+							</td>
+						</tr>
+					</table>
+					
+				</form>
+				";
+			}
 		?>
 	</center>
 
@@ -124,7 +126,7 @@
 						<img src ='lib/images/sup.png' height='15' witdh='10' title='Supprimer'></a>
 						<a href='index.php?page=5&idprojet=".$_GET['idprojet']."&action=edit&id=".$unCommentaire_of_user['id']."#commentaires'>
 						<img src ='lib/images/edition.png' height='15' witdh='10' title='Modifier'></a>";
-				};
+				}
 				
 				echo '</span>
 				<span id="date_com">'.$unCommentaire_of_user['dateCom'] . '<span>
