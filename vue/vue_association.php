@@ -4,6 +4,7 @@
 			<tr> 
 				<th> Id </th>
 				<th> Libellé </th>
+				<th> Email </th>
                 <th> Nb Projets</th>
 				<th> Budget Projets Total</th>
                 <th> Somme Collectée Totale</th>
@@ -19,6 +20,7 @@
 				echo "<tr> 
 						<td>".$uneAssociation['id']." </td>
 						<td>".$uneAssociation['libelle']." </td>
+						<td>".$uneAssociation['email']." </td>
                         <td>".
                         $uneAssociation['nbprojets']." </td>
                         <td>".

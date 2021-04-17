@@ -58,6 +58,7 @@
             $tab=array(
                 "id"=>$_POST['id'],
                 "libelle"=>$_POST['libelle'],
+                "email"=>$_POST['email'],
                 "nbprojets"=>$_POST['nbprojets'],
                 "budgetProjetsTot"=>$_POST['budgetProjetsTot'],
                 "sommeCollecteeTot"=>$_POST['sommeCollecteeTot'],
@@ -77,6 +78,7 @@
             $tab=array(
                 "id"=>$_POST['id'],
                 "libelle"=>$_POST['libelle'],
+                "email"=>$_POST['email'],
                 "nbprojets"=>$_POST['nbprojets'],
                 "budgetProjetsTot"=>$_POST['budgetProjetsTot'],
                 "sommeCollecteeTot"=>$_POST['sommeCollecteeTot'],

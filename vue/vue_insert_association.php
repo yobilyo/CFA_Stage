@@ -5,6 +5,10 @@
 			<td>  Libelle : </td> 
 			<td> <input type="text" class="form-control" name="libelle" value ="<?php echo ($uneAssociation!=null) ? $uneAssociation['libelle']:""; ?>" ></td>
 		</tr>
+		<tr> 
+			<td>  Email : </td> 
+			<td> <input type="text" class="form-control" name="email" value ="<?php echo ($uneAssociation!=null) ? $uneAssociation['email']:""; ?>" ></td>
+		</tr>
         <tr> 
 			<td> Nombre de Projets : </td> 
 			<td> <input type="text" class="form-control" name="nbprojets" value ="<?php echo ($uneAssociation!=null) ? $uneAssociation['nbprojets']:""; ?>" ></td>
