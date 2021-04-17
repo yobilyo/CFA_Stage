@@ -10,6 +10,7 @@
 					<th> Civilité</th>
 					<th> Date de naissance</th>
 					<th> Droits</th>
+					<th> Téléphone</th>
 					<th> Email</th>
 					<th> Mdp</th> 
 					<th> Adresse</th>
@@ -33,6 +34,7 @@
 				<td>".$unUtilisateur['prenom']." </td>
 				<td>".$unUtilisateur['civilite']." </td>
 				<td>".$unUtilisateur['date_naissance']." </td>
+				<td>".$unUtilisateur['tel']." </td>
 				<td>".$unUtilisateur['droits']." </td>
 				<td>".$unUtilisateur['email']." </td>
 				<td>".$unUtilisateur['mdp']." </td>

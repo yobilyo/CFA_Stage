@@ -21,6 +21,7 @@ echo "
         <p class='p_mesInfos'><span class='legend_mesInfos'> Prénom :</span> ".$unUtilisateur['prenom']."</p>
         <p class='p_mesInfos'><span class='legend_mesInfos'> Date de naissance :</span> ".$unUtilisateur['date_naissance']."</p>
         <p class='p_mesInfos'><span class='legend_mesInfos'> E-mail :</span> ".$unUtilisateur['email']."</p>
+        <p class='p_mesInfos'><span class='legend_mesInfos'> Téléphone :</span> ".$unUtilisateur['tel']."</p>
         <p class='p_mesInfos'><span class='legend_mesInfos'> Adresse :</span> ".$unUtilisateur['adresse']."</p>
         <p class='p_mesInfos'><span class='legend_mesInfos'> Code Postal :</span> ".$unUtilisateur['codePostal']."</p>
         <p class='p_mesInfos'><span class='legend_mesInfos'> Ville :</span> ".$unUtilisateur['ville']."</p>

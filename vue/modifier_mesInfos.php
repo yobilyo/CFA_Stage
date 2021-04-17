@@ -74,6 +74,10 @@ if(isset($_POST['ValiderMDP']))
                    <td>E-mail :</td>            
                    <td><input type='text' name='email' value='".$unUtilisateur['email']."'/></td>
                 </tr>
+                <tr>
+                    <td>Téléphone :</td>            
+                    <td><input type='text' name='tel' value='".$unUtilisateur['tel']."'/></td>
+                </tr>
                <tr>
                    <td>Adresse</td>             
                    <td><input type='text' name='adresse' value='".$unUtilisateur['adresse']."'/></td>
@@ -115,6 +119,7 @@ if(isset($_POST['ValiderINFOS']))
         "prenom"=>$_POST['prenom'],
         "civilite"=>$_POST['civilite'],
         "date_naissance"=>$_POST['date_naissance'],
+        "tel"=>$_POST['tel'],
         "droits"=>$unUtilisateur['droits'],
         "email"=>$_POST['email'],
         "mdp"=>$unUtilisateur['mdp'],
@@ -124,7 +129,8 @@ if(isset($_POST['ValiderINFOS']))
         "pays"=>$_POST['pays'],
         "photo_profil"=>$_POST['photo_profil']
     );
-    $unControleur->setTable ("utilisateur");
+
+    $unControleur->setTable("utilisateur");
     $where = array('id' => $_SESSION['id']);
 
     $unControleur->update($tab, $where);
