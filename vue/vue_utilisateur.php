@@ -12,6 +12,7 @@
 					<th> Téléphone</th>
 					<th> Droits</th>
 					<th> Email</th>
+					<th> Email valide</th>
 					<th> Mdp</th> 
 					<th> Adresse</th>
 					<th> Code Postal</th>
@@ -37,6 +38,7 @@
 				<td>".$unUtilisateur['tel']." </td>
 				<td>".$unUtilisateur['droits']." </td>
 				<td>".$unUtilisateur['email']." </td>
+				<td>".$unUtilisateur['emailValide']." </td>
 				<td>".$unUtilisateur['mdp']." </td>
 				<td>".$unUtilisateur['adresse']." </td>
 				<td>".$unUtilisateur['codePostal']." </td>

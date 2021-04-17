@@ -69,6 +69,27 @@
 			<td> Email : </td> 
 			<td> <input type="text" class="form-control" name="email" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['email']:""; ?>" ></td>
 		</tr>
+		<tr> 
+			<td> E-mail valide : </td> 
+			<!-- $unUtilisateur -->
+			<td>
+				<select name='emailValide' class="form-control form-control-sm">
+					<?php
+						$lesOptions = array("0", "1");
+						foreach ($lesOptions as $uneOption) {
+
+							$selected = "";
+							if ($uneOption == $unUtilisateur['emailValide']) {
+								$selected = " selected";
+							} else {
+								$selected = " ";
+							}
+							echo "<option value ='".$uneOption."' ".$selected.">".$uneOption."</option>";
+						}
+					?>
+				</select>
+			</td>
+		</tr>
         <tr> 
 			<td> Mot de passe : </td> 
 			<!-- $unUtilisateur -->

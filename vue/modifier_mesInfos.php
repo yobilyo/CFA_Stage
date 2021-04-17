@@ -75,6 +75,25 @@ if(isset($_POST['ValiderMDP']))
                    <td><input type='text' name='email' value='".$unUtilisateur['email']."'/></td>
                 </tr>
                 <tr>
+                    <td>Email valide :</td>
+                    <td><select name='emailValide'>";
+                        $lesOptions = array("0", "1");
+                        foreach ($lesOptions as $uneOption) 
+                        {
+                            $selected = " ";
+                            if ($unUtilisateur != null && $unUtilisateur['emailValide'] == $uneOption) 
+                            {
+                                $selected = " selected";
+                            } 
+                            else
+                            {
+                                $selected = " ";
+                            }
+                            echo "<option value ='".$uneOption."' ".$selected.">".$uneOption."</option>";
+                        }
+                    echo"</td>
+                </tr>           
+                <tr>
                     <td>Téléphone :</td>            
                     <td><input type='text' name='tel' value='".$unUtilisateur['tel']."'/></td>
                 </tr>
@@ -122,6 +141,7 @@ if(isset($_POST['ValiderINFOS']))
         "tel"=>$_POST['tel'],
         "droits"=>$unUtilisateur['droits'],
         "email"=>$_POST['email'],
+        "emailValide"=>$_POST['emailValide'],
         "mdp"=>$unUtilisateur['mdp'],
         "adresse"=>$_POST['adresse'],
         "codePostal"=>$_POST['codePostal'],
