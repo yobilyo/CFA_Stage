@@ -20,7 +20,7 @@ CREATE TABLE Utilisateur(
         droits       Enum ("administrateur","membre") NOT NULL ,
         email        Varchar (100) UNIQUE NOT NULL ,
         mdp          Varchar (50) NOT NULL ,
-        tel          Varchar (10) NOT NULL ,
+        tel          Varchar (10) NOT NULL , 
         adresse      Varchar (100) NOT NULL,
         codePostal  INT (5) NOT NULL ,
         ville        Varchar (50) NOT NULL,
