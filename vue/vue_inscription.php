@@ -66,6 +66,14 @@
 			</div>
 			<br/>
 
+			Téléphone * :
+			<div class='form-group'>
+				<div class='col-sm-8'>
+				<input type="text" required='required' name="tel" class='form-control'>
+				</div>
+			</div>
+			<br/>
+
 			Adresse * :
 			<div class='form-group'>
 				<div class='col-sm-8'>
