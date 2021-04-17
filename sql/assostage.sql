@@ -19,6 +19,7 @@ CREATE TABLE Utilisateur(
         date_naissance Date NOT NULL,
         droits       Enum ("administrateur","membre") NOT NULL ,
         email        Varchar (100) UNIQUE NOT NULL ,
+        emailValide boolean not null,
         mdp          Varchar (50) NOT NULL ,
         tel          Varchar (10) NOT NULL , 
         adresse      Varchar (100) NOT NULL,
@@ -271,10 +272,10 @@ create view dons_et_projets as(
 # insertions
 
 insert into utilisateur values
-(null, "Zinedine", "Zidane", "M", "1972-06-23", "administrateur", "a@gmail.com", "123", "0102030405", "15 rue de Paris", "95316", "Clignancourt", "France", "lib/images/photo_profil/zidane.jpg"),
-(null, "Fabien", "Barthez", "M", "1971-06-28", "administrateur", "b@gmail.com", "456", "0202030405", "87 avenue du 11 novembre 1918", "92008", "Neuilly", "France", "lib/images/photo_profil/barthez.jpg"),
-(null, "Frida", "Kahlo", "Mme", "1907-07-06", "membre", "c@gmail.com", "789", "0302030405", "53 rue de Paris", "95316", "Clignancourt", "France", "lib/images/photo_profil/frida.jpg"),
-(null, "Rihanna", "Robyn", "Mlle", "1988-02-20", "membre", "d@gmail.com", "abc", "0402030405", "68 rue Saint Michael", "12345", "Londres", "Royaume-Uni", "lib/images/photo_profil/rihanna.jpg");
+(null, "Zinedine", "Zidane", "M", "1972-06-23", "administrateur", "a@gmail.com", 1, "123", "0102030405", "15 rue de Paris", "95316", "Clignancourt", "France", "lib/images/photo_profil/zidane.jpg"),
+(null, "Fabien", "Barthez", "M", "1971-06-28", "administrateur", "b@gmail.com", 1, "456", "0202030405", "87 avenue du 11 novembre 1918", "92008", "Neuilly", "France", "lib/images/photo_profil/barthez.jpg"),
+(null, "Frida", "Kahlo", "Mme", "1907-07-06", "membre", "c@gmail.com", 1, "789", "0302030405", "53 rue de Paris", "95316", "Clignancourt", "France", "lib/images/photo_profil/frida.jpg"),
+(null, "Rihanna", "Robyn", "Mlle", "1988-02-20", "membre", "d@gmail.com", 1, "abc", "0402030405", "68 rue Saint Michael", "12345", "Londres", "Royaume-Uni", "lib/images/photo_profil/rihanna.jpg");
 
 INSERT INTO association VALUES (null, "Restos du coeur", "boutiqueassocfa@gmail.com", 0,0,0, "lib/images/asso-logo.png");
 
