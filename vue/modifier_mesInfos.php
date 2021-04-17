@@ -74,7 +74,11 @@ if(isset($_POST['ValiderMDP']))
                    <td>E-mail :</td>            
                    <td><input type='text' name='email' value='".$unUtilisateur['email']."'/></td>
                 </tr>
-                <tr>
+                ";
+
+                if ($unUtilisateur['droits'] == 'administrateur') {
+                    echo "
+                    <tr>
                     <td>Email valide :</td>
                     <td><select name='emailValide'>";
                         $lesOptions = array("0", "1");
@@ -92,7 +96,14 @@ if(isset($_POST['ValiderMDP']))
                             echo "<option value ='".$uneOption."' ".$selected.">".$uneOption."</option>";
                         }
                     echo"</td>
-                </tr>           
+                    </tr>";
+                } else {
+                    echo "
+                    <input type='hidden' name='emailValide' value='".$unUtilisateur['emailValide']."' />
+                    ";
+                }
+                
+                echo "         
                 <tr>
                     <td>Téléphone :</td>            
                     <td><input type='text' name='tel' value='".$unUtilisateur['tel']."'/></td>

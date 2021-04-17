@@ -16,6 +16,7 @@
             "date_naissance"=>$_POST['date_naissance'],
             "droits"=>$droits,
             "email"=>$_POST['email'],
+            "emailValide"=>0,
             "mdp"=>$_POST['mdp'],
             "tel"=>$_POST['tel'],
             "adresse"=>$_POST['adresse'],

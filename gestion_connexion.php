@@ -21,6 +21,7 @@
             $_SESSION['date_naissance'] = $membreConnecte['date_naissance'];
             $_SESSION['droits'] = $membreConnecte['droits'];
             $_SESSION['email'] = $membreConnecte['email'];
+            $_SESSION['emailValide'] = $membreConnecte['emailValide'];
             $_SESSION['mdp'] = $membreConnecte['mdp']; 
             $_SESSION['tel'] = $membreConnecte['tel']; 
             $_SESSION['adresse'] = $membreConnecte['adresse'];
