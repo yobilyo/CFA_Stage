@@ -15,11 +15,11 @@
 		</tr>
         <tr> 
 			<td> Budget des Projets Total : </td> 
-			<td> <input type="text" class="form-control" name="budgetProjetsTot" value ="<?php echo ($uneAssociation!=null) ? $uneAssociation['budgetProjetsTot']:""; ?>" ></td>
+			<td> <input type="number" class="form-control" name="budgetProjetsTot" value ="<?php echo ($uneAssociation!=null) ? $uneAssociation['budgetProjetsTot']:""; ?>" ></td>
 		</tr>
         <tr> 
 			<td> Somme collectée Totale : </td> 
-			<td> <input type="text" class="form-control" name="sommeCollecteeTot" value ="<?php echo ($uneAssociation!=null) ? $uneAssociation['sommeCollecteeTot']:""; ?>" ></td>
+			<td> <input type="number" class="form-control" name="sommeCollecteeTot" value ="<?php echo ($uneAssociation!=null) ? $uneAssociation['sommeCollecteeTot']:""; ?>" ></td>
 		</tr>
         <tr> 
 			<td> Photo de profil (URL) : </td> 

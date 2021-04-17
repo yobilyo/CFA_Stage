@@ -56,7 +56,6 @@
             //var_dump($_POST);
 
             $tab=array(
-                "id"=>$_POST['id'],
                 "libelle"=>$_POST['libelle'],
                 "email"=>$_POST['email'],
                 "nbprojets"=>$_POST['nbprojets'],
@@ -76,7 +75,6 @@
             //var_dump($_POST);
             $unControleur->setTable ("association");
             $tab=array(
-                "id"=>$_POST['id'],
                 "libelle"=>$_POST['libelle'],
                 "email"=>$_POST['email'],
                 "nbprojets"=>$_POST['nbprojets'],
