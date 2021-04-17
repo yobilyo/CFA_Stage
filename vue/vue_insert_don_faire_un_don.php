@@ -32,6 +32,7 @@
             $password = " ";
             $adresse = " ";
             $rue = " ";
+            $tel = " "; 
             $codePostal = " ";
             $ville = " ";
             $civilite = " ";
@@ -55,6 +56,7 @@
                 $adresse = " value ='".$lUtilisateur['adresse']."' style='background-color:gainsboro;' readonly";
                 $codePostal = " value = '".$lUtilisateur['codePostal']."' style='background-color:gainsboro;' readonly";
                 $ville = " value = '".$lUtilisateur['ville']."' style='background-color:gainsboro;' readonly";
+                $tel = " value = '".$lUtilisateur['tel']."' style='background-color:gainsboro;' readonly"; 
                 $civilite = " value = '".$lUtilisateur['civilite']."' style='background-color:gainsboro;'";
                 $civiliteDisabled = "style='background-color:gainsboro;' disabled";
                 $pays = " value = '".$lUtilisateur['pays']."' style='background-color:gainsboro;' readonly";
@@ -86,6 +88,7 @@
             <input type='text' placeholder='Prénom' name='prenom' ".$prenom.">
             <input type='text' placeholder='Nom' name='nom'".$nom.">
             <input type='text' placeholder='E-mail' name='email'".$email.">
+            <input type='text' placeholder='Téléphone' name='tel'".$tel.">
             <input type='password' placeholder='Mot de passe' name='mdp'".$password.">
             <input type='date' placeholder='Date de naissance' name='date_naissance' ".$datenaissance.">
             <input type='text' placeholder='Adresse' name='adresse' ".$adresse.">
