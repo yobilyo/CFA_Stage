@@ -17,6 +17,7 @@
             "droits"=>$droits,
             "email"=>$_POST['email'],
             "mdp"=>$_POST['mdp'],
+            "tel"=>$_POST['tel'],
             "adresse"=>$_POST['adresse'],
             "codePostal"=>$_POST['codePostal'],
             "ville"=>$_POST['ville'],

@@ -22,6 +22,7 @@
             $_SESSION['droits'] = $membreConnecte['droits'];
             $_SESSION['email'] = $membreConnecte['email'];
             $_SESSION['mdp'] = $membreConnecte['mdp']; 
+            $_SESSION['tel'] = $membreConnecte['tel']; 
             $_SESSION['adresse'] = $membreConnecte['adresse'];
             $_SESSION['codePostal'] = $membreConnecte['codePostal'];
             $_SESSION['ville'] = $membreConnecte['ville'];
