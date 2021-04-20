@@ -1,6 +1,5 @@
-<img style="float:left;margin:40px;" src='./lib/images/asso-logo.png' style='position: relative' width='250'/>
-
-<br/><br/><br/><br/><br/>
+<img src='./lib/images/asso-logo.png' width='250'/>
+<br/><br/>
 
 <div class='col-md-5' style='background-color:#F9F9F9'>
 	<form method='post' action='' class='form-horizontal' role='form'>

@@ -118,7 +118,7 @@
 		</tr>
 
 			<td> Photo de profil (URL) : </td> 
-			<td> <input type="text" class="form-control" name="photo_profil" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['photo_profil']:"lib/images/photo_profil/nom_image.jpg"; ?>" ></td>
+			<td> <input type="text" class="form-control" name="photo_profil" value ="<?php echo ($unUtilisateur!=null) ? $unUtilisateur['photo_profil']:"lib/images/photo_profil/anonymous.jpg"; ?>" ></td>
 		</tr>
 
         <!-- Id utilisateur caché envoyé dans le formulaire aussi -->

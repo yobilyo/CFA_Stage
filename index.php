@@ -31,6 +31,17 @@
 			require_once("vue/vue_navbar.php");
 			//print_r($_SESSION);
 			echo "<br/>";
+
+			//à enlever une fois la fonctionnalité de vérification d'email implémentée
+			if (isset($_SESSION['id'])) {
+				$unControleur->setTable("utilisateur");
+				$where = array("id"=>$_SESSION['id']);
+				$utilisateurConnecte = $unControleur->selectWhere($where);
+				if ($utilisateurConnecte['emailValide'] != 1) {
+					echo "Attention, votre compte n'a pas été validé, veuillez confirmer votre email
+					pour accéder à l'ensemble des fonctionnalités du site internet.<br/>";
+				}
+			}
 		?>
 
 		<?php
